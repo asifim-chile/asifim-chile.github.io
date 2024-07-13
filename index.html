@@ -7,12 +7,17 @@
     <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
     <style>
-        body { margin: 0; }
-        canvas { width: 100%; height: 100% }
+        body { margin: 0; overflow: hidden; }
+        canvas { width: 100%; height: 100%; display: block; }
+        #joystick { position: absolute; bottom: 20px; left: 20px; width: 100px; height: 100px; background: rgba(0, 0, 0, 0.5); border-radius: 50%; touch-action: none; }
+        #joystickHandle { position: absolute; width: 50px; height: 50px; background: rgba(255, 255, 255, 0.7); border-radius: 50%; left: 25px; top: 25px; touch-action: none; }
     </style>
 </head>
 <body>
     <canvas id="renderCanvas"></canvas>
+    <div id="joystick">
+        <div id="joystickHandle"></div>
+    </div>
     <script>
         // Configuración inicial del entorno Babylon.js
         var canvas = document.getElementById("renderCanvas");
@@ -26,7 +31,7 @@
         var ground = BABYLON.MeshBuilder.CreateGround("ground", { width: 10, height: 10 }, scene);
 
         // Conectar con el servidor Socket.io
-        var socket = io('http://localhost:3000');
+        var socket = io();
 
         // Almacenar esferas de todos los usuarios
         var spheres = {};
@@ -59,16 +64,40 @@
             userSphere = spheres[socket.id];
         });
 
-        // Joystick virtual
-        var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
-        var joystick = new BABYLON.GUI.VirtualJoystick(true);
-        joystick.setJoystickSensibility(0.05);
+        // Joystick virtual personalizado
+        var joystick = document.getElementById('joystick');
+        var joystickHandle = document.getElementById('joystickHandle');
+        var maxOffset = 25;
+        var deltaX = 0;
+        var deltaY = 0;
+        var isDragging = false;
+
+        joystickHandle.addEventListener('pointerdown', function(event) {
+            isDragging = true;
+            joystickHandle.setPointerCapture(event.pointerId);
+        });
+
+        joystickHandle.addEventListener('pointermove', function(event) {
+            if (isDragging) {
+                deltaX = Math.max(-maxOffset, Math.min(maxOffset, event.clientX - joystick.offsetLeft - joystick.offsetWidth / 2));
+                deltaY = Math.max(-maxOffset, Math.min(maxOffset, event.clientY - joystick.offsetTop - joystick.offsetHeight / 2));
+                joystickHandle.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+            }
+        });
+
+        joystickHandle.addEventListener('pointerup', function(event) {
+            isDragging = false;
+            joystickHandle.releasePointerCapture(event.pointerId);
+            deltaX = 0;
+            deltaY = 0;
+            joystickHandle.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+        });
 
         // Mover la esfera del usuario con el joystick
         scene.onBeforeRenderObservable.add(function() {
             if (userSphere) {
-                userSphere.position.x += joystick.deltaPosition.x;
-                userSphere.position.z += joystick.deltaPosition.y;
+                userSphere.position.x += deltaX * 0.01;
+                userSphere.position.z += deltaY * 0.01;
                 socket.emit('move', { id: socket.id, position: userSphere.position });
             }
         });
