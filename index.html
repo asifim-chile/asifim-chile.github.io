@@ -2,123 +2,86 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda en Línea</title>
+    <title>Babylon.js con Socket.io</title>
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            background-color: #444;
-            overflow: hidden;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            text-align: center;
-        }
-        nav ul li {
-            display: inline;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            padding: 10px 20px;
-            display: inline-block;
-        }
-        nav ul li a:hover {
-            background-color: #555;
-        }
-        .container {
-            padding: 20px;
-        }
-        .product {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 10px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        .product img {
-            max-width: 100%;
-            height: auto;
-        }
-        .product h2 {
-            font-size: 20px;
-            color: #333;
-        }
-        .product p {
-            font-size: 16px;
-            color: #777;
-        }
-        .product .price {
-            font-size: 18px;
-            color: #e91e63;
-        }
-        .product button {
-            background-color: #e91e63;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        .product button:hover {
-            background-color: #d81b60;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
+        body { margin: 0; }
+        canvas { width: 100%; height: 100% }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Tienda en Línea</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Productos</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </nav>
-    <div class="container">
-        <div class="product">
-            <img src="producto1.jpg" alt="Producto 1">
-            <h2>Producto 1</h2>
-            <p>Descripción breve del producto 1.</p>
-            <p class="price">$19.99</p>
-            <button>Añadir al carrito</button>
-        </div>
-        <div class="product">
-            <img src="producto2.jpg" alt="Producto 2">
-            <h2>Producto 2</h2>
-            <p>Descripción breve del producto 2.</p>
-            <p class="price">$29.99</p>
-            <button>Añadir al carrito</button>
-        </div>
-        <!-- Añade más productos aquí -->
-    </div>
-    <footer>
-        <p>&copy; 2024 ASIFIM CHILE. Todos los derechos reservados.</p>
-    </footer>
+    <canvas id="renderCanvas"></canvas>
+    <script>
+        // Configuración inicial del entorno Babylon.js
+        var canvas = document.getElementById("renderCanvas");
+        var engine = new BABYLON.Engine(canvas, true);
+        var scene = new BABYLON.Scene(engine);
+        var camera = new BABYLON.ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 10, new BABYLON.Vector3(0, 0, 0), scene);
+        camera.attachControl(canvas, true);
+        var light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0), scene);
+
+        // Crear el plano de fondo
+        var ground = BABYLON.MeshBuilder.CreateGround("ground", { width: 10, height: 10 }, scene);
+
+        // Conectar con el servidor Socket.io
+        var socket = io('http://localhost:3000');
+
+        // Almacenar esferas de todos los usuarios
+        var spheres = {};
+
+        // Función para crear una nueva esfera
+        function createSphere(id, position) {
+            var sphere = BABYLON.MeshBuilder.CreateSphere(id, { diameter: 1 }, scene);
+            sphere.position = position;
+            spheres[id] = sphere;
+        }
+
+        // Crear una nueva esfera al recibir la señal del servidor
+        socket.on('newUser', function(data) {
+            createSphere(data.id, new BABYLON.Vector3(data.position.x, data.position.y, data.position.z));
+        });
+
+        // Actualizar la posición de una esfera
+        socket.on('updatePosition', function(data) {
+            if (spheres[data.id]) {
+                spheres[data.id].position.x = data.position.x;
+                spheres[data.id].position.y = data.position.y;
+                spheres[data.id].position.z = data.position.z;
+            }
+        });
+
+        // Crear la esfera para el usuario actual
+        var userSphere;
+        socket.on('connect', function() {
+            createSphere(socket.id, new BABYLON.Vector3(0, 0.5, 0));
+            userSphere = spheres[socket.id];
+        });
+
+        // Joystick virtual
+        var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
+        var joystick = new BABYLON.GUI.VirtualJoystick(true);
+        joystick.setJoystickSensibility(0.05);
+
+        // Mover la esfera del usuario con el joystick
+        scene.onBeforeRenderObservable.add(function() {
+            if (userSphere) {
+                userSphere.position.x += joystick.deltaPosition.x;
+                userSphere.position.z += joystick.deltaPosition.y;
+                socket.emit('move', { id: socket.id, position: userSphere.position });
+            }
+        });
+
+        // Render loop
+        engine.runRenderLoop(function() {
+            scene.render();
+        });
+
+        // Redimensionar el canvas cuando la ventana se redimensione
+        window.addEventListener('resize', function() {
+            engine.resize();
+        });
+    </script>
 </body>
 </html>
