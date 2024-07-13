@@ -35,10 +35,23 @@
 
         // Almacenar esferas de todos los usuarios
         var spheres = {};
+        var colors = [
+            new BABYLON.Color3(1, 0, 0),  // Rojo
+            new BABYLON.Color3(0, 1, 0),  // Verde
+            new BABYLON.Color3(0, 0, 1),  // Azul
+            new BABYLON.Color3(1, 1, 0),  // Amarillo
+            new BABYLON.Color3(1, 0, 1),  // Magenta
+            new BABYLON.Color3(0, 1, 1)   // Cian
+        ];
+        var colorIndex = 0;
 
-        // Función para crear una nueva esfera
+        // Función para crear una nueva esfera con un color único
         function createSphere(id, position) {
             var sphere = BABYLON.MeshBuilder.CreateSphere(id, { diameter: 1 }, scene);
+            var material = new BABYLON.StandardMaterial(id + "-material", scene);
+            material.diffuseColor = colors[colorIndex % colors.length];
+            colorIndex++;
+            sphere.material = material;
             sphere.position = position;
             spheres[id] = sphere;
         }
@@ -54,6 +67,14 @@
                 spheres[data.id].position.x = data.position.x;
                 spheres[data.id].position.y = data.position.y;
                 spheres[data.id].position.z = data.position.z;
+            }
+        });
+
+        // Eliminar una esfera al desconectarse el usuario
+        socket.on('userDisconnected', function(data) {
+            if (spheres[data.id]) {
+                spheres[data.id].dispose();
+                delete spheres[data.id];
             }
         });
 
