@@ -3,87 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esfera Roja en Babylon.js</title>
-    <script src="https://cdn.babylonjs.com/babylon.js"></script>
-    <script src="https://cdn.babylonjs.com/hand.min.js"></script>
-    <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
+    <title>ASIFIM 3D</title>
     <style>
-        html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; }
-        canvas { width: 100%; height: 100%; display: block; }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .text-3d {
+            font-size: 100px;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            user-select: none;
+            text-align: center;
+            transition: transform 0.1s;
+            color: white;
+            text-shadow: 
+                1px 1px 0px #999, 
+                2px 2px 0px #888, 
+                3px 3px 0px #777, 
+                4px 4px 0px #666, 
+                5px 5px 0px #555, 
+                6px 6px 0px #444, 
+                7px 7px 0px #333, 
+                8px 8px 0px #222, 
+                9px 9px 0px #111;
+        }
     </style>
 </head>
 <body>
-    <canvas id="renderCanvas"></canvas>
+
+    <div class="text-3d" id="asifim">ASIFIM</div>
+
     <script>
-        // Obtener el canvas y crear el motor
-        const canvas = document.getElementById("renderCanvas");
-        const engine = new BABYLON.Engine(canvas, true);
+        let textElement = document.getElementById("asifim");
+        let fontSize = 100;
+        let initialDistance = 0;
 
-        // Crear la escena
-        const scene = new BABYLON.Scene(engine);
-        const camera = new BABYLON.ArcRotateCamera("camera", Math.PI / 2, Math.PI / 2.5, 5, BABYLON.Vector3.Zero(), scene);
-        camera.attachControl(canvas, true);
+        function getDistance(touches) {
+            let dx = touches[0].clientX - touches[1].clientX;
+            let dy = touches[0].clientY - touches[1].clientY;
+            return Math.sqrt(dx * dx + dy * dy);
+        }
 
-        // Crear la luz
-        const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 1, 0), scene);
-
-        // Crear la esfera roja
-        const sphere = BABYLON.MeshBuilder.CreateSphere("sphere", { diameter: 2 }, scene);
-        const material = new BABYLON.StandardMaterial("material", scene);
-        material.diffuseColor = new BABYLON.Color3(1, 0, 0);
-        sphere.material = material;
-
-        // Manejo de eventos táctiles
-        let lastTouchX = 0, lastTouchY = 0, isDragging = false;
-        let initialDistance = 0, initialRadius = camera.radius;
-
-        canvas.addEventListener("touchstart", (event) => {
-            if (event.touches.length === 1) {
-                lastTouchX = event.touches[0].clientX;
-                lastTouchY = event.touches[0].clientY;
-                isDragging = true;
-            } else if (event.touches.length === 2) {
-                initialDistance = Math.hypot(
-                    event.touches[0].clientX - event.touches[1].clientX,
-                    event.touches[0].clientY - event.touches[1].clientY
-                );
-                initialRadius = camera.radius;
+        document.addEventListener("touchstart", (e) => {
+            if (e.touches.length === 2) {
+                initialDistance = getDistance(e.touches);
             }
         });
 
-        canvas.addEventListener("touchmove", (event) => {
-            event.preventDefault();
-            if (event.touches.length === 1 && isDragging) {
-                let deltaX = event.touches[0].clientX - lastTouchX;
-                let deltaY = event.touches[0].clientY - lastTouchY;
-                lastTouchX = event.touches[0].clientX;
-                lastTouchY = event.touches[0].clientY;
-
-                sphere.rotation.y += deltaX * 0.01;
-                sphere.rotation.x += deltaY * 0.01;
-            } else if (event.touches.length === 2) {
-                let newDistance = Math.hypot(
-                    event.touches[0].clientX - event.touches[1].clientX,
-                    event.touches[0].clientY - event.touches[1].clientY
-                );
-                let zoomFactor = initialDistance / newDistance;
-                camera.radius = initialRadius * zoomFactor;
+        document.addEventListener("touchmove", (e) => {
+            if (e.touches.length === 2) {
+                let newDistance = getDistance(e.touches);
+                let scale = newDistance / initialDistance;
+                fontSize = Math.min(Math.max(fontSize * scale, 50), 300);
+                textElement.style.fontSize = fontSize + "px";
+                initialDistance = newDistance;
             }
-        });
-
-        canvas.addEventListener("touchend", () => {
-            isDragging = false;
-        });
-
-        // Renderizar la escena
-        engine.runRenderLoop(() => {
-            scene.render();
-        });
-
-        // Redimensionar la escena si la ventana cambia de tamaño
-        window.addEventListener("resize", () => {
-            engine.resize();
         });
     </script>
+
 </body>
 </html>
