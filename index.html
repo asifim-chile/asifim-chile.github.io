@@ -7,13 +7,14 @@
     <style>
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             background-color: black;
             color: white;
             font-family: Arial, sans-serif;
-            overflow: hidden;
+            text-align: center;
         }
 
         .text-3d {
@@ -22,9 +23,6 @@
             text-transform: uppercase;
             position: relative;
             user-select: none;
-            text-align: center;
-            transition: transform 0.1s;
-            color: white;
             text-shadow: 
                 1px 1px 0px #999, 
                 2px 2px 0px #888, 
@@ -36,11 +34,47 @@
                 8px 8px 0px #222, 
                 9px 9px 0px #111;
         }
+
+        .description {
+            margin-top: 20px;
+            font-size: 18px;
+            max-width: 600px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #444;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #666;
+        }
     </style>
 </head>
 <body>
 
     <div class="text-3d" id="asifim">ASIFIM</div>
+    <p class="description">Bienvenido a ASIFIM. Síguenos en Instagram y descarga nuestros documentos para más información.</p>
+
+    <div class="buttons">
+        <a href="https://www.instagram.com/asifim.chile" class="button" target="_blank">Instagram</a>
+        <a href="asifimweb/pdf1.pdf" class="button" download>Descargar PDF 1</a>
+        <a href="asifimweb/pdf2.pdf" class="button" download>Descargar PDF 2</a>
+        <a href="asifimweb/pdf3.pdf" class="button" download>Descargar PDF 3</a>
+        <a href="https://waypay.link/aqui_va_tu_link" class="button" target="_blank">Pagar con Waypay</a>
+    </div>
 
     <script>
         let textElement = document.getElementById("asifim");
