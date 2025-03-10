@@ -3,116 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASIFIM</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <title>Asifim 3D</title>
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-
-        .logo {
-            width: 150px;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        .text-3d {
-            font-size: 100px;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-shadow: 1px 1px 5px #999;
-        }
-
-        .description {
-            margin-top: 20px;
-            font-size: 18px;
-            max-width: 600px;
-        }
-
-        .buttons {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 5px;
-            font-size: 16px;
-            color: white;
-            background-color: #444;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .button:hover {
-            background-color: #666;
-        }
-
-        /* Ajustes para el carrusel */
-        .swiper {
-            width: 80%;
-            max-width: 600px;
-            height: 300px;
-            margin-top: 20px;
-            cursor: pointer; /* Hace que el cursor cambie para indicar que es clickeable */
-        }
-
-        .swiper-slide {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-        }
-
-        .swiper-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        /* Texto llamativo */
-        .highlight-text {
-            font-size: 24px;
-            font-weight: bold;
-            color: yellow;
-            text-shadow: 2px 2px 4px red;
-            margin-top: 30px;
-        }
+        body, html { margin: 0; padding: 0; overflow: hidden; }
+        canvas { width: 100%; height: 100%; display: block; }
     </style>
 </head>
 <body>
-    <img src="logoasifim.png" alt="Logo ASIFIM" class="logo">
-    <div class="text-3d">ASIFIM</div>
- 
-    
-    <div class="buttons">
-        <a href="index_esp.html" class="highlight-text">ESPAÑOL</a>
-        <a href="index_ing.html" class="highlight-text">ENGLISH</a>
-    </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <canvas id="renderCanvas"></canvas>
     <script>
-        new Swiper('.swiper', {
-            loop: true,
-            pagination: { el: '.swiper-pagination', clickable: true },
-            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-            autoplay: { delay: 3000 },
-            slidesPerView: 1,
-            spaceBetween: 10
+        window.addEventListener('DOMContentLoaded', function () {
+            const canvas = document.getElementById('renderCanvas');
+            const engine = new BABYLON.Engine(canvas, true);
+
+            const createScene = function () {
+                const scene = new BABYLON.Scene(engine);
+                scene.clearColor = new BABYLON.Color4(0, 0, 0, 1);
+
+                const camera = new BABYLON.ArcRotateCamera("Camera", -Math.PI / 2, Math.PI / 3, 10, BABYLON.Vector3.Zero(), scene);
+                camera.attachControl(canvas, true);
+                camera.lowerBetaLimit = Math.PI / 3;
+                camera.upperBetaLimit = Math.PI / 3;
+                camera.wheelPrecision = 50;
+                camera.panningSensibility = 0;
+
+                const light = new BABYLON.PointLight("light", new BABYLON.Vector3(0, 5, 0), scene);
+                light.intensity = 1.5;
+
+                // Fuente de audio
+                const sound = new BABYLON.Sound("music", "asifim.mp3", scene, null, { autoplay: true, loop: true });
+
+                // Material dorado con brillo celestial
+                const goldMaterial = new BABYLON.StandardMaterial("goldMaterial", scene);
+                goldMaterial.emissiveColor = new BABYLON.Color3(1, 0.84, 0);
+                goldMaterial.specularColor = new BABYLON.Color3(1, 1, 1);
+                goldMaterial.diffuseColor = new BABYLON.Color3(1, 0.84, 0);
+
+                // Texto 3D "ASIFIM"
+                BABYLON.MeshBuilder.CreateText("ASIFIM", {
+                    text: "ASIFIM", size: 2, depth: 0.5,
+                    font: "bold 64px Arial"
+                }, scene).then(mesh => {
+                    mesh.position.y = 3;
+                    mesh.material = goldMaterial;
+                });
+
+                // Palabras "Español" y "English" en el suelo
+                const textOptions = { size: 1, depth: 0.3, font: "bold 32px Arial" };
+                BABYLON.MeshBuilder.CreateText("Español", textOptions, scene).then(mesh => {
+                    mesh.position = new BABYLON.Vector3(-2, 0.1, 2);
+                });
+                BABYLON.MeshBuilder.CreateText("English", textOptions, scene).then(mesh => {
+                    mesh.position = new BABYLON.Vector3(2, 0.1, 2);
+                });
+
+                // Relámpagos ascendentes con cambio de color
+                function createLightning() {
+                    const lightning = BABYLON.MeshBuilder.CreateLines("lightning", { points: [new BABYLON.Vector3(Math.random() * 5 - 2.5, 0, Math.random() * 5 - 2.5), new BABYLON.Vector3(0, 3, 0)] }, scene);
+                    let frame = 0;
+                    scene.onBeforeRenderObservable.add(() => {
+                        if (frame < 50) {
+                            lightning.color = new BABYLON.Color3.Lerp(new BABYLON.Color3(0.3, 0, 0), new BABYLON.Color3(1, 1, 1), frame / 50);
+                            frame++;
+                        } else {
+                            lightning.dispose();
+                            createLightning();
+                        }
+                    });
+                }
+                createLightning();
+
+                return scene;
+            };
+
+            const scene = createScene();
+            engine.runRenderLoop(() => scene.render());
+            window.addEventListener("resize", () => engine.resize());
         });
     </script>
 </body>
