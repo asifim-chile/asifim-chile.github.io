@@ -7,6 +7,7 @@
     <script src="https://cdn.babylonjs.com/babylon.js"></script>
     <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
     <script src="https://cdn.babylonjs.com/earcut.min.js"></script>
+    <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
     <style>
         body { margin: 0; overflow: hidden; }
         canvas { width: 100vw; height: 100vh; display: block; }
@@ -28,19 +29,25 @@
             const light = new BABYLON.PointLight("light", new BABYLON.Vector3(10, 10, 10), scene);
             light.intensity = 3;
             
+            // Crear un plano para mostrar el texto luminoso
             const textPlane = BABYLON.MeshBuilder.CreatePlane("textPlane", { width: 5, height: 2 }, scene);
             textPlane.position.z = -2;
             
-            const textTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(textPlane, 1024, 512);
+            // Crear material emisivo para hacer que el texto brille
+            const textMaterial = new BABYLON.StandardMaterial("textMaterial", scene);
+            textMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
+            textPlane.material = textMaterial;
             
-            const textBlock = new BABYLON.GUI.TextBlock();
-            textBlock.text = "ASIFIM";
-            textBlock.color = "white";
-            textBlock.fontSize = 200;
-            textBlock.outlineWidth = 20;
-            textBlock.outlineColor = "#ffffff";
+            // Crear una textura dinámica con el texto
+            const textTexture = new BABYLON.DynamicTexture("dynamicTexture", { width: 512, height: 256 }, scene, true);
+            textMaterial.diffuseTexture = textTexture;
             
-            textTexture.addControl(textBlock);
+            const ctx = textTexture.getContext();
+            ctx.font = "bold 100px Arial";
+            ctx.fillStyle = "white";
+            ctx.textAlign = "center";
+            ctx.fillText("ASIFIM", 256, 128);
+            textTexture.update();
             
             return scene;
         };
