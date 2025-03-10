@@ -6,6 +6,7 @@
     <title>ASIFIM en 3D</title>
     <script src="https://cdn.babylonjs.com/babylon.js"></script>
     <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+    <script src="https://cdn.babylonjs.com/earcut.min.js"></script>
     <style>
         body { margin: 0; overflow: hidden; }
         canvas { width: 100vw; height: 100vh; display: block; }
@@ -27,11 +28,13 @@
             const light = new BABYLON.PointLight("light", new BABYLON.Vector3(10, 10, 10), scene);
             light.intensity = 1.5;
             
-            BABYLON.MeshBuilder.CreateText("ASIFIM", {
+            BABYLON.MeshBuilder.ExtrudeText("ASIFIM", {
                 text: "ASIFIM",
-                size: 2,
+                depth: 0.5,
+                fontSize: 2,
                 resolution: 64,
-                depth: 0.5
+                font: "Arial",
+                invertYAxis: true
             }, scene).then(textMesh => {
                 textMesh.position.y = 0;
                 
