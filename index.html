@@ -15,10 +15,12 @@
 <body>
     <canvas id="renderCanvas"></canvas>
     <script>
+       
+        /*
         function loadFallbackPage() {
             window.location.href = "index_bl.html";
         }
-
+*/
         window.addEventListener('DOMContentLoaded', function () {
             try {
                 const canvas = document.getElementById('renderCanvas');
@@ -61,10 +63,13 @@
                 const scene = createScene();
                 engine.runRenderLoop(() => scene.render());
                 window.addEventListener("resize", () => engine.resize());
-            } catch (error) {
+            } 
+            /*
+            catch (error) {
                 console.error("Error al cargar Babylon.js:", error);
-                //loadFallbackPage();
+                loadFallbackPage();
             }
+            */
         });
     </script>
 </body>
