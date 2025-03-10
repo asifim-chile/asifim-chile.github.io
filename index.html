@@ -7,7 +7,6 @@
     <script src="https://cdn.babylonjs.com/babylon.js"></script>
     <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
     <script src="https://cdn.babylonjs.com/earcut.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
         body { margin: 0; overflow: hidden; }
         canvas { width: 100vw; height: 100vh; display: block; }
@@ -29,33 +28,29 @@
             const light = new BABYLON.PointLight("light", new BABYLON.Vector3(10, 10, 10), scene);
             light.intensity = 1.5;
             
-            // Crear texto 3D con Three.js y convertirlo a Babylon.js
-            const loader = new THREE.FontLoader();
-            loader.load("https://threejs.org/examples/fonts/helvetiker_regular.typeface.json", function (font) {
-                const textGeometry = new THREE.TextGeometry("ASIFIM", {
-                    font: font,
-                    size: 2,
-                    height: 0.5,
-                    curveSegments: 12,
-                    bevelEnabled: true,
-                    bevelThickness: 0.1,
-                    bevelSize: 0.05,
-                    bevelOffset: 0,
-                    bevelSegments: 5
-                });
+            // Crear texto en 3D extruido manualmente
+            BABYLON.MeshBuilder.CreateText = function(name, text, options, scene) {
+                const output = new BABYLON.TransformNode(name, scene);
+                const font = "Arial";
+                const size = options.size || 2;
+                const depth = options.depth || 0.5;
                 
-                const textMesh = new BABYLON.Mesh("textMesh", scene);
-                const vertexData = BABYLON.VertexData.ExtractFromGeometry(textGeometry);
-                vertexData.applyToMesh(textMesh);
+                const plane = BABYLON.MeshBuilder.CreatePlane("plane", { size: size * 3 }, scene);
+                plane.parent = output;
+                plane.position.z = depth / 2;
                 
-                textMesh.position.y = 0;
+                const texture = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(plane, 1024, 512);
+                const textBlock = new BABYLON.GUI.TextBlock();
+                textBlock.text = text;
+                textBlock.fontSize = 200;
+                textBlock.color = "gold";
+                texture.addControl(textBlock);
                 
-                const goldMaterial = new BABYLON.PBRMetallicRoughnessMaterial("goldMaterial", scene);
-                goldMaterial.baseColor = new BABYLON.Color3(1, 0.84, 0);
-                goldMaterial.metallic = 1;
-                goldMaterial.roughness = 0.3;
-                textMesh.material = goldMaterial;
-            });
+                return output;
+            };
+            
+            const textMesh = BABYLON.MeshBuilder.CreateText("asifimText", "ASIFIM", { size: 2, depth: 0.5 }, scene);
+            textMesh.position.y = 1;
             
             return scene;
         };
