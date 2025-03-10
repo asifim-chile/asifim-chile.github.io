@@ -47,10 +47,10 @@
                     goldMaterial.specularColor = new BABYLON.Color3(1, 1, 1);
                     goldMaterial.diffuseColor = new BABYLON.Color3(1, 0.84, 0);
 
-                    // Texto 3D "ASIFIM"
-                    const textMesh = BABYLON.MeshBuilder.ExtrudeShape("ASIFIM", {
-                        shape: BABYLON.ShapeBuilder.ExtrudeShape({ shape: BABYLON.Curve3.CreateCubicBezier() }, scene),
-                        depth: 0.5
+                    // Texto 3D "ASIFIM" usando extrusión de forma
+                    const font = "bold 64px Arial";
+                    const textMesh = BABYLON.MeshBuilder.CreateText("ASIFIM", {
+                        text: "ASIFIM", size: 2, depth: 0.5, font: font
                     }, scene);
                     textMesh.position.y = 3;
                     textMesh.material = goldMaterial;
