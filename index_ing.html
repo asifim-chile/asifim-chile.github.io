@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPANY AND FOUNDATION ASIFIM</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .logo {
+            width: 150px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .text-3d {
+            font-size: 100px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 5px #999;
+        }
+
+        .description {
+            margin-top: 20px;
+            font-size: 18px;
+            max-width: 600px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            color: white;
+            background-color: #444;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #666;
+        }
+
+        /* Ajustes para el carrusel */
+        .swiper {
+            width: 80%;
+            max-width: 600px;
+            height: 300px;
+            margin-top: 20px;
+            cursor: pointer; /* Hace que el cursor cambie para indicar que es clickeable */
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Texto llamativo */
+        .highlight-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: yellow;
+            text-shadow: 2px 2px 4px red;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <img src="logoasifim.png" alt="Logo ASIFIM" class="logo">
+    <div class="text-3d">ASIFIM</div>
+    <p class="description">
+    Make Your Dreams Come True with the ASIFIM Method!<br> Together, We Can Make a Change. <br><br>Welcome to the ASIFIM Company-Foundation. </p>
+
+    <div class="swiper" onclick="window.location.href='historia_ing.html';">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img00.jpg" alt="Imagen 1"></div>
+            <div class="swiper-slide"><img src="img01.jpg" alt="Imagen 2"></div>
+            <div class="swiper-slide"><img src="img02.jpg" alt="Imagen 3"></div>
+            <div class="swiper-slide"><img src="img03.jpg" alt="Imagen 4"></div>
+            <div class="swiper-slide"><img src="img04.jpg" alt="Imagen 5"></div>
+            <div class="swiper-slide"><img src="img05.jpg" alt="Imagen 6"></div>
+            <div class="swiper-slide"><img src="img06.jpg" alt="Imagen 7"></div>
+            <div class="swiper-slide"><img src="img07.jpg" alt="Imagen 8"></div>
+            <div class="swiper-slide"><img src="img08.jpg" alt="Imagen 9"></div>
+            <div class="swiper-slide"><img src="img09.jpg" alt="Imagen 10"></div>
+            <div class="swiper-slide"><img src="img10.jpg" alt="Imagen 11"></div>
+            <div class="swiper-slide"><img src="img11.jpg" alt="Imagen 12"></div>
+            <div class="swiper-slide"><img src="img12.jpg" alt="Imagen 13"></div>
+            <div class="swiper-slide"><img src="img13.jpg" alt="Imagen 14"></div>
+            <div class="swiper-slide"><img src="img14.jpg" alt="Imagen 15"></div>
+            <div class="swiper-slide"><img src="img15.jpg" alt="Imagen 16"></div>
+            <div class="swiper-slide"><img src="img16.jpg" alt="Imagen 17"></div>
+            <div class="swiper-slide"><img src="img17.jpg" alt="Imagen 18"></div>
+            <div class="swiper-slide"><img src="img18.jpg" alt="Imagen 19"></div>
+            <div class="swiper-slide"><img src="img19.jpg" alt="Imagen 20"></div>
+
+
+
+
+
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    
+    <div class="buttons">
+        <a href="autodesarrollo_ing.html" class="highlight-text">Start Your Self-Development Journey with ASIFIM</a>
+        <a href="proyectos_ing.html" class="highlight-text">INCOHERENT PROJECTS ASIFIM</a>
+        
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        new Swiper('.swiper', {
+            loop: true,
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            autoplay: { delay: 3000 },
+            slidesPerView: 1,
+            spaceBetween: 10
+        });
+    </script>
+</body>
+</html>
