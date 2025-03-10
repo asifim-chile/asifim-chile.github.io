@@ -43,17 +43,8 @@
                 goldMaterial.specularColor = new BABYLON.Color3(1, 1, 1);
                 goldMaterial.diffuseColor = new BABYLON.Color3(1, 0.84, 0);
 
-                // Función para crear texto en Babylon.js
-                async function createTextMesh(text, position, scene) {
-                    const advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
-                    
-                    const textBlock = new BABYLON.GUI.TextBlock();
-                    textBlock.text = text;
-                    textBlock.color = "gold";
-                    textBlock.fontSize = 64;
-                    textBlock.fontStyle = "bold";
-                    advancedTexture.addControl(textBlock);
-
+                // Función para crear texto 3D con DynamicTexture
+                function createTextMesh(text, position, scene) {
                     const plane = BABYLON.MeshBuilder.CreatePlane("textPlane", { width: 3, height: 1 }, scene);
                     plane.position = position;
 
