@@ -28,13 +28,13 @@
             const light = new BABYLON.PointLight("light", new BABYLON.Vector3(10, 10, 10), scene);
             light.intensity = 1.5;
             
-            BABYLON.MeshBuilder.ExtrudeText("ASIFIM", {
+            BABYLON.MeshBuilder.CreateText("ASIFIM", {
                 text: "ASIFIM",
+                size: 2,
                 depth: 0.5,
-                fontSize: 2,
-                resolution: 64,
                 font: "Arial",
-                invertYAxis: true
+                resolution: 64,
+                extrude: true
             }, scene).then(textMesh => {
                 textMesh.position.y = 0;
                 
@@ -43,6 +43,8 @@
                 goldMaterial.metallic = 1;
                 goldMaterial.roughness = 0.3;
                 textMesh.material = goldMaterial;
+            }).catch(error => {
+                console.error("Error al crear el texto 3D:", error);
             });
             
             return scene;
