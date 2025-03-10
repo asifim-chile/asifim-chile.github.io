@@ -1,105 +1,53 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asifim 3D</title>
+    <title>ASIFIM en 3D</title>
     <script src="https://cdn.babylonjs.com/babylon.js"></script>
     <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
-    <script src="https://cdn.babylonjs.com/earcut.min.js"></script>
-    <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
     <style>
-        body, html { margin: 0; padding: 0; overflow: hidden; }
-        canvas { width: 100%; height: 100%; display: block; }
+        body { margin: 0; overflow: hidden; }
+        canvas { width: 100vw; height: 100vh; display: block; }
     </style>
 </head>
 <body>
     <canvas id="renderCanvas"></canvas>
     <script>
-        window.addEventListener('DOMContentLoaded', function () {
-            const canvas = document.getElementById('renderCanvas');
-            const engine = new BABYLON.Engine(canvas, true);
-
-            const createScene = function () {
-                const scene = new BABYLON.Scene(engine);
-                scene.clearColor = new BABYLON.Color4(0, 0, 0, 1);
-
-                const camera = new BABYLON.ArcRotateCamera("Camera", -Math.PI / 2, Math.PI / 3, 10, BABYLON.Vector3.Zero(), scene);
-                camera.attachControl(canvas, true);
-                camera.lowerBetaLimit = Math.PI / 3;
-                camera.upperBetaLimit = Math.PI / 3;
-                camera.wheelPrecision = 50;
-                camera.panningSensibility = 0;
-
-                const light = new BABYLON.PointLight("light", new BABYLON.Vector3(0, 5, 0), scene);
-                light.intensity = 1.5;
-
-                // Fuente de audio
-                const sound = new BABYLON.Sound("music", "asifim.mp3", scene, null, { autoplay: true, loop: true });
-
-                // Material dorado con brillo celestial
-                const goldMaterial = new BABYLON.StandardMaterial("goldMaterial", scene);
-                goldMaterial.emissiveColor = new BABYLON.Color3(1, 0.84, 0);
-                goldMaterial.specularColor = new BABYLON.Color3(1, 1, 1);
-                goldMaterial.diffuseColor = new BABYLON.Color3(1, 0.84, 0);
-
-                // Función para crear texto 3D con DynamicTexture
-                function createTextMesh(text, position, scene) {
-                    const plane = BABYLON.MeshBuilder.CreatePlane("textPlane", { width: 3, height: 1 }, scene);
-                    plane.position = position;
-
-                    const dynamicTexture = new BABYLON.DynamicTexture("dynamicTexture", { width: 512, height: 256 }, scene);
-                    dynamicTexture.drawText(text, null, null, "bold 64px Arial", "gold", "transparent");
-
-                    const textMaterial = new BABYLON.StandardMaterial("textMaterial", scene);
-                    textMaterial.diffuseTexture = dynamicTexture;
-                    plane.material = textMaterial;
-                }
-
-                // Crear los textos en la escena
-                createTextMesh("ASIFIM", new BABYLON.Vector3(0, 3, 0), scene);
-                createTextMesh("Español", new BABYLON.Vector3(-2, 0.5, 2), scene);
-                createTextMesh("English", new BABYLON.Vector3(2, 0.5, 2), scene);
-
-                // Relámpagos ascendentes con cambio de color
-                function createLightning() {
-                    const points = [];
-                    const startPosition = new BABYLON.Vector3(Math.random() * 5 - 2.5, 0, Math.random() * 5 - 2.5);
-                    const endPosition = new BABYLON.Vector3(0, 3, 0);
-                    
-                    for (let i = 0; i <= 10; i++) {
-                        let y = (i / 10) * 3;
-                        points.push(new BABYLON.Vector3(startPosition.x + Math.random() * 0.3 - 0.15, y, startPosition.z + Math.random() * 0.3 - 0.15));
-                    }
-                    points.push(endPosition);
-                    
-                    const lightning = BABYLON.MeshBuilder.CreateLines("lightning", { points }, scene);
-                    
-                    let frame = 0;
-                    scene.onBeforeRenderObservable.add(() => {
-                        if (frame < 50) {
-                            const t = frame / 50;
-                            lightning.color = new BABYLON.Color3.Lerp(
-                                new BABYLON.Color3(0.3, 0, 0), // Rojo oscuro
-                                new BABYLON.Color3(1, 1, 1),   // Blanco intenso
-                                t
-                            );
-                            frame++;
-                        } else {
-                            lightning.dispose();
-                            createLightning();
-                        }
-                    });
-                }
-                createLightning();
-
-                return scene;
-            };
-
-            const scene = createScene();
-            engine.runRenderLoop(() => scene.render());
-            window.addEventListener("resize", () => engine.resize());
-        });
+        const canvas = document.getElementById("renderCanvas");
+        const engine = new BABYLON.Engine(canvas, true);
+        
+        const createScene = function () {
+            const scene = new BABYLON.Scene(engine);
+            scene.clearColor = new BABYLON.Color4(0, 0, 0, 1);
+            
+            const camera = new BABYLON.ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 3, 10, BABYLON.Vector3.Zero(), scene);
+            camera.attachControl(canvas, true);
+            
+            const light = new BABYLON.PointLight("light", new BABYLON.Vector3(10, 10, 10), scene);
+            light.intensity = 1.5;
+            
+            BABYLON.MeshBuilder.CreateText("ASIFIM", {
+                text: "ASIFIM",
+                size: 2,
+                resolution: 64,
+                depth: 0.5
+            }, scene).then(textMesh => {
+                textMesh.position.y = 0;
+                
+                const goldMaterial = new BABYLON.PBRMetallicRoughnessMaterial("goldMaterial", scene);
+                goldMaterial.baseColor = new BABYLON.Color3(1, 0.84, 0);
+                goldMaterial.metallic = 1;
+                goldMaterial.roughness = 0.3;
+                textMesh.material = goldMaterial;
+            });
+            
+            return scene;
+        };
+        
+        const scene = createScene();
+        engine.runRenderLoop(() => scene.render());
+        window.addEventListener("resize", () => engine.resize());
     </script>
 </body>
 </html>
