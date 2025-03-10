@@ -15,85 +15,56 @@
 <body>
     <canvas id="renderCanvas"></canvas>
     <script>
+        function loadFallbackPage() {
+            window.location.href = "index_bl.html";
+        }
+
         window.addEventListener('DOMContentLoaded', function () {
-            const canvas = document.getElementById('renderCanvas');
-            const engine = new BABYLON.Engine(canvas, true);
+            try {
+                const canvas = document.getElementById('renderCanvas');
+                const engine = new BABYLON.Engine(canvas, true);
 
-            const createScene = function () {
-                const scene = new BABYLON.Scene(engine);
-                scene.clearColor = new BABYLON.Color4(0, 0, 0, 1);
+                const createScene = function () {
+                    const scene = new BABYLON.Scene(engine);
+                    scene.clearColor = new BABYLON.Color4(0, 0, 0, 1);
 
-                const camera = new BABYLON.ArcRotateCamera("Camera", -Math.PI / 2, Math.PI / 3, 10, BABYLON.Vector3.Zero(), scene);
-                camera.attachControl(canvas, true);
-                camera.lowerBetaLimit = Math.PI / 3;
-                camera.upperBetaLimit = Math.PI / 3;
-                camera.wheelPrecision = 50;
-                camera.panningSensibility = 0;
+                    const camera = new BABYLON.ArcRotateCamera("Camera", -Math.PI / 2, Math.PI / 3, 10, BABYLON.Vector3.Zero(), scene);
+                    camera.attachControl(canvas, true);
+                    camera.lowerBetaLimit = Math.PI / 3;
+                    camera.upperBetaLimit = Math.PI / 3;
+                    camera.wheelPrecision = 50;
+                    camera.panningSensibility = 0;
 
-                const light = new BABYLON.PointLight("light", new BABYLON.Vector3(0, 5, 0), scene);
-                light.intensity = 1.5;
+                    const light = new BABYLON.PointLight("light", new BABYLON.Vector3(0, 5, 0), scene);
+                    light.intensity = 1.5;
 
-                // Fuente de audio
-                const sound = new BABYLON.Sound("music", "asifim.mp3", scene, null, { autoplay: true, loop: true });
+                    // Fuente de audio
+                    const sound = new BABYLON.Sound("music", "asifim.mp3", scene, null, { autoplay: true, loop: true });
 
-                // Material dorado con brillo celestial
-                const goldMaterial = new BABYLON.StandardMaterial("goldMaterial", scene);
-                goldMaterial.emissiveColor = new BABYLON.Color3(1, 0.84, 0);
-                goldMaterial.specularColor = new BABYLON.Color3(1, 1, 1);
-                goldMaterial.diffuseColor = new BABYLON.Color3(1, 0.84, 0);
+                    // Material dorado con brillo celestial
+                    const goldMaterial = new BABYLON.StandardMaterial("goldMaterial", scene);
+                    goldMaterial.emissiveColor = new BABYLON.Color3(1, 0.84, 0);
+                    goldMaterial.specularColor = new BABYLON.Color3(1, 1, 1);
+                    goldMaterial.diffuseColor = new BABYLON.Color3(1, 0.84, 0);
 
-                // Texto 3D "ASIFIM"
-                const textMesh = BABYLON.MeshBuilder.ExtrudeText("ASIFIM", {
-                    text: "ASIFIM", depth: 0.5, font: "bold 64px Arial"
-                }, scene);
-                textMesh.position.y = 3;
-                textMesh.material = goldMaterial;
+                    // Texto 3D "ASIFIM"
+                    const textMesh = BABYLON.MeshBuilder.ExtrudeShape("ASIFIM", {
+                        shape: BABYLON.ShapeBuilder.ExtrudeShape({ shape: BABYLON.Curve3.CreateCubicBezier() }, scene),
+                        depth: 0.5
+                    }, scene);
+                    textMesh.position.y = 3;
+                    textMesh.material = goldMaterial;
 
-                // Palabras "Español" y "English" en el suelo
-                const textOptions = { size: 1, depth: 0.3, font: "bold 32px Arial" };
-                const spanishMesh = BABYLON.MeshBuilder.ExtrudeText("Español", textOptions, scene);
-                spanishMesh.position = new BABYLON.Vector3(-2, 0.1, 2);
-                const englishMesh = BABYLON.MeshBuilder.ExtrudeText("English", textOptions, scene);
-                englishMesh.position = new BABYLON.Vector3(2, 0.1, 2);
+                    return scene;
+                };
 
-                // Relámpagos ascendentes con cambio de color
-                function createLightning() {
-                    const points = [];
-                    const startPosition = new BABYLON.Vector3(Math.random() * 5 - 2.5, 0, Math.random() * 5 - 2.5);
-                    const endPosition = new BABYLON.Vector3(0, 3, 0);
-                    
-                    for (let i = 0; i <= 10; i++) {
-                        let y = (i / 10) * 3;
-                        points.push(new BABYLON.Vector3(startPosition.x + Math.random() * 0.3 - 0.15, y, startPosition.z + Math.random() * 0.3 - 0.15));
-                    }
-                    points.push(endPosition);
-                    
-                    const lightning = BABYLON.MeshBuilder.CreateLines("lightning", { points }, scene);
-                    
-                    let frame = 0;
-                    scene.onBeforeRenderObservable.add(() => {
-                        if (frame < 50) {
-                            const t = frame / 50;
-                            lightning.color = new BABYLON.Color3.Lerp(
-                                new BABYLON.Color3(0.3, 0, 0), // Rojo oscuro
-                                new BABYLON.Color3(1, 1, 1),   // Blanco intenso
-                                t
-                            );
-                            frame++;
-                        } else {
-                            lightning.dispose();
-                            createLightning();
-                        }
-                    });
-                }
-                createLightning();
-
-                return scene;
-            };
-
-            const scene = createScene();
-            engine.runRenderLoop(() => scene.render());
-            window.addEventListener("resize", () => engine.resize());
+                const scene = createScene();
+                engine.runRenderLoop(() => scene.render());
+                window.addEventListener("resize", () => engine.resize());
+            } catch (error) {
+                console.error("Error al cargar Babylon.js:", error);
+                loadFallbackPage();
+            }
         });
     </script>
 </body>
