@@ -7,6 +7,7 @@
     <script src="https://cdn.babylonjs.com/babylon.js"></script>
     <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
     <script src="https://cdn.babylonjs.com/earcut.min.js"></script>
+    <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
     <style>
         body, html { margin: 0; padding: 0; overflow: hidden; }
         canvas { width: 100%; height: 100%; display: block; }
@@ -42,19 +43,32 @@
                 goldMaterial.specularColor = new BABYLON.Color3(1, 1, 1);
                 goldMaterial.diffuseColor = new BABYLON.Color3(1, 0.84, 0);
 
-                // Texto 3D "ASIFIM"
-                const textMesh = BABYLON.MeshBuilder.ExtrudeText("ASIFIM", {
-                    text: "ASIFIM", depth: 0.5, font: "bold 64px Arial"
-                }, scene);
-                textMesh.position.y = 3;
-                textMesh.material = goldMaterial;
+                // Función para crear texto en Babylon.js
+                async function createTextMesh(text, position, scene) {
+                    const advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
+                    
+                    const textBlock = new BABYLON.GUI.TextBlock();
+                    textBlock.text = text;
+                    textBlock.color = "gold";
+                    textBlock.fontSize = 64;
+                    textBlock.fontStyle = "bold";
+                    advancedTexture.addControl(textBlock);
 
-                // Palabras "Español" y "English" en el suelo
-                const textOptions = { size: 1, depth: 0.3, font: "bold 32px Arial" };
-                const spanishMesh = BABYLON.MeshBuilder.ExtrudeText("Español", textOptions, scene);
-                spanishMesh.position = new BABYLON.Vector3(-2, 0.1, 2);
-                const englishMesh = BABYLON.MeshBuilder.ExtrudeText("English", textOptions, scene);
-                englishMesh.position = new BABYLON.Vector3(2, 0.1, 2);
+                    const plane = BABYLON.MeshBuilder.CreatePlane("textPlane", { width: 3, height: 1 }, scene);
+                    plane.position = position;
+
+                    const dynamicTexture = new BABYLON.DynamicTexture("dynamicTexture", { width: 512, height: 256 }, scene);
+                    dynamicTexture.drawText(text, null, null, "bold 64px Arial", "gold", "transparent");
+
+                    const textMaterial = new BABYLON.StandardMaterial("textMaterial", scene);
+                    textMaterial.diffuseTexture = dynamicTexture;
+                    plane.material = textMaterial;
+                }
+
+                // Crear los textos en la escena
+                createTextMesh("ASIFIM", new BABYLON.Vector3(0, 3, 0), scene);
+                createTextMesh("Español", new BABYLON.Vector3(-2, 0.5, 2), scene);
+                createTextMesh("English", new BABYLON.Vector3(2, 0.5, 2), scene);
 
                 // Relámpagos ascendentes con cambio de color
                 function createLightning() {
