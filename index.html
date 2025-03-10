@@ -1,60 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASIFIM en 3D</title>
-    <script src="https://cdn.babylonjs.com/babylon.js"></script>
-    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
-    <script src="https://cdn.babylonjs.com/earcut.min.js"></script>
-    <script src="https://cdn.babylonjs.com/gui/babylon.gui.min.js"></script>
+    <title>ASIFIM</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
     <style>
-        body { margin: 0; overflow: hidden; }
-        canvas { width: 100vw; height: 100vh; display: block; }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .logo {
+            width: 150px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .text-3d {
+            font-size: 100px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 5px #999;
+        }
+
+        .description {
+            margin-top: 20px;
+            font-size: 18px;
+            max-width: 600px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            color: white;
+            background-color: #444;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #666;
+        }
+
+        /* Ajustes para el carrusel */
+        .swiper {
+            width: 80%;
+            max-width: 600px;
+            height: 300px;
+            margin-top: 20px;
+            cursor: pointer; /* Hace que el cursor cambie para indicar que es clickeable */
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Texto llamativo */
+        .highlight-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: yellow;
+            text-shadow: 2px 2px 4px red;
+            margin-top: 30px;
+        }
     </style>
 </head>
 <body>
-    <canvas id="renderCanvas"></canvas>
+    <img src="logoasifim.png" alt="Logo ASIFIM" class="logo">
+    <div class="text-3d">ASIFIM</div>
+ 
+    
+    <div class="buttons">
+        <a href="index_esp.html" class="highlight-text">ESPAÑOL</a>
+        <a href="index_ing.html" class="highlight-text">ENGLISH</a>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script>
-        const canvas = document.getElementById("renderCanvas");
-        const engine = new BABYLON.Engine(canvas, true);
-        
-        const createScene = function () {
-            const scene = new BABYLON.Scene(engine);
-            scene.clearColor = new BABYLON.Color4(0, 0, 0, 1);
-            
-            const camera = new BABYLON.ArcRotateCamera("Camera", Math.PI / 2, Math.PI / 3, 10, BABYLON.Vector3.Zero(), scene);
-            camera.attachControl(canvas, true);
-            
-            const light = new BABYLON.PointLight("light", new BABYLON.Vector3(10, 10, 10), scene);
-            light.intensity = 3;
-            
-            // Crear un plano para mostrar el texto luminoso
-            const textPlane = BABYLON.MeshBuilder.CreatePlane("textPlane", { width: 5, height: 2 }, scene);
-            textPlane.position.z = -2;
-            
-            // Crear material emisivo para hacer que el texto brille
-            const textMaterial = new BABYLON.StandardMaterial("textMaterial", scene);
-            textMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
-            textPlane.material = textMaterial;
-            
-            // Crear una textura dinámica con el texto
-            const textTexture = new BABYLON.DynamicTexture("dynamicTexture", { width: 512, height: 256 }, scene, true);
-            textMaterial.diffuseTexture = textTexture;
-            
-            const ctx = textTexture.getContext();
-            ctx.font = "bold 100px Arial";
-            ctx.fillStyle = "white";
-            ctx.textAlign = "center";
-            ctx.fillText("ASIFIM", 256, 128);
-            textTexture.update();
-            
-            return scene;
-        };
-        
-        const scene = createScene();
-        engine.runRenderLoop(() => scene.render());
-        window.addEventListener("resize", () => engine.resize());
+        new Swiper('.swiper', {
+            loop: true,
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+            autoplay: { delay: 3000 },
+            slidesPerView: 1,
+            spaceBetween: 10
+        });
     </script>
 </body>
 </html>
