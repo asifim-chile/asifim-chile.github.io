@@ -26,31 +26,21 @@
             camera.attachControl(canvas, true);
             
             const light = new BABYLON.PointLight("light", new BABYLON.Vector3(10, 10, 10), scene);
-            light.intensity = 1.5;
+            light.intensity = 3;
             
-            function createText3D(text, scene) {
-                const fontData = `M 0 0 L 10 0 L 10 10 L 0 10 Z`; // Forma simple para prueba
-                const shape = BABYLON.Vector3.FromArray(fontData.match(/-?\d+/g).map(Number));
-                
-                const path = [new BABYLON.Vector3(0, 0, 0), new BABYLON.Vector3(0, 0, 0.5)];
-                
-                const textMesh = BABYLON.MeshBuilder.ExtrudeShape("textMesh", {
-                    shape: [shape],
-                    path: path,
-                    cap: BABYLON.Mesh.CAP_ALL
-                }, scene);
-                
-                const goldMaterial = new BABYLON.PBRMetallicRoughnessMaterial("goldMaterial", scene);
-                goldMaterial.baseColor = new BABYLON.Color3(1, 0.84, 0);
-                goldMaterial.metallic = 1;
-                goldMaterial.roughness = 0.3;
-                textMesh.material = goldMaterial;
-                
-                return textMesh;
-            }
+            const textPlane = BABYLON.MeshBuilder.CreatePlane("textPlane", { width: 5, height: 2 }, scene);
+            textPlane.position.z = -2;
             
-            const text3D = createText3D("ASIFIM", scene);
-            text3D.position.y = 1;
+            const textTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(textPlane, 1024, 512);
+            
+            const textBlock = new BABYLON.GUI.TextBlock();
+            textBlock.text = "ASIFIM";
+            textBlock.color = "white";
+            textBlock.fontSize = 200;
+            textBlock.outlineWidth = 20;
+            textBlock.outlineColor = "#ffffff";
+            
+            textTexture.addControl(textBlock);
             
             return scene;
         };
