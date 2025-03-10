@@ -28,29 +28,29 @@
             const light = new BABYLON.PointLight("light", new BABYLON.Vector3(10, 10, 10), scene);
             light.intensity = 1.5;
             
-            // Crear texto en 3D extruido manualmente
-            BABYLON.MeshBuilder.CreateText = function(name, text, options, scene) {
-                const output = new BABYLON.TransformNode(name, scene);
-                const font = "Arial";
-                const size = options.size || 2;
-                const depth = options.depth || 0.5;
+            function createText3D(text, scene) {
+                const fontData = `M 0 0 L 10 0 L 10 10 L 0 10 Z`; // Forma simple para prueba
+                const shape = BABYLON.Vector3.FromArray(fontData.match(/-?\d+/g).map(Number));
                 
-                const plane = BABYLON.MeshBuilder.CreatePlane("plane", { size: size * 3 }, scene);
-                plane.parent = output;
-                plane.position.z = depth / 2;
+                const path = [new BABYLON.Vector3(0, 0, 0), new BABYLON.Vector3(0, 0, 0.5)];
                 
-                const texture = BABYLON.GUI.AdvancedDynamicTexture.CreateForMesh(plane, 1024, 512);
-                const textBlock = new BABYLON.GUI.TextBlock();
-                textBlock.text = text;
-                textBlock.fontSize = 200;
-                textBlock.color = "gold";
-                texture.addControl(textBlock);
+                const textMesh = BABYLON.MeshBuilder.ExtrudeShape("textMesh", {
+                    shape: [shape],
+                    path: path,
+                    cap: BABYLON.Mesh.CAP_ALL
+                }, scene);
                 
-                return output;
-            };
+                const goldMaterial = new BABYLON.PBRMetallicRoughnessMaterial("goldMaterial", scene);
+                goldMaterial.baseColor = new BABYLON.Color3(1, 0.84, 0);
+                goldMaterial.metallic = 1;
+                goldMaterial.roughness = 0.3;
+                textMesh.material = goldMaterial;
+                
+                return textMesh;
+            }
             
-            const textMesh = BABYLON.MeshBuilder.CreateText("asifimText", "ASIFIM", { size: 2, depth: 0.5 }, scene);
-            textMesh.position.y = 1;
+            const text3D = createText3D("ASIFIM", scene);
+            text3D.position.y = 1;
             
             return scene;
         };
