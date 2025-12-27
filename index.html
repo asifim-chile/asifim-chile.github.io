@@ -4,116 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASIFIM</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: black;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-
-        .logo {
-            width: 150px;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        .text-3d {
-            font-size: 100px;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-shadow: 1px 1px 5px #999;
-        }
-
-        .description {
-            margin-top: 20px;
-            font-size: 18px;
-            max-width: 600px;
-        }
-
-        .buttons {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 5px;
-            font-size: 16px;
-            color: white;
-            background-color: #444;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-
-        .button:hover {
-            background-color: #666;
-        }
-
-        /* Ajustes para el carrusel */
-        .swiper {
-            width: 80%;
-            max-width: 600px;
-            height: 300px;
-            margin-top: 20px;
-            cursor: pointer; /* Hace que el cursor cambie para indicar que es clickeable */
-        }
-
-        .swiper-slide {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-        }
-
-        .swiper-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        /* Texto llamativo */
-        .highlight-text {
-            font-size: 24px;
-            font-weight: bold;
-            color: yellow;
-            text-shadow: 2px 2px 4px red;
-            margin-top: 30px;
-        }
-    </style>
 </head>
-<body>
-    <img src="logoasifim.png" alt="Logo ASIFIM" class="logo">
-    <div class="text-3d">ASIFIM</div>
- 
-    
-    <div class="buttons">
-        <a href="index_esp.html" class="highlight-text">ESPAÑOL</a>
-        <a href="index_ing.html" class="highlight-text">ENGLISH</a>
+
+<body style="
+    margin:0;
+    padding:0;
+    min-height:100vh;
+    background-color:#000;
+    color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+">
+
+    <!-- LOGO -->
+    <img src="logoasifim.png" alt="ASIFIM"
+        style="
+            width:140px;
+            margin-bottom:20px;
+            opacity:0.9;
+        "
+    >
+
+    <!-- TITULO -->
+    <div style="
+        font-size:64px;
+        letter-spacing:4px;
+        font-weight:bold;
+        margin-bottom:10px;
+    ">
+        ASIFIM
     </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script>
-        new Swiper('.swiper', {
-            loop: true,
-            pagination: { el: '.swiper-pagination', clickable: true },
-            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-            autoplay: { delay: 3000 },
-            slidesPerView: 1,
-            spaceBetween: 10
-        });
-    </script>
+
+    <!-- SUBTITULO -->
+    <div style="
+        font-size:14px;
+        letter-spacing:2px;
+        opacity:0.7;
+        margin-bottom:40px;
+    ">
+        Desarrollo Integral No Convencional
+    </div>
+
+    <!-- TEXTO UMBRAL -->
+    <div style="
+        max-width:700px;
+        font-size:16px;
+        line-height:1.6;
+        opacity:0.9;
+        margin-bottom:50px;
+    ">
+        ASIFIM es una esfera integral de exploración, disciplina y transmisión,
+        orientada al desarrollo de la soberanía individual, la claridad mental
+        y la integración consciente de la experiencia humana en todas sus dimensiones.
+        <br><br>
+        No es una escuela, una terapia, una religión ni un sistema de creencias cerrado.
+    </div>
+
+    <!-- CTA -->
+    <a href="explorar.html"
+        style="
+            text-decoration:none;
+            color:#fff;
+            border:1px solid rgba(255,255,255,0.5);
+            padding:12px 30px;
+            font-size:16px;
+            letter-spacing:1px;
+            transition:all 0.3s;
+        "
+        onmouseover="this.style.backgroundColor='#fff';this.style.color='#000';"
+        onmouseout="this.style.backgroundColor='transparent';this.style.color='#fff';"
+    >
+        Explorar ASIFIM
+    </a>
+
+    <!-- IDIOMAS (SECUNDARIOS) -->
+    <div style="
+        margin-top:60px;
+        font-size:12px;
+        opacity:0.5;
+        letter-spacing:1px;
+    ">
+        <a href="index_en.html" style="color:#fff; text-decoration:none; margin:0 8px;">EN</a>
+        |
+        <a href="index_jp.html" style="color:#fff; text-decoration:none; margin:0 8px;">JP</a>
+        |
+        <a href="index_ru.html" style="color:#fff; text-decoration:none; margin:0 8px;">RU</a>
+    </div>
+
+    <!-- FOOTER -->
+    <div style="
+        position:absolute;
+        bottom:15px;
+        font-size:11px;
+        opacity:0.4;
+        letter-spacing:1px;
+    ">
+        Solo para adultos responsables · ASIFIM
+    </div>
+
 </body>
 </html>
