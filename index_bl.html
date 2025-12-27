@@ -4,100 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASIFIM</title>
-
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #000;
-            color: #fff;
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .logo {
-            width: 140px;
-            margin-bottom: 10px;
-            opacity: 0.9;
-        }
-
-        .title {
-            font-size: 64px;
-            font-weight: bold;
-            letter-spacing: 4px;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            font-size: 14px;
-            letter-spacing: 2px;
-            opacity: 0.7;
-            margin-bottom: 40px;
-        }
-
-        .languages {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .lang-link {
-            font-size: 22px;
-            font-weight: bold;
-            text-decoration: none;
-            color: #fff;
-            padding: 10px 30px;
-            border: 1px solid rgba(255,255,255,0.4);
-            transition: all 0.3s ease;
-        }
-
-        .lang-link:hover {
-            background-color: #fff;
-            color: #000;
-        }
-
-        footer {
-            position: absolute;
-            bottom: 15px;
-            font-size: 11px;
-            opacity: 0.4;
-            letter-spacing: 1px;
-        }
-
-        @media (max-width: 600px) {
-            .title {
-                font-size: 42px;
-            }
-            .lang-link {
-                font-size: 18px;
-            }
-        }
-    </style>
 </head>
 
-<body>
+<body style="
+    margin:0;
+    padding:0;
+    min-height:100vh;
+    background-color:#000;
+    color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+">
 
-    <img src="logoasifim.png" alt="ASIFIM" class="logo">
+    <!-- LOGO -->
+    <img src="logoasifim.png" alt="ASIFIM"
+        style="
+            width:140px;
+            margin-bottom:20px;
+            opacity:0.9;
+        "
+    >
 
-    <div class="title">ASIFIM</div>
-    <div class="subtitle">Desarrollo Integral No Convencional</div>
-
-    <div class="languages">
-        <a href="index_esp.html" class="lang-link">ESPAÑOL</a>
-        <a href="index_ing.html" class="lang-link">ENGLISH</a>
-        <!-- futuras versiones -->
-        <!-- <a href="index_jp.html" class="lang-link">日本語</a> -->
-        <!-- <a href="index_ru.html" class="lang-link">РУССКИЙ</a> -->
+    <!-- TITULO -->
+    <div style="
+        font-size:64px;
+        letter-spacing:4px;
+        font-weight:bold;
+        margin-bottom:10px;
+    ">
+        ASIFIM
     </div>
 
-    <footer>
+    <!-- SUBTITULO -->
+    <div style="
+        font-size:14px;
+        letter-spacing:2px;
+        opacity:0.7;
+        margin-bottom:40px;
+    ">
+        Desarrollo Integral No Convencional
+    </div>
+
+    <!-- TEXTO UMBRAL -->
+    <div style="
+        max-width:700px;
+        font-size:16px;
+        line-height:1.6;
+        opacity:0.9;
+        margin-bottom:50px;
+    ">
+        ASIFIM es una esfera integral de exploración, disciplina y transmisión,
+        orientada al desarrollo de la soberanía individual, la claridad mental
+        y la integración consciente de la experiencia humana en todas sus dimensiones.
+        <br><br>
+        No es una escuela, una terapia, una religión ni un sistema de creencias cerrado.
+    </div>
+
+    <!-- CTA -->
+    <a href="explorar.html"
+        style="
+            text-decoration:none;
+            color:#fff;
+            border:1px solid rgba(255,255,255,0.5);
+            padding:12px 30px;
+            font-size:16px;
+            letter-spacing:1px;
+            transition:all 0.3s;
+        "
+        onmouseover="this.style.backgroundColor='#fff';this.style.color='#000';"
+        onmouseout="this.style.backgroundColor='transparent';this.style.color='#fff';"
+    >
+        Explorar ASIFIM
+    </a>
+
+    <!-- IDIOMAS (SECUNDARIOS) -->
+    <div style="
+        margin-top:60px;
+        font-size:12px;
+        opacity:0.5;
+        letter-spacing:1px;
+    ">
+        <a href="index_en.html" style="color:#fff; text-decoration:none; margin:0 8px;">EN</a>
+        |
+        <a href="index_jp.html" style="color:#fff; text-decoration:none; margin:0 8px;">JP</a>
+        |
+        <a href="index_ru.html" style="color:#fff; text-decoration:none; margin:0 8px;">RU</a>
+    </div>
+
+    <!-- FOOTER -->
+    <div style="
+        position:absolute;
+        bottom:15px;
+        font-size:11px;
+        opacity:0.4;
+        letter-spacing:1px;
+    ">
         Solo para adultos responsables · ASIFIM
-    </footer>
+    </div>
 
 </body>
 </html>
