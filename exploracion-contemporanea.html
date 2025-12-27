@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASIFIM | Carlos David Quezada Molina</title>
+
+<!-- Swiper -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+<style>
+body{
+    margin:0;
+    background:black;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+    line-height:1.6;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+h1,h2,h3{
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+h1{
+    font-size:42px;
+    margin-bottom:5px;
+}
+
+h2{
+    margin-top:60px;
+    font-size:26px;
+    border-bottom:1px solid #444;
+    padding-bottom:10px;
+}
+
+.subtitle{
+    font-size:18px;
+    opacity:0.8;
+}
+
+.section{
+    margin-top:30px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.box{
+    border:1px solid #333;
+    padding:20px;
+    border-radius:10px;
+}
+
+.small{
+    font-size:14px;
+    opacity:0.85;
+}
+
+/* Carrusel */
+.swiper{
+    width:100%;
+    max-width:600px;
+    height:320px;
+    margin:40px auto;
+}
+
+.swiper-slide{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.swiper-slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+/* Listas */
+ul{
+    padding-left:20px;
+}
+
+li{
+    margin-bottom:6px;
+}
+
+/* Footer */
+.footer{
+    margin-top:80px;
+    text-align:center;
+    font-size:12px;
+    letter-spacing:2px;
+    opacity:0.6;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+    <h1>Carlos David<br>Quezada Molina</h1>
+    <div class="subtitle">Asesor de Negocios & Desarrollo Personal</div>
+
+    <!-- CARRUSEL (MISMA APARIENCIA QUE TU PADRE) -->
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="carlos1.jpg"></div>
+            <div class="swiper-slide"><img src="carlos2.jpg"></div>
+            <div class="swiper-slide"><img src="carlos3.jpg"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <h2>Presentación</h2>
+    <div class="section">
+        <p>
+        Técnico en Administración de Empresas, titulado con distinción en la Universidad de las Américas (2019).
+        Mi desarrollo profesional integra el ámbito empresarial tradicional con un enfoque holístico, creativo e intuitivo,
+        equilibrado por pensamiento crítico, científico, matemático y filosófico.
+        </p>
+        <p>
+        He dedicado gran parte de mi vida a la docencia, las artes marciales, las terapias holísticas
+        y la asesoría independiente de negocios, promoviendo la autodisciplina, el propósito
+        y soluciones conscientes, integrativas y altamente creativas.
+        </p>
+    </div>
+
+    <h2>Datos Personales</h2>
+    <div class="grid">
+        <div class="box small">
+            <b>RUT:</b> 16.277.075-6<br>
+            <b>Fecha de Nacimiento:</b> 07/01/1986<br>
+            <b>Nacionalidad:</b> Chileno<br>
+            <b>Estado Civil:</b> Divorciado
+        </div>
+        <div class="box small">
+            <b>Dirección:</b> Puente Alto, Santiago<br>
+            <b>Cel / WhatsApp:</b> +56 9 3249 1679<br>
+            <b>Email:</b> asifimchile@gmail.com
+        </div>
+    </div>
+
+    <h2>Experiencia Laboral</h2>
+    <ul>
+        <li><b>ASIFIM – Asesor de Negocios & Desarrollo Personal</b> (2021 – Actualidad)</li>
+        <li><b>ASIFIM – Terapeuta Holístico</b> (2005 – Actualidad)</li>
+        <li>Ventas, atención al cliente, Servipag y Call Center (2006 – 2020)</li>
+        <li>Logística, bodegas, jardinería y servicios alimentarios (2006 – 2020)</li>
+    </ul>
+
+    <h2>Formación Académica</h2>
+    <ul>
+        <li>Ingeniería Comercial – Universidad de las Américas (Congelado)</li>
+        <li>Técnico en Administración de Empresas – Universidad de las Américas (Titulado)</li>
+        <li>Ingeniería Física – USACH (Incompleto)</li>
+    </ul>
+
+    <h2>Docencia y Actividades Destacadas</h2>
+    <ul>
+        <li>Docente Permanente y Terapeuta en ASIFIM</li>
+        <li>Docente de Qi Gong – IP Los Leones</li>
+        <li>Docente Tai Chi / Qi Gong – Museo Histórico Militar</li>
+        <li>Expositor Expo Mundo Místico (Santiago y Viña del Mar)</li>
+    </ul>
+
+    <h2>Capacitaciones & Tecnología</h2>
+    <ul>
+        <li>Javascript y Python – Platzi</li>
+        <li>Analista Web – Fundación Telefónica</li>
+        <li>Marketing Digital, Gamificación y Videojuegos</li>
+        <li>Programador Full Stack MERN</li>
+    </ul>
+
+    <h2>Terapias & Artes</h2>
+    <ul>
+        <li>Maestro Cinta Negra 4° Thuan Sanda-Qigong</li>
+        <li>Tai Chi – Chi Kung</li>
+        <li>Masoterapia Oriental</li>
+        <li>Tarot, I Ching, lectura de aura, mediumnidad</li>
+        <li>Sexualidad Consciente Taoísta</li>
+    </ul>
+
+    <h2>Desarrollo Integral & Emprendimiento</h2>
+    <ul>
+        <li>Método ASIFIM aplicado al emprendimiento</li>
+        <li>Asesoría integral de negocios y coaching holístico</li>
+        <li>Programas futuros de formación y apoyo a PYMES vía crowdfunding</li>
+    </ul>
+
+    <div class="footer">
+        ASIFIM · Autodisciplina · Individualidad · Evolución Consciente
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+new Swiper('.swiper',{
+    loop:true,
+    autoplay:{delay:3000},
+    pagination:{el:'.swiper-pagination'}
+});
+</script>
+
+</body>
+</html>
