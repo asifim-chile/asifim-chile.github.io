@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exploración Contemporánea | ASIFIM</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+<style>
+body{
+    margin:0;
+    background:black;
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+h1{
+    font-size:42px;
+    letter-spacing:3px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    font-size:16px;
+    letter-spacing:2px;
+    opacity:0.7;
+    margin-bottom:40px;
+}
+
+.section{
+    margin-top:70px;
+}
+
+.section h2{
+    font-size:24px;
+    letter-spacing:2px;
+    margin-bottom:20px;
+    border-bottom:1px solid #333;
+    padding-bottom:10px;
+}
+
+p{
+    font-size:16px;
+    line-height:1.7;
+    opacity:0.9;
+    margin-bottom:20px;
+}
+
+/* Carrusel */
+.swiper{
+    width:100%;
+    max-width:560px;
+    height:320px;
+    margin:50px auto;
+}
+
+.swiper-slide{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.swiper-slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.block{
+    margin-bottom:30px;
+}
+
+.footer{
+    margin-top:90px;
+    text-align:center;
+    font-size:12px;
+    letter-spacing:2px;
+    opacity:0.6;
+}
+a{
+    color:white;
+    text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>David<br>Quezada Molina</h1>
+    <div class="subtitle">
+        Director · Administrador · ASIFIM
+    </div>
+
+    <!-- CARRUSEL (MISMO ROL QUE EL DE TU PADRE) -->
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="cd01.jpg"></div>
+            <div class="swiper-slide"><img src="cd02.jpg"></div>
+            <div class="swiper-slide"><img src="cd03.jpg"></div>
+            <div class="swiper-slide"><img src="cd04.jpg"></div>
+            <div class="swiper-slide"><img src="cd05.jpg"></div>
+            <div class="swiper-slide"><img src="cd06.jpg"></div>
+            <div class="swiper-slide"><img src="cd07.jpg"></div>
+            <div class="swiper-slide"><img src="cd08.jpg"></div>
+            <div class="swiper-slide"><img src="cd09.jpg"></div>
+            <div class="swiper-slide"><img src="cd10.jpg"></div>
+            <div class="swiper-slide"><img src="cd11.jpg"></div>
+            <div class="swiper-slide"><img src="cd12.jpg"></div>
+            <div class="swiper-slide"><img src="cd13.jpg"></div>
+          
+
+
+            
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- IDENTIDAD -->
+    <div class="section">
+        <h2>Rol y Continuidad</h2>
+
+        <p>
+        David Quezada Molina es el actual Director, Administrador
+        y dueño legal de <strong>ASIFIM SpA</strong>.
+        </p>
+
+        <p>
+        Asumió este rol formalmente el año <strong>2019</strong>,
+        tras terminar su formación en Administración De Empresas y como continuidad orgánica del proceso
+        fundacional iniciado en 1984.
+        </p>
+
+        <p>
+        Desde entonces, su labor se ha centrado en resguardar
+        la coherencia estructural del sistema ASIFIM,
+        permitiendo su expansión hacia nuevas formas de exploración
+        contemporánea sin perder su raíz disciplinaria y metodológica.
+        </p>
+    </div>
+
+    <!-- ENFOQUE -->
+    <div class="section">
+        <h2>Exploración Contemporánea</h2>
+
+        <p>
+        Su trabajo representa la dimensión contemporánea de ASIFIM:
+        la aplicación del método en contextos actuales
+        como el emprendimiento, la empresa, la tecnología,
+        el desarrollo humano y la organización de sistemas complejos.
+        </p>
+
+        <p>
+        Integra una formación técnica en administración de empresas
+        con más de tres décadas de práctica en artes marciales,
+        terapias holísticas, docencia y disciplinas simbólicas,
+        operando desde una mirada integral, crítica y altamente estructurada.
+        </p>
+    </div>
+
+    <!-- ÁREAS -->
+    <div class="section">
+        <h2>Líneas de Acción</h2>
+
+        <div class="block">
+            <strong>Asesoría Integral de Negocios</strong><br>
+            Optimización de emprendimientos y organizaciones
+            desde una lectura estratégica, humana y sistémica.
+        </div>
+
+        <div class="block">
+            <strong>Desarrollo Personal y Autodisciplina</strong><br>
+            Procesos orientados al fortalecimiento de la soberanía individual,
+            claridad mental y coherencia entre propósito y acción.
+        </div>
+
+        <div class="block">
+            <strong>Lectura Sistémica de Talento</strong><br>
+            Apoyo en procesos de reclutamiento y conformación de equipos
+            mediante lectura de campo, percepción áurica
+            y visión sistémica aplicada a entornos organizacionales.
+        </div>
+
+        <div class="block">
+            <strong>Terapias Holísticas y Formación Interna</strong><br>
+            Masoterapia Oriental, Medicina Tradicional China, Qi Gong, Tai Chi,
+            Lectura de Auras, Tarot e I Ching, Sexualidad Esotérica y Desarrollo Esotérico - Psíquico aplicado
+            al equilibrio personal y funcional.
+        </div>
+    </div>
+
+
+
+<a href="psi.magia.html"
+            style="
+                text-decoration:none;
+                color:#fff;
+                border:1px solid rgba(255,255,255,0.4);
+                padding:14px;
+                font-size:16px;
+                letter-spacing:1px;
+            "
+            onmouseover="this.style.backgroundColor='#fff';this.style.color='#000';"
+            onmouseout="this.style.backgroundColor='transparent';this.style.color='#fff';"
+        >
+            PSI-MAGIA
+        </a>
+
+
+
+
+    
+    <!-- CIERRE -->
+    <div class="section">
+        <h2>Sentido</h2>
+        <p>
+        Su labor no busca reemplazar métodos tradicionales,
+        sino integrarlos, expandirlos y adaptarlos
+        a las necesidades reales del presente,
+        manteniendo como eje la autodisciplina consciente
+        y el valor irreductible de la individualidad.
+        </p>
+    </div>
+
+<!-- NAVEGACION -->
+<div style="display:flex; gap:40px; font-size:12px; letter-spacing:2px; opacity:0.6;">
+  <a href="explorar.html" style="color:white; text-decoration:none;">← Explorar ASIFIM</a>
+  <a href="superarte.html" style="color:white; text-decoration:none;"> SuperArte →</a>
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+new Swiper('.swiper',{
+    loop:true,
+    autoplay:{delay:3000},
+    pagination:{el:'.swiper-pagination'}
+});
+</script>
+
+</body>
+</html>
