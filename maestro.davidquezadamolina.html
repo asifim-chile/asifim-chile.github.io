@@ -79,7 +79,7 @@ p{
 }
 
 /* 🔹 VERTICAL (certificados largos) */
-.swiper-horizontal{
+.swiper-vertical{
     height:500px;
 }
 
@@ -88,7 +88,6 @@ p{
     width:auto;
     object-fit:contain;
 }
-
 /* 🔹 HORIZONTAL (certificados anchos) */
 .swiper-horizontal{
     height:320px;
@@ -404,7 +403,7 @@ new Swiper('.swiper-main',{
     }
 });
 
-// 🔹 Vertical (AQUÍ ESTABA EL ERROR)
+// 🔹 Vertical (solo nombre, NO movimiento vertical)
 new Swiper('.swiper-vertical',{
     loop:true,
     autoplay:{
@@ -413,7 +412,7 @@ new Swiper('.swiper-vertical',{
     },
     grabCursor:true,
     pagination:{
-        el:'.swiper- horizontal .swiper-pagination',
+        el:'.swiper-vertical .swiper-pagination',
         clickable:true
     }
 });
