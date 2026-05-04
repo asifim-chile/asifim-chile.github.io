@@ -389,28 +389,36 @@ a{
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 <script>
+// 🔹 CONFIG BASE reutilizable (esto es lo importante)
+const baseConfig = {
+    loop: true,
+    speed: 600,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false
+    },
+    grabCursor: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    watchOverflow: true,
+    observer: true,
+    observeParents: true,
+    loopAdditionalSlides: 2
+};
+
 // 🔹 Carrusel principal
 new Swiper('.swiper-main',{
-    loop:true,
-    autoplay:{
-        delay:3000,
-        disableOnInteraction:false
-    },
-    grabCursor:true,
+    ...baseConfig,
     pagination:{
         el:'.swiper-main .swiper-pagination',
         clickable:true
     }
 });
 
-// 🔹 Vertical (solo nombre, NO movimiento vertical)
+// 🔹 “vertical” (pero horizontal realmente)
 new Swiper('.swiper-vertical',{
-    loop:true,
-    autoplay:{
-        delay:3000,
-        disableOnInteraction:false
-    },
-    grabCursor:true,
+    ...baseConfig,
+    direction: 'horizontal', // 🔥 FORZAMOS horizontal
     pagination:{
         el:'.swiper-vertical .swiper-pagination',
         clickable:true
@@ -419,12 +427,7 @@ new Swiper('.swiper-vertical',{
 
 // 🔹 Horizontal
 new Swiper('.swiper-horizontal',{
-    loop:true,
-    autoplay:{
-        delay:3000,
-        disableOnInteraction:false
-    },
-    grabCursor:true,
+    ...baseConfig,
     pagination:{
         el:'.swiper-horizontal .swiper-pagination',
         clickable:true
