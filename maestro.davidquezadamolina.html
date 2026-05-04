@@ -406,16 +406,14 @@ new Swiper('.swiper-main',{
 
 // 🔹 Vertical (AQUÍ ESTABA EL ERROR)
 new Swiper('.swiper-vertical',{
-    direction:'vertical', // 👈 ESTO FALTABA
     loop:true,
     autoplay:{
         delay:3000,
         disableOnInteraction:false
     },
     grabCursor:true,
-    mousewheel:true, // 👈 scroll con rueda
     pagination:{
-        el:'.swiper-vertical .swiper-pagination',
+        el:'.swiper- horizontal .swiper-pagination',
         clickable:true
     }
 });
