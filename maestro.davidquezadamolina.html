@@ -362,11 +362,27 @@ a{
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 <script>
-new Swiper('.swiper',{
+<script>
+new Swiper('.swiper-vertical',{
     loop:true,
     autoplay:{delay:3000},
-    pagination:{el:'.swiper-pagination'}
+    pagination:{
+        el:'.swiper-vertical .swiper-pagination',
+        clickable:true
+    }
 });
+
+new Swiper('.swiper-horizontal',{
+    loop:true,
+    autoplay:{delay:3000},
+    pagination:{
+        el:'.swiper-horizontal .swiper-pagination',
+        clickable:true
+    }
+});
+</script>
+
+    
 </script>
 
 </body>
