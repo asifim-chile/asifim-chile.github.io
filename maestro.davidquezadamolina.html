@@ -390,37 +390,49 @@ a{
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 <script>
-
-// 🔹 Carrusel principal (el que estaba pegado)
+// 🔹 Carrusel principal
 new Swiper('.swiper-main',{
     loop:true,
-    autoplay:{delay:3000},
+    autoplay:{
+        delay:3000,
+        disableOnInteraction:false
+    },
+    grabCursor:true,
     pagination:{
         el:'.swiper-main .swiper-pagination',
         clickable:true
     }
 });
 
-// 🔹 Vertical (certificados largos)
+// 🔹 Vertical (AQUÍ ESTABA EL ERROR)
 new Swiper('.swiper-vertical',{
+    direction:'vertical', // 👈 ESTO FALTABA
     loop:true,
-    autoplay:{delay:3000},
+    autoplay:{
+        delay:3000,
+        disableOnInteraction:false
+    },
+    grabCursor:true,
+    mousewheel:true, // 👈 scroll con rueda
     pagination:{
         el:'.swiper-vertical .swiper-pagination',
         clickable:true
     }
 });
 
-// 🔹 Horizontal (certificados anchos)
+// 🔹 Horizontal
 new Swiper('.swiper-horizontal',{
     loop:true,
-    autoplay:{delay:3000},
+    autoplay:{
+        delay:3000,
+        disableOnInteraction:false
+    },
+    grabCursor:true,
     pagination:{
         el:'.swiper-horizontal .swiper-pagination',
         clickable:true
     }
 });
-
 </script>
 
 </body>
