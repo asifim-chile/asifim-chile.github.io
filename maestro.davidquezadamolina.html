@@ -102,7 +102,7 @@ a{
     </div>
 
     <!-- CARRUSEL -->
-    <div class="swiper">
+  <div class="swiper swiper-main">
         <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="cd01.jpg"></div>
             <div class="swiper-slide"><img src="cd02.jpg"></div>
@@ -361,8 +361,20 @@ a{
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
 <script>
 
+// 🔹 Carrusel principal (el que estaba pegado)
+new Swiper('.swiper-main',{
+    loop:true,
+    autoplay:{delay:3000},
+    pagination:{
+        el:'.swiper-main .swiper-pagination',
+        clickable:true
+    }
+});
+
+// 🔹 Vertical (certificados largos)
 new Swiper('.swiper-vertical',{
     loop:true,
     autoplay:{delay:3000},
@@ -372,6 +384,7 @@ new Swiper('.swiper-vertical',{
     }
 });
 
+// 🔹 Horizontal (certificados anchos)
 new Swiper('.swiper-horizontal',{
     loop:true,
     autoplay:{delay:3000},
@@ -381,8 +394,6 @@ new Swiper('.swiper-horizontal',{
     }
 });
 
-
-    
 </script>
 
 </body>
