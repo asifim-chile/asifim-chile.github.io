@@ -53,7 +53,7 @@ p{
     margin-bottom:20px;
 }
 
-/* 🔹 BASE */
+/* 🔹 BASE (todos los carruseles) */
 .swiper{
     width:100%;
     max-width:560px;
@@ -66,7 +66,7 @@ p{
     align-items:center;
 }
 
-/* 🔹 MAIN */
+/* 🔹 CARRUSEL PRINCIPAL */
 .swiper-main{
     height:320px;
 }
@@ -78,17 +78,38 @@ p{
     border-radius:12px;
 }
 
-/* 🔹 CERTIFICADOS (TODOS HORIZONTALES AHORA) */
-.swiper-vertical,
+/* 🔹 VERTICAL (certificados largos) */
 .swiper-horizontal{
-    height:420px;
+    height:500px;
 }
 
-.swiper-vertical img,
+.swiper-vertical img{
+    height:100%;
+    width:auto;
+    object-fit:contain;
+}
+
+/* 🔹 HORIZONTAL (certificados anchos) */
+.swiper-horizontal{
+    height:320px;
+}
+
 .swiper-horizontal img{
     width:100%;
     height:100%;
     object-fit:contain;
+}
+
+.block{
+    margin-bottom:30px;
+}
+
+.footer{
+    margin-top:90px;
+    text-align:center;
+    font-size:12px;
+    letter-spacing:2px;
+    opacity:0.6;
 }
 
 a{
@@ -107,8 +128,8 @@ a{
         Director · Administrador · ASIFIM
     </div>
 
-    <!-- CARRUSEL PRINCIPAL -->
-    <div class="swiper swiper-main">
+    <!-- CARRUSEL -->
+  <div class="swiper swiper-main">
         <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="cd01.jpg"></div>
             <div class="swiper-slide"><img src="cd02.jpg"></div>
@@ -127,62 +148,241 @@ a{
         <div class="swiper-pagination"></div>
     </div>
 
-    <!-- TODO TU CONTENIDO ORIGINAL (NO TOCADO) -->
-    <div class="section">
-        <h2>Rol y Continuidad</h2>
-        <p><strong>David Quezada Molina</strong> ...</p>
-        <p>(TODO tu texto igual)</p>
-    </div>
+    <!-- ROL -->
+<div class="section">
+    <h2>Rol y Continuidad</h2>
 
+    <p><strong>David Quezada Molina</strong> es el actual Director, Administrador y dueño legal de ASIFIM SpA.</p>
+
+    <p>Asumió este rol formalmente el año 2019, tras finalizar su formación en <strong>ADMINISTRACIÓN DE EMPRESAS</strong>, como continuidad orgánica del proceso fundacional iniciado en 1984.</p>
+
+    <p>Su formación se inicia desde la infancia bajo la guía directa de su entorno familiar, desarrollándose en disciplinas marciales como <strong>WUSHU, KUNG FU INTERNO, QIN NA, SANDA, KICK BOXING y MUAY THAI</strong>, integrando desde temprana edad una comprensión práctica del cuerpo, la energía y la disciplina.</p>
+
+    <p>En paralelo, profundiza en las artes internas a través de su formación como practicante y posteriormente instructor en <strong>QIGONG</strong>, así como en <strong>TAI CHI CHUAN ESTILO YANG</strong>, disciplina transmitida por su madre, la Maestra <strong>ANA MOLINA VARGAS</strong>, pionera del estilo en Chile, consolidando una base sólida en el trabajo energético, la respiración y la conciencia corporal.</p>
+
+    <p>A partir de los 12 años, inicia de forma espontánea y experiencial su desarrollo psíquico, comenzando con prácticas de <strong>TELEKINESIS</strong> y <strong>VISIÓN REMOTA</strong>, expandiéndose posteriormente hacia fenómenos como viajes astrales, telepatía y lectura áurica, configurando una línea de exploración directa en los estados no ordinarios de percepción.</p>
+
+    <p>Desde el año 2003, profundiza en el estudio y práctica de sistemas de magia esotérica, incluyendo <strong>HERMETISMO, CHAOS MAGIC, MAGICK, WICCA</strong> y otras corrientes, integrando estas disciplinas con experiencias de canalización y trabajo con entidades espirituales desde un enfoque práctico y exploratorio.</p>
+
+    <p>Posteriormente, a partir de experiencias de exploración profunda de la conciencia —incluyendo una <strong>ECM (Experiencia Cercana a la Muerte)</strong> y procesos de exploración con estados ampliados mediante prácticas psicodélicas— se consolida la activación de su capacidad de <strong>MEDIUMNIDAD</strong>, la cual continúa desarrollándose de forma progresiva.</p>
+
+<p>En el año 2023, profundiza y refina estas habilidades mediante trabajo sistemático en prácticas de magia aplicada junto a su entorno cercano de formación, destacando la colaboración con su mejor amiga y maestra en magia natural, proceso que impulsa significativamente el fortalecimiento de la <strong>MEDIUMNIDAD</strong> y el aumento de su capacidad de <strong>PRECOGNICIÓN</strong>.</p>
+
+<p>De forma paralela, integra su exploración en el ámbito tecnológico, desarrollando una visión de <strong>MAGIA APLICADA A SISTEMAS INFORMÁTICOS</strong>, articulando pensamiento simbólico, estructural y programación, en conjunto con procesos de aprendizaje colaborativo en el área del desarrollo digital, incluyendo el trabajo conjunto con su hermano en la exploración de estos sistemas.</p>
+    
+    <p>Desde entonces, su labor se ha centrado en resguardar la coherencia estructural del sistema ASIFIM, permitiendo su expansión hacia nuevas formas de exploración contemporánea sin perder su raíz disciplinaria, metodológica y tradicional.</p>
+
+</div>
+
+    <!-- EXPLORACIÓN -->
     <div class="section">
         <h2>Exploración Contemporánea</h2>
-        <p>(TODO tu texto igual)</p>
+
+        <p>Su trabajo representa la dimensión contemporánea de ASIFIM: la aplicación del método en contextos actuales como el emprendimiento, la empresa, la tecnología, el desarrollo humano y la organización de sistemas complejos.</p>
+
+        <p>Integra una formación técnica en administración de empresas, <strong>PROGRAMACIÓN FULL STACK MEAN</strong> y desarrollo digital, junto con un camino de más de dos décadas en disciplinas esotéricas, holísticas, terapéuticas y simbólicas, operando desde una mirada integral, crítica y estructurada.</p>
+
+        <p>A esto se suma su desarrollo autodidacta en <strong>MATEMÁTICA, TEORÍA DE SISTEMAS, GAMIFICACIÓN, PNL y DESIGN THINKING</strong>, así como su base en <strong>INGENIERÍA FÍSICA (USACH)</strong>, la cual, pese a no haber sido finalizada, marcó profundamente su forma de comprender la realidad desde modelos estructurales y sistémicos.</p>
     </div>
 
-    <!-- CERTIFICADOS 1 -->
-    <div class="swiper swiper-vertical">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="certificado_CDQM_01.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_02.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_03.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_08.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_09.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_10.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_11.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_12.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_13.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_14.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_16.jpg"></div>
+ <!-- Carrucel Horizontal -->
+
+<div class="swiper swiper-vertical" style="width:100%; max-width:560px; height:500px; margin:50px auto;">
+    <div class="swiper-wrapper">
+
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_01.jpg" style="height:100%; width:auto; object-fit:contain;">
         </div>
-        <div class="swiper-pagination"></div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_02.jpg" style="height:100%; width:auto; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_03.jpg" style="height:100%; width:auto; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_08.jpg" style="height:100%; width:auto; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_09.jpg" style="height:100%; width:auto; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_10.jpg" style="height:100%; width:auto; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_11.jpg" style="height:100%; width:auto; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_12.jpg" style="height:100%; width:auto; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_13.jpg" style="height:100%; width:auto; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_14.jpg" style="height:100%; width:auto; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_16.jpg" style="height:100%; width:auto; object-fit:contain;">
+        </div>
+
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+    <br><br>
+
+  <!-- Carrucel Horizontal -->
+    
+<div class="swiper swiper-horizontal" style="width:100%; max-width:560px; height:320px; margin:50px auto;">
+    <div class="swiper-wrapper">
+
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_04.jpg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_05.jpg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_07.jpg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_15.jpg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_17.jpg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_18.jpg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_19.jpg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_20.jpg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_21.jpg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_22.jpg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_23.jpg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_24.jpg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_25.jpg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_26.jpg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_27.jpg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_28.jpg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_29.jpg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_30.jpg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_31.jpg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_32.jpg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+        <div class="swiper-slide" style="display:flex; justify-content:center; align-items:center;">
+            <img src="certificado_CDQM_33.jpg" style="width:100%; height:100%; object-fit:contain;">
+        </div>
+
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+
+
+
+
+    
+    <!-- ARTE -->
+    <div class="section">
+        <h2>Dimensión Artística y Creativa</h2>
+
+        <p>De manera transversal, su desarrollo incluye una fuerte línea artística, comprendida no como un ámbito separado, sino como una extensión práctica de su enfoque integrador.</p>
+
+        <p>Se ha desarrollado como <strong>MÚSICO</strong> (guitarrista, cantante, compositor, bajista y baterista), así como en el dibujo, la pintura, la escritura y la expresión corporal a través de la danza.</p>
+
+        <p>Esta dimensión creativa se articula con su trabajo en <strong>GAMIFICACIÓN</strong> y diseño de experiencias, permitiéndole traducir estructuras complejas —tanto simbólicas como estratégicas— en formatos comprensibles, aplicables y experienciales.</p>
     </div>
 
-    <!-- CERTIFICADOS 2 -->
-    <div class="swiper swiper-horizontal">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide"><img src="certificado_CDQM_04.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_05.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_07.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_15.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_17.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_18.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_19.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_20.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_21.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_22.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_23.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_24.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_25.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_26.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_27.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_28.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_29.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_30.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_31.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_32.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_33.jpg"></div>
-        </div>
-        <div class="swiper-pagination"></div>
+    <!-- LINEAS -->
+    <div class="section">
+        <h2>Líneas de Acción</h2>
+
+        <p><strong>ASESORÍA INTEGRAL DE NEGOCIOS</strong><br>
+        Optimización de emprendimientos y organizaciones desde una lectura estratégica, humana y sistémica.</p>
+
+        <p><strong>DESARROLLO PERSONAL Y AUTODISCIPLINA</strong><br>
+        Procesos orientados al fortalecimiento de la soberanía individual, claridad mental y coherencia entre propósito y acción.</p>
+
+        <p><strong>LECTURA SISTÉMICA DE TALENTO</strong><br>
+        Apoyo en procesos de reclutamiento y conformación de equipos mediante lectura de campo, percepción áurica y visión sistémica aplicada a entornos organizacionales.</p>
+
+        <p><strong>TERAPIAS HOLÍSTICAS Y FORMACIÓN INTERNA</strong><br>
+        MASOTERAPIA ORIENTAL, MEDICINA TRADICIONAL CHINA, QI GONG, TAI CHI, LECTURA DE AURAS, TAROT, I CHING, SEXUALIDAD ESOTÉRICA y desarrollo ESOTÉRICO-PSÍQUICO aplicado al equilibrio personal y funcional.</p>
+    </div>
+
+    <br><br>
+    <!-- BOTON -->
+    <a href="psi-magia.html"
+        style="
+            text-decoration:none;
+            color:#fff;
+            border:1px solid rgba(255,255,255,0.4);
+            padding:14px;
+            font-size:16px;
+            letter-spacing:1px;
+        "
+        onmouseover="this.style.backgroundColor='#fff';this.style.color='#000';"
+        onmouseout="this.style.backgroundColor='transparent';this.style.color='#fff';"
+    >
+        PSI-MAGIA
+    </a>
+
+<br><br><br><br>
+     <a href="servicios.CDQM.html"
+        style="
+            text-decoration:none;
+            color:#fff;
+            border:1px solid rgba(255,255,255,0.4);
+            padding:14px;
+            font-size:16px;
+            letter-spacing:1px;
+        "
+        onmouseover="this.style.backgroundColor='#fff';this.style.color='#000';"
+        onmouseout="this.style.backgroundColor='transparent';this.style.color='#fff';"
+    >
+        Servicios
+    </a>
+
+    <!-- SENTIDO sentido-->
+    <div class="section">
+        <h2>Sentido</h2>
+        <p>
+        Su labor no busca reemplazar métodos tradicionales, sino integrarlos, expandirlos y adaptarlos a las necesidades reales del presente, manteniendo como eje la autodisciplina consciente y el valor irreductible de la individualidad.
+        </p>
+    </div>
+
+
+
+
+    
+    <!-- NAV -->
+    <div style="display:flex; gap:40px; font-size:12px; letter-spacing:2px; opacity:0.6;">
+      <a href="explorar.html">← Explorar ASIFIM</a>
+      <a href="superarte.html">SuperArte →</a>
     </div>
 
 </div>
@@ -190,34 +390,42 @@ a{
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 <script>
-const config = {
+// 🔹 Carrusel principal
+new Swiper('.swiper-main',{
     loop:true,
     autoplay:{
-        delay:2500,
+        delay:3000,
         disableOnInteraction:false
     },
-    speed:600,
-    grabCursor:true
-};
-
-new Swiper('.swiper-main',{
-    ...config,
+    grabCursor:true,
     pagination:{
         el:'.swiper-main .swiper-pagination',
         clickable:true
     }
 });
 
+// 🔹 Vertical (AQUÍ ESTABA EL ERROR)
 new Swiper('.swiper-vertical',{
-    ...config,
+    loop:true,
+    autoplay:{
+        delay:3000,
+        disableOnInteraction:false
+    },
+    grabCursor:true,
     pagination:{
-        el:'.swiper-vertical .swiper-pagination',
+        el:'.swiper- horizontal .swiper-pagination',
         clickable:true
     }
 });
 
+// 🔹 Horizontal
 new Swiper('.swiper-horizontal',{
-    ...config,
+    loop:true,
+    autoplay:{
+        delay:3000,
+        disableOnInteraction:false
+    },
+    grabCursor:true,
     pagination:{
         el:'.swiper-horizontal .swiper-pagination',
         clickable:true
