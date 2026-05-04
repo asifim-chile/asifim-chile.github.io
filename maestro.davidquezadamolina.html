@@ -53,11 +53,10 @@ p{
     margin-bottom:20px;
 }
 
-/* Carrusel */
+/* 🔹 BASE (todos los carruseles) */
 .swiper{
     width:100%;
     max-width:560px;
-    height:320px;
     margin:50px auto;
 }
 
@@ -67,11 +66,38 @@ p{
     align-items:center;
 }
 
-.swiper-slide img{
+/* 🔹 CARRUSEL PRINCIPAL */
+.swiper-main{
+    height:320px;
+}
+
+.swiper-main img{
     width:100%;
     height:100%;
     object-fit:cover;
     border-radius:12px;
+}
+
+/* 🔹 VERTICAL (certificados largos) */
+.swiper-vertical{
+    height:500px;
+}
+
+.swiper-vertical img{
+    height:100%;
+    width:auto;
+    object-fit:contain;
+}
+
+/* 🔹 HORIZONTAL (certificados anchos) */
+.swiper-horizontal{
+    height:320px;
+}
+
+.swiper-horizontal img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
 }
 
 .block{
@@ -85,6 +111,7 @@ p{
     letter-spacing:2px;
     opacity:0.6;
 }
+
 a{
     color:white;
     text-decoration:none;
