@@ -1,218 +1,599 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
-<title>Servicios | ASIFIM</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Servicios — David Quezada Molina | ASIFIM</title>
+
+<meta name="description"
+content="Servicios de David Quezada Molina — Desarrollo humano, creatividad, empresa, simbolismo y exploración consciente.">
+
 <style>
-    body {
-        margin: 0;
-        padding: 40px;
-        background: black;
-        color: white;
-        font-family: Arial, sans-serif;
-        text-align: center;
+
+body{
+    margin:0;
+    background:#000;
+    color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width:100%;
+    max-width:980px;
+    margin:auto;
+    padding:55px 20px 90px 20px;
+    box-sizing:border-box;
+}
+
+.logo{
+    width:150px;
+    display:block;
+    margin:0 auto 30px auto;
+    opacity:0.92;
+}
+
+.top-subtitle{
+    text-align:center;
+    font-size:13px;
+    letter-spacing:3px;
+    opacity:0.5;
+    margin-bottom:18px;
+    text-transform:uppercase;
+}
+
+h1{
+    font-size:48px;
+    letter-spacing:4px;
+    margin:0 0 18px 0;
+    text-align:center;
+    line-height:1.1;
+}
+
+.subtitle{
+    text-align:center;
+    font-size:14px;
+    letter-spacing:2px;
+    opacity:0.66;
+    margin-bottom:65px;
+    text-transform:uppercase;
+    line-height:1.8;
+}
+
+.hero{
+    width:100%;
+    max-width:900px;
+    display:block;
+    margin:auto;
+    border-radius:10px;
+    margin-bottom:70px;
+    opacity:0.95;
+    object-fit:cover;
+}
+
+.intro{
+    max-width:860px;
+    margin:auto;
+    font-size:18px;
+    line-height:2;
+    opacity:0.94;
+    margin-bottom:70px;
+}
+
+.section{
+    max-width:900px;
+    margin:0 auto 85px auto;
+}
+
+.section-title{
+    font-size:28px;
+    letter-spacing:2px;
+    margin-bottom:30px;
+    border-bottom:1px solid rgba(255,255,255,0.14);
+    padding-bottom:14px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:22px;
+}
+
+.card{
+    background:#0d0d0d;
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:14px;
+    padding:28px;
+    box-sizing:border-box;
+}
+
+.card h3{
+    margin-top:0;
+    margin-bottom:18px;
+    font-size:17px;
+    letter-spacing:1px;
+}
+
+.card p{
+    margin:0;
+    font-size:15px;
+    line-height:1.95;
+    opacity:0.82;
+}
+
+.highlight-box{
+    background:#0d0d0d;
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:14px;
+    padding:36px;
+    box-sizing:border-box;
+}
+
+.highlight-box p{
+    margin:0 0 24px 0;
+    font-size:16px;
+    line-height:2;
+    opacity:0.86;
+}
+
+.quote{
+    max-width:760px;
+    margin:90px auto;
+    text-align:center;
+    font-size:16px;
+    line-height:2;
+    opacity:0.58;
+    font-style:italic;
+}
+
+.contact{
+    max-width:760px;
+    margin:0 auto 80px auto;
+    background:#0d0d0d;
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:14px;
+    padding:34px;
+    text-align:center;
+}
+
+.contact h3{
+    margin-top:0;
+    margin-bottom:22px;
+    letter-spacing:2px;
+}
+
+.contact p{
+    font-size:15px;
+    line-height:2;
+    opacity:0.84;
+}
+
+.contact a{
+    color:#fff;
+    text-decoration:none;
+}
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:18px;
+    margin-top:60px;
+}
+
+.btn{
+    text-decoration:none;
+    color:#fff;
+    border:1px solid rgba(255,255,255,0.18);
+    padding:16px 24px;
+    font-size:13px;
+    letter-spacing:1px;
+    opacity:0.82;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#fff;
+    color:#000;
+}
+
+.footer-note{
+    max-width:760px;
+    margin:90px auto 0 auto;
+    text-align:center;
+    font-size:14px;
+    line-height:1.9;
+    opacity:0.48;
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:38px;
     }
-    h1, h2 {
-        letter-spacing: 4px;
+
+    .intro{
+        font-size:16px;
+        line-height:1.9;
     }
-    h2 {
-        letter-spacing: 3px;
-        margin-top: 50px;
+
+    .section-title{
+        font-size:24px;
     }
-    p {
-        max-width: 800px;
-        margin: 20px auto;
-        line-height: 1.6;
-        opacity: 0.9;
-    }
-    p.subtitle {
-        opacity: 0.7;
-    }
-    hr {
-        margin: 50px auto;
-        width: 60%;
-        opacity: 0.3;
-    }
-    h3 {
-        margin-top: 30px;
-        letter-spacing: 2px;
-    }
-    .highlight-box {
-        max-width: 700px;
-        font-size: 16px;
-        line-height: 1.8;
-        opacity: 0.85;
-        margin: 50px auto;
-        text-align: center;
-        background: #111;
-        padding: 20px;
-        border-radius: 10px;
-    }
-    .highlight-box a {
-        color: white;
-        text-decoration: none;
-    }
-    .social-links a {
-        display: inline-block;
-        margin: 5px 0;
-        color: white;
-        text-decoration: none;
-    }
-    .nav-links {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        font-size: 14px;
-        letter-spacing: 2px;
-        opacity: 0.8;
-        text-align: center;
-        margin-bottom: 60px;
-    }
+
+}
+
 </style>
+
 </head>
 
 <body>
 
-<h1>SERVICIOS ASIFIM</h1>
+<div class="container">
 
-<p>
-ASIFIM aplica su metodología en procesos concretos de acompañamiento, formación, lectura simbólica,
-disciplina corporal y exploración consciente.  
-Los servicios aquí descritos no constituyen terapia médica ni promesas de resultado.
-</p>
+    <!-- LOGO -->
 
-<hr>
+    <img src="logoasifim.png"
+    alt="ASIFIM"
+    class="logo">
 
+    <!-- TITULO -->
 
-
-<!-- ================= DAVID ================= -->
-
-<h2>David Quezada Molina</h2>
-<p class="subtitle">Director y administrador ASIFIM SpA</p>
-
-<p>
-Aplicaciones contemporáneas del Método ASIFIM orientadas a claridad mental,
-lectura simbólica, disciplina interna y desarrollo integral.
-</p>
-
-<h3>Formación y Clases</h3>
-<p>
-<b>Tai Chi · Qigong · Meditación</b><br>
-$30.000 CLP — 4 sesiones mensuales (1 hora c/u)
-</p>
-
-<p>
-<b>Formación en Masaje Oriental</b><br>
-Programas modulares (duración según especialización):<br>
-— Descontracturante terapéutico (3 meses)<br>
-— Relajación / Estético / Sensitivo terapéutico (1 mes c/u)<br>
-<i>Valores informados directamente según programa.</i>
-</p>
-
-<h3>Lecturas y Exploración Simbólica</h3>
-<p>
-<b>Lectura de Aura (vía WhatsApp)</b><br>
-$10.000 CLP — análisis vía foto (respuesta por audio)
-</p>
-
-<p>
-<b>Tarot (vía WhatsApp)</b><br>
-$2.000 CLP por pregunta<br>
-3 preguntas por $5.000 CLP
-</p>
-
-<p>
-<b>I Ching (vía WhatsApp)</b><br>
-$5.000 CLP — 1 pregunta
-</p>
-
-<p>
-<b>Lecturas Aura - Tarot - I Ching en videollamada (30 min)</b><br>
-$15.000 CLP
-</p>
-
-<p>
-<b>Lecturas Aura - Tarot - I Ching en Presencial (1 hora)</b><br>
-$25.000 CLP<br>
-A domicilio: $35.000 CLP
-</p>
-
-<p>
-<b>Canalización y Mediumnidad</b><br>
-Solo presencial — $45.000 CLP
-</p>
-
-<h3>Formación Avanzada & Acompañamiento</h3>
-<p>
-Clases y procesos personalizados en:
-</p>
-<p style="line-height:1.8;">
-— PSI-MAGIA<br>
-— Alquimia CDQM<br>
-— Sexualidad Esotérica (teórico)<br>
-— Asesoría Integral de Negocios y Desarrollo Personal para Emprendedores
-</p>
-
-<p>
-<b>Sesión individual (2 horas)</b><br>
-$50.000 CLP<br>
-<i>Programas mensuales y semestrales diseñados a medida.</i>
-</p>
-
-<p>
-<b>Embudo formativo:</b><br>
-PDF → Membresía anual Drive ($50.000 CLP) → Talleres Especiales → Acompañamiento Premium
-</p>
-
-
-<p style="margin-top:20px;">
-📍 <b>Lugar:</b> misanacion.cl
-</p>
-<p>
-📍 <b>Lugar:</b> Seminario #950, Ñuñoa (Espacio artístico incoherente)
-</p>
-
-    
-<hr>
-
-<!-- CONTACTO -->
-<div class="highlight-box">
-
-    <b>WhatsApp</b><br>
-       📲 David Quezada Molina · <a href="https://wa.me/56932491679" target="_blank">+56 9 3249 1679</a>
-</div>
-
-<!-- REDES SOCIALES -->
-<div class="highlight-box social-links">
-    <b>Redes sociales oficiales</b><br><br>
-
-    <a href="https://www.tiktok.com/@psi.magia" target="_blank">
-        TikTok Esotérico 
-    </a><br>
-
-   <a href="https://www.tiktok.com/@arte_said" target="_blank">
-        TikTok Artístico 
-    </a><br>
-
-   <a href="https://www.youtube.com/@psi.magia777" target="_blank">
-        You Tube Esotérico 
-    </a><br>
-
-     <a href="https://www.youtube.com/@said.musico" target="_blank">
-        You Tube Artístico
-    </a><br>
-
-    
-</div>  
-
-<hr>
-
-
-
-  <!-- NAV -->
-    <div style="display:flex; gap:40px; font-size:12px; letter-spacing:2px; opacity:0.6;">
-      <a href="maestro.davidquezadamolina.html">← Volver</a>
-      <a href="explorar.html">← Explorar ASIFIM</a>
+    <div class="top-subtitle">
+        Exploración Contemporánea · Desarrollo Humano · Estrategia
     </div>
 
+    <h1>
+        SERVICIOS
+    </h1>
+
+    <div class="subtitle">
+        David Quezada Molina · ASIFIM
+    </div>
+
+    <!-- IMAGEN -->
+
+    <img src="cd03.jpg"
+    alt="David Quezada Molina"
+    class="hero">
+
+    <!-- INTRO -->
+
+    <div class="intro">
+
+        Los servicios desarrollados por David Quezada Molina
+        integran desarrollo humano,
+        creatividad,
+        pensamiento estratégico,
+        simbolismo,
+        autodisciplina
+        y exploración consciente,
+        articulando herramientas tradicionales
+        y contemporáneas
+        aplicadas tanto a personas
+        como a proyectos,
+        emprendimientos
+        y procesos organizacionales.
+
+    </div>
+
+    <!-- DESARROLLO HUMANO -->
+
+    <div class="section">
+
+        <div class="section-title">
+            Desarrollo Humano y Autodisciplina
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>
+                    DESARROLLO PERSONAL
+                </h3>
+
+                <p>
+                    Procesos orientados a fortalecer claridad mental,
+                    creatividad,
+                    estabilidad emocional,
+                    disciplina,
+                    identidad
+                    y coherencia interna.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    ENTRENAMIENTO DE CONSCIENCIA
+                </h3>
+
+                <p>
+                    Herramientas relacionadas con observación consciente,
+                    percepción,
+                    simbolismo,
+                    estados internos,
+                    meditación
+                    y exploración experiencial.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    ORIENTACIÓN DE VIDA
+                </h3>
+
+                <p>
+                    Acompañamiento estratégico y humano
+                    en procesos de cambio,
+                    toma de decisiones,
+                    crisis existenciales
+                    y reorganización personal.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- EMPRESA -->
+
+    <div class="section">
+
+        <div class="section-title">
+            Empresa, Estrategia y Creatividad
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>
+                    ASESORÍA DE NEGOCIOS
+                </h3>
+
+                <p>
+                    Optimización estratégica de proyectos,
+                    marcas,
+                    emprendimientos
+                    y procesos organizacionales
+                    desde una visión sistémica y humana.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    IDENTIDAD Y PROPÓSITO
+                </h3>
+
+                <p>
+                    Desarrollo de narrativa,
+                    identidad conceptual,
+                    visión estratégica
+                    y coherencia comunicacional
+                    para proyectos y marcas personales.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    GAMIFICACIÓN Y EXPERIENCIAS
+                </h3>
+
+                <p>
+                    Diseño de dinámicas,
+                    experiencias,
+                    estructuras pedagógicas
+                    y sistemas creativos aplicados
+                    al aprendizaje y desarrollo humano.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- HOLISTICO -->
+
+    <div class="section">
+
+        <div class="section-title">
+            Formación Holística y Simbólica
+        </div>
+
+        <div class="highlight-box">
+
+            <p>
+
+                Integración de herramientas relacionadas con:
+                Tarot,
+                I Ching,
+                lectura áurica,
+                simbolismo,
+                percepción energética,
+                meditación,
+                Qi Gong,
+                Tai Chi,
+                sexualidad consciente
+                y exploración psíquica.
+
+            </p>
+
+            <p>
+
+                Estas prácticas son abordadas desde una perspectiva
+                experiencial,
+                reflexiva
+                y orientada al desarrollo de criterio,
+                evitando estructuras dogmáticas
+                o dependencias psicológicas.
+
+            </p>
+
+            <p>
+
+                El enfoque prioriza la autonomía,
+                la observación consciente,
+                la responsabilidad individual
+                y la integración práctica
+                de la experiencia humana.
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- ARTISTAS -->
+
+    <div class="section">
+
+        <div class="section-title">
+            Procesos Creativos y Artísticos
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>
+                    COACHING PARA ARTISTAS
+                </h3>
+
+                <p>
+                    Apoyo estratégico,
+                    creativo
+                    y emocional
+                    para músicos,
+                    ilustradores,
+                    performers,
+                    creadores
+                    y proyectos artísticos.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    DESBLOQUEO CREATIVO
+                </h3>
+
+                <p>
+                    Herramientas orientadas
+                    a recuperar flujo creativo,
+                    confianza,
+                    autenticidad
+                    y conexión con la expresión personal.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <h3>
+                    DIRECCIÓN CONCEPTUAL
+                </h3>
+
+                <p>
+                    Desarrollo de universos simbólicos,
+                    estética,
+                    narrativa,
+                    identidad conceptual
+                    y estructuras creativas.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FRASE -->
+
+    <div class="quote">
+
+        “La creatividad,
+        la consciencia
+        y la autodisciplina
+        son distintas formas
+        de aprender a sostener la propia existencia.”
+
+    </div>
+
+    <!-- CONTACTO -->
+
+    <div class="contact">
+
+        <h3>
+            CONTACTO
+        </h3>
+
+        <p>
+
+            📧 asifimchile@gmail.com
+
+            <br><br>
+
+            📲 WhatsApp:
+            <br>
+            +56 9 3249 1679
+
+            <br><br>
+
+            Atención presencial y online.
+
+        </p>
+
+    </div>
+
+    <!-- BOTONES -->
+
+    <div class="buttons">
+
+        <a href="psi-magia.html" class="btn">
+            PSI · MAGIA
+        </a>
+
+        <a href="contactos.html" class="btn">
+            Contactos
+        </a>
+
+        <a href="maestro.davidquezadamolina.html" class="btn">
+            ← Volver
+        </a>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <div class="footer-note">
+
+        Los servicios desarrollados dentro de ASIFIM
+        buscan integrar tradición,
+        creatividad,
+        consciencia
+        y pensamiento contemporáneo,
+        manteniendo como eje central
+        la autonomía
+        y el valor irreductible de la individualidad.
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
