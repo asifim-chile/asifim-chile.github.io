@@ -25,7 +25,7 @@ body{
 
 .container{
     width:100%;
-    max-width:980px;
+    max-width:920px;
     margin:auto;
     padding:50px 20px 80px 20px;
     box-sizing:border-box;
@@ -52,6 +52,7 @@ h1{
     letter-spacing:3px;
     margin:0 0 16px 0;
     text-align:center;
+    line-height:1.1;
 }
 
 .subtitle{
@@ -65,15 +66,15 @@ h1{
 }
 
 .section{
-    margin-top:70px;
+    margin-top:75px;
 }
 
 .section h2{
     font-size:26px;
     letter-spacing:2px;
-    margin-bottom:25px;
+    margin-bottom:28px;
     border-bottom:1px solid rgba(255,255,255,0.15);
-    padding-bottom:12px;
+    padding-bottom:14px;
 }
 
 p{
@@ -88,13 +89,18 @@ p{
     opacity:0.96;
 }
 
+/* SWIPER */
+
 .swiper-slide{
     display:flex;
     justify-content:center;
     align-items:center;
 }
 
+/* CARRUSEL PRINCIPAL */
+
 .swiper-main{
+    width:100%;
     height:360px;
     margin-bottom:60px;
 }
@@ -106,9 +112,13 @@ p{
     border-radius:10px;
 }
 
+/* CERTIFICADOS HORIZONTALES */
+
 .swiper-horizontal{
+    width:100%;
+    max-width:760px;
     height:340px;
-    margin-top:40px;
+    margin:60px auto;
 }
 
 .swiper-horizontal img{
@@ -116,36 +126,58 @@ p{
     height:100%;
     object-fit:contain;
     border-radius:10px;
+    background:#111;
+    padding:10px;
+    box-sizing:border-box;
 }
 
+/* CERTIFICADOS VERTICALES */
+
 .swiper-vertical{
-    height:560px;
-    margin-top:50px;
+    width:100%;
+    max-width:760px;
+    height:auto;
+    margin:60px auto;
+}
+
+.swiper-vertical .swiper-slide{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px 0;
 }
 
 .swiper-vertical img{
-    width:100%;
-    height:100%;
+    width:auto;
+    max-width:100%;
+    max-height:760px;
     object-fit:contain;
     border-radius:10px;
+    background:#111;
+    padding:10px;
+    box-sizing:border-box;
 }
+
+/* FRASE */
 
 .quote{
     max-width:760px;
-    margin:70px auto;
+    margin:80px auto;
     text-align:center;
     font-size:15px;
     line-height:1.9;
-    opacity:0.62;
+    opacity:0.6;
     font-style:italic;
 }
+
+/* BOTONES */
 
 .buttons{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
     gap:18px;
-    margin-top:50px;
+    margin-top:55px;
 }
 
 .btn{
@@ -165,12 +197,14 @@ p{
 }
 
 .footer-nav{
-    margin-top:80px;
+    margin-top:90px;
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
     gap:18px;
 }
+
+/* MOBILE */
 
 @media(max-width:768px){
 
@@ -186,17 +220,19 @@ p{
         height:240px;
     }
 
-    .swiper-vertical{
-        height:420px;
+    .swiper-vertical img{
+        max-height:520px;
     }
 
     p{
         font-size:15px;
+        line-height:1.85;
     }
 
 }
 
 </style>
+
 </head>
 
 <body>
@@ -221,7 +257,7 @@ p{
         Desarrollo Humano · Creatividad · Empresa · Simbolismo
     </div>
 
-    <!-- CARRUSEL -->
+    <!-- CARRUSEL PRINCIPAL -->
     <div class="swiper swiper-main">
 
         <div class="swiper-wrapper">
@@ -246,7 +282,8 @@ p{
 
     </div>
 
-    <!-- ROL -->
+    <!-- CONTINUIDAD -->
+
     <div class="section">
 
         <h2>Continuidad y Dirección</h2>
@@ -262,15 +299,17 @@ p{
         <p>
 
         Su formación integra disciplinas corporales,
-        desarrollo humano, exploración simbólica,
-        creatividad, emprendimiento y sistemas contemporáneos.
+        desarrollo humano,
+        creatividad,
+        exploración simbólica
+        y sistemas contemporáneos de organización y comunicación.
 
         </p>
 
         <p>
 
-        Desde temprana edad se desarrolla en artes marciales
-        y disciplinas internas como
+        Desde temprana edad se desarrolla en disciplinas marciales
+        y prácticas internas como
         Qigong,
         Tai Chi Chuan,
         Sanda,
@@ -279,24 +318,25 @@ p{
         y Kung Fu interno,
         integrando una comprensión práctica
         del cuerpo,
-        la disciplina
-        y la percepción consciente.
+        la percepción
+        y la autodisciplina.
 
         </p>
 
         <p>
 
-        Paralelamente,
-        desarrolla una línea de exploración psíquica y simbólica
-        orientada al estudio de la percepción,
-        los estados ampliados de conciencia
-        y las estructuras internas del comportamiento humano.
+        Paralelamente desarrolla una línea de exploración psíquica,
+        simbólica y experiencial orientada al estudio
+        de la conciencia,
+        los estados perceptivos
+        y la estructura interna del comportamiento humano.
 
         </p>
 
     </div>
 
     <!-- EXPLORACION -->
+
     <div class="section">
 
         <h2>Exploración Contemporánea</h2>
@@ -304,12 +344,12 @@ p{
         <p>
 
         Su trabajo representa la dimensión contemporánea de ASIFIM:
-        la aplicación del método en contextos actuales
-        relacionados con empresa,
+        la aplicación del método en áreas como
         creatividad,
+        empresa,
         tecnología,
-        comunicación,
-        bienestar
+        bienestar,
+        comunicación
         y desarrollo humano.
 
         </p>
@@ -323,7 +363,8 @@ p{
         y pensamiento estratégico,
         junto con más de dos décadas
         de exploración esotérica,
-        simbólica y terapéutica.
+        terapéutica
+        y simbólica.
 
         </p>
 
@@ -332,16 +373,16 @@ p{
         A esto se suma una fuerte base autodidacta
         en teoría de sistemas,
         matemática,
-        creatividad aplicada,
         PNL,
-        Design Thinking
-        y modelos de observación estructural.
+        creatividad aplicada
+        y Design Thinking.
 
         </p>
 
     </div>
 
     <!-- CERTIFICADOS HORIZONTALES -->
+
     <div class="swiper swiper-horizontal">
 
         <div class="swiper-wrapper">
@@ -375,6 +416,7 @@ p{
     </div>
 
     <!-- CERTIFICADOS VERTICALES -->
+
     <div class="swiper swiper-vertical">
 
         <div class="swiper-wrapper">
@@ -398,6 +440,7 @@ p{
     </div>
 
     <!-- ARTE -->
+
     <div class="section">
 
         <h2>Dimensión Artística</h2>
@@ -425,14 +468,15 @@ p{
         y transmisión pedagógica,
         permitiendo traducir estructuras complejas
         en formatos prácticos,
-        comprensibles
-        y experienciales.
+        experienciales
+        y comprensibles.
 
         </p>
 
     </div>
 
     <!-- LINEAS -->
+
     <div class="section">
 
         <h2>Líneas de Acción</h2>
@@ -441,8 +485,8 @@ p{
 
         <strong>DESARROLLO HUMANO Y AUTODISCIPLINA</strong><br>
         Procesos orientados a fortalecer claridad,
-        coherencia,
         creatividad,
+        coherencia,
         criterio
         y soberanía individual.
 
@@ -467,9 +511,8 @@ p{
         simbolismo,
         Qi Gong,
         Tai Chi,
-        meditación,
-        percepción consciente
-        y exploración psíquica.
+        meditación
+        y percepción consciente.
 
         </p>
 
@@ -478,7 +521,7 @@ p{
         <strong>CREATIVIDAD Y EXPERIENCIAS</strong><br>
         Diseño de actividades,
         dinámicas,
-        formación experiencial
+        procesos experienciales
         y herramientas de integración creativa.
 
         </p>
@@ -486,18 +529,19 @@ p{
     </div>
 
     <!-- FRASE -->
+
     <div class="quote">
 
         “La creatividad,
         la consciencia
         y la autodisciplina
-        no son mundos separados:
         son distintas formas
         de ordenar la experiencia humana.”
 
     </div>
 
     <!-- BOTONES -->
+
     <div class="buttons">
 
         <a href="psi-magia.html" class="btn">
@@ -511,6 +555,7 @@ p{
     </div>
 
     <!-- SENTIDO -->
+
     <div class="section">
 
         <h2>Sentido</h2>
@@ -530,6 +575,7 @@ p{
     </div>
 
     <!-- NAV -->
+
     <div class="footer-nav">
 
         <a href="index.html" class="btn">
@@ -544,44 +590,60 @@ p{
 
 </div>
 
+<!-- SWIPER -->
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 <script>
 
 new Swiper('.swiper-main',{
+
     loop:true,
+
     autoplay:{
         delay:3000,
         disableOnInteraction:false
     },
+
     pagination:{
         el:'.swiper-main .swiper-pagination',
         clickable:true
     }
+
 });
 
 new Swiper('.swiper-horizontal',{
+
     loop:true,
+
     autoplay:{
         delay:3200,
         disableOnInteraction:false
     },
+
     pagination:{
         el:'.swiper-horizontal .swiper-pagination',
         clickable:true
     }
+
 });
 
 new Swiper('.swiper-vertical',{
+
     loop:true,
+
+    autoHeight:true,
+
     autoplay:{
         delay:3400,
         disableOnInteraction:false
     },
+
     pagination:{
         el:'.swiper-vertical .swiper-pagination',
         clickable:true
     }
+
 });
 
 </script>
