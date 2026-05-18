@@ -9,275 +9,400 @@
 <title>Carlos Quezada Müller — ASIFIM</title>
 
 <meta name="description"
-content="Carlos Quezada Müller — Fundador de ASIFIM. Qigong, Taoísmo, bienestar y artes marciales tradicionales.">
+content="Carlos Quezada Müller — Fundador de ASIFIM. Taoísmo, Qigong, artes marciales tradicionales y desarrollo integral consciente.">
 
-<!-- SWIPER -->
 <link rel="stylesheet"
 href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 
-</head>
+<style>
 
-<body style="
-margin:0;
-background:#000;
-color:#fff;
-font-family:Arial, Helvetica, sans-serif;
-">
+body{
+    margin:0;
+    background:#000;
+    color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
-<!-- CONTENEDOR -->
-<div style="
-width:100%;
-display:flex;
-flex-direction:column;
-align-items:center;
-padding:50px 20px 80px 20px;
-box-sizing:border-box;
-">
+/* CONTENEDOR */
 
-    <!-- LOGO -->
-    <img src="logoasifim.png"
-    alt="ASIFIM"
-    style="
+.container{
+    width:100%;
+    max-width:940px;
+    margin:auto;
+    padding:50px 20px 90px 20px;
+    box-sizing:border-box;
+}
+
+/* LOGO */
+
+.logo{
     width:150px;
-    margin-bottom:28px;
+    margin:0 auto 28px auto;
+    display:block;
     opacity:0.92;
-    ">
+}
 
-    <!-- TITULO SUPERIOR -->
-    <div style="
+/* TEXTOS */
+
+.top-subtitle{
+    text-align:center;
     font-size:13px;
     letter-spacing:3px;
     opacity:0.55;
     margin-bottom:18px;
     text-transform:uppercase;
-    text-align:center;
-    ">
-    Origen · Tradición · Fundador
-    </div>
+}
 
-    <!-- NOMBRE -->
-    <div style="
-    font-size:46px;
-    font-weight:bold;
+h1{
+    font-size:50px;
     letter-spacing:3px;
-    margin-bottom:16px;
+    margin:0 0 16px 0;
     text-align:center;
-    ">
-    Carlos Quezada Müller
-    </div>
+    line-height:1.1;
+}
 
-    <!-- SUB -->
-    <div style="
+.subtitle{
+    text-align:center;
     font-size:14px;
     letter-spacing:2px;
     opacity:0.65;
-    margin-bottom:55px;
+    margin-bottom:60px;
     text-transform:uppercase;
+    line-height:1.7;
+}
+
+.section{
+    margin-top:80px;
+}
+
+.section h2{
+    font-size:26px;
+    letter-spacing:2px;
+    margin-bottom:28px;
+    border-bottom:1px solid rgba(255,255,255,0.12);
+    padding-bottom:14px;
+}
+
+p{
+    font-size:16px;
+    line-height:1.95;
+    opacity:0.86;
+    margin-bottom:28px;
+}
+
+.highlight{
+    font-size:18px;
+    line-height:2;
+    opacity:0.96;
+}
+
+/* IMAGENES */
+
+.hero-image{
+    width:100%;
+    max-width:880px;
+    border-radius:10px;
+    margin-bottom:65px;
+    object-fit:cover;
+    opacity:0.96;
+}
+
+.image-block{
+    width:100%;
+    border-radius:10px;
+    object-fit:cover;
+    opacity:0.95;
+}
+
+/* CERTIFICADO */
+
+.certificate{
+    width:100%;
+    border-radius:10px;
+    object-fit:contain;
+    background:#111;
+    padding:12px;
+    box-sizing:border-box;
+    opacity:0.95;
+}
+
+/* SWIPER */
+
+.swiper{
+    width:100%;
+    max-width:920px;
+    margin:70px auto;
+}
+
+.swiper-slide{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.swiper-slide img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* FRASE */
+
+.quote{
+    max-width:760px;
+    margin:80px auto;
     text-align:center;
-    ">
-    Qigong · Taoísmo · Bienestar · Arte Marcial Terapéutica
+    font-size:16px;
+    line-height:2;
+    opacity:0.6;
+    font-style:italic;
+}
+
+/* BOTONES */
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:18px;
+    margin-top:55px;
+}
+
+.btn{
+    text-decoration:none;
+    color:#fff;
+    border:1px solid rgba(255,255,255,0.18);
+    padding:16px 24px;
+    font-size:13px;
+    letter-spacing:1px;
+    opacity:0.82;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#fff;
+    color:#000;
+}
+
+/* NAV */
+
+.footer-nav{
+    margin-top:90px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:18px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    h1{
+        font-size:38px;
+    }
+
+    p{
+        font-size:15px;
+        line-height:1.85;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LOGO -->
+
+    <img src="logoasifim.png"
+    alt="ASIFIM"
+    class="logo">
+
+    <!-- TITULO -->
+
+    <div class="top-subtitle">
+        Origen · Tradición · Fundador
+    </div>
+
+    <h1>
+        Carlos Quezada Müller
+    </h1>
+
+    <div class="subtitle">
+        Taoísmo · Qigong · Artes Marciales Tradicionales · Desarrollo Integral
     </div>
 
     <!-- IMAGEN PRINCIPAL -->
+
     <img src="ASIFIM_0.jpg"
     alt="Carlos Quezada Müller"
-    style="
-    width:100%;
-    max-width:860px;
-    margin-bottom:60px;
-    border-radius:8px;
-    object-fit:cover;
-    opacity:0.96;
-    ">
+    class="hero-image">
 
-    <!-- BLOQUE -->
-    <div style="
-    width:100%;
-    max-width:860px;
-    display:flex;
-    flex-direction:column;
-    gap:34px;
-    margin-bottom:60px;
-    ">
+    <!-- INTRO -->
 
-        <!-- TEXTO 1 -->
-        <div style="
-        font-size:18px;
-        line-height:1.9;
-        opacity:0.95;
-        ">
+    <div class="section">
 
-        ASIFIM fue fundado en Chile en 1984 por
-        <strong>Carlos Quezada Müller</strong>,
-        como resultado de décadas de estudio,
-        práctica y enseñanza de disciplinas
-        marciales, energéticas, terapéuticas y filosóficas.
+        <p class="highlight">
 
-        </div>
+        Carlos Quezada Müller es fundador de ASIFIM
+        y uno de los pioneros en Chile
+        en la enseñanza e investigación
+        de disciplinas tradicionales chinas,
+        desarrollo energético
+        y trabajo corporal consciente.
 
-        <!-- IMAGEN -->
+        </p>
+
+        <p>
+
+        Desde 1984 ha desarrollado un camino continuo
+        de formación,
+        práctica,
+        enseñanza
+        y transmisión de conocimientos
+        vinculados al Taoísmo,
+        el Qigong,
+        Tai Chi Chuan,
+        Sanda,
+        artes marciales tradicionales,
+        medicina oriental
+        y procesos de integración humana.
+
+        </p>
+
+    </div>
+
+    <!-- IMAGEN -->
+
+    <div class="section">
+
         <img src="ASIFIM_01.jpg"
         alt="Trayectoria Carlos Quezada Müller"
-        style="
-        width:100%;
-        border-radius:8px;
-        object-fit:cover;
-        opacity:0.95;
-        ">
+        class="image-block">
 
-        <!-- TEXTO 2 -->
-        <div style="
-        font-size:16px;
-        line-height:1.9;
-        opacity:0.84;
-        ">
+    </div>
 
-        Con más de cinco décadas de trayectoria,
-        es uno de los pioneros en Chile en la investigación,
-        difusión y formación del Qigong,
-        Tai Chi Chuan, Sanda y otras disciplinas
-        tradicionales de raíz china y taoísta.
+    <!-- TRAYECTORIA -->
 
-        <br><br>
+    <div class="section">
 
-        Actualmente es representante nacional del estilo
-        Sanda-Qigong, reconocido por la DGMN,
-        con grado de Cinta Negra 10° Thuan.
+        <h2>Trayectoria</h2>
 
-        </div>
+        <p>
 
-        <!-- CERTIFICADO -->
+        Con más de cinco décadas de experiencia,
+        su trabajo ha integrado entrenamiento físico,
+        respiración,
+        percepción consciente,
+        disciplina,
+        filosofía taoísta,
+        bienestar
+        y exploración simbólica.
+
+        </p>
+
+        <p>
+
+        Actualmente es representante nacional
+        del estilo Sanda-Qigong,
+        reconocido por la DGMN,
+        con grado de
+        <strong>Cinta Negra 10° Thuan</strong>.
+
+        </p>
+
+    </div>
+
+    <!-- CERTIFICADO -->
+
+    <div class="section">
+
         <img src="CERTIFICADO_10th Carlos QM.jpg"
         alt="Certificado Carlos Quezada Müller"
-        style="
-        width:100%;
-        border-radius:8px;
-        object-fit:contain;
-        background:#111;
-        padding:10px;
-        box-sizing:border-box;
-        opacity:0.95;
-        ">
+        class="certificate">
 
-        <!-- TEXTO 3 -->
-        <div style="
-        font-size:16px;
-        line-height:1.9;
-        opacity:0.84;
-        ">
+    </div>
 
-        A lo largo de su trayectoria ha integrado
-        artes marciales, trabajo corporal,
-        medicina oriental, respiración,
-        filosofía taoísta y procesos de desarrollo humano,
-        desarrollando una síntesis metodológica
-        propia conocida como el
-        <strong>Método ASIFIM</strong>.
+    <!-- METODO -->
 
-        </div>
+    <div class="section">
 
-        <!-- TEXTO 4 -->
-        <div style="
-        font-size:16px;
-        line-height:1.9;
-        opacity:0.84;
-        ">
+        <h2>Método ASIFIM</h2>
 
-        Este enfoque utiliza la práctica,
-        la experiencia directa,
-        la percepción consciente,
+        <p>
+
+        A lo largo de su trayectoria
+        desarrolló una síntesis metodológica propia
+        conocida como el
+        <strong>Método ASIFIM</strong>,
+        integrando tradición,
+        experiencia práctica,
+        autodisciplina
+        y exploración consciente.
+
+        </p>
+
+        <p>
+
+        Este enfoque entiende el desarrollo humano
+        como un proceso integral,
+        donde cuerpo,
+        mente,
+        emoción,
+        percepción,
+        creatividad
+        y voluntad
+        forman parte de una misma experiencia.
+
+        </p>
+
+        <p>
+
+        La práctica,
         el movimiento,
-        la disciplina y el simbolismo
-        como herramientas de integración física,
-        emocional y mental.
+        la respiración,
+        el entrenamiento disciplinario,
+        el simbolismo
+        y la experiencia directa
+        son utilizados como herramientas
+        para fortalecer autonomía,
+        criterio propio
+        y soberanía individual.
 
-        <br><br>
-
-        La autonomía,
-        la autorresponsabilidad
-        y el desarrollo de criterio propio
-        constituyen pilares fundamentales
-        dentro de su enseñanza.
-
-        </div>
+        </p>
 
     </div>
 
     <!-- FRASE -->
-    <div style="
-    max-width:760px;
-    text-align:center;
-    font-size:15px;
-    line-height:1.9;
-    opacity:0.6;
-    margin-bottom:65px;
-    font-style:italic;
-    ">
 
-    “La disciplina no busca limitar al individuo,
-    sino entregarle herramientas para sostenerse con conciencia.”
+    <div class="quote">
+
+        “La disciplina no busca limitar al individuo,
+        sino entregarle herramientas
+        para sostenerse con conciencia.”
 
     </div>
 
     <!-- CARRUSEL -->
-    <div class="swiper"
-    style="
-    width:100%;
-    max-width:920px;
-    margin-bottom:70px;
-    ">
+
+    <div class="swiper">
 
         <div class="swiper-wrapper">
 
-            <div class="swiper-slide">
-                <img src="img00.jpg"
-                style="width:100%; border-radius:8px;">
-            </div>
-
-            <div class="swiper-slide">
-                <img src="img01.jpg"
-                style="width:100%; border-radius:8px;">
-            </div>
-
-            <div class="swiper-slide">
-                <img src="img02.jpg"
-                style="width:100%; border-radius:8px;">
-            </div>
-
-            <div class="swiper-slide">
-                <img src="img03.jpg"
-                style="width:100%; border-radius:8px;">
-            </div>
-
-            <div class="swiper-slide">
-                <img src="img04.jpg"
-                style="width:100%; border-radius:8px;">
-            </div>
-
-            <div class="swiper-slide">
-                <img src="img05.jpg"
-                style="width:100%; border-radius:8px;">
-            </div>
-
-            <div class="swiper-slide">
-                <img src="img06.jpg"
-                style="width:100%; border-radius:8px;">
-            </div>
-
-            <div class="swiper-slide">
-                <img src="img07.jpg"
-                style="width:100%; border-radius:8px;">
-            </div>
-
-            <div class="swiper-slide">
-                <img src="img08.jpg"
-                style="width:100%; border-radius:8px;">
-            </div>
-
-            <div class="swiper-slide">
-                <img src="img09.jpg"
-                style="width:100%; border-radius:8px;">
-            </div>
+            <div class="swiper-slide"><img src="img00.jpg"></div>
+            <div class="swiper-slide"><img src="img01.jpg"></div>
+            <div class="swiper-slide"><img src="img02.jpg"></div>
+            <div class="swiper-slide"><img src="img03.jpg"></div>
+            <div class="swiper-slide"><img src="img04.jpg"></div>
+            <div class="swiper-slide"><img src="img05.jpg"></div>
+            <div class="swiper-slide"><img src="img06.jpg"></div>
+            <div class="swiper-slide"><img src="img07.jpg"></div>
+            <div class="swiper-slide"><img src="img08.jpg"></div>
+            <div class="swiper-slide"><img src="img09.jpg"></div>
 
         </div>
 
@@ -286,116 +411,88 @@ box-sizing:border-box;
     </div>
 
     <!-- ARTE -->
-    <div style="
-    max-width:860px;
-    font-size:15px;
-    line-height:1.9;
-    opacity:0.74;
-    margin-bottom:50px;
-    text-align:center;
-    ">
 
-    Paralelamente, Carlos Quezada Müller ha desarrollado
-    una línea artística y performática propia,
-    entendiendo el arte como una herramienta
-    de exploración simbólica,
-    integración psíquica
-    y cuestionamiento consciente
-    de las estructuras establecidas.
+    <div class="section">
+
+        <h2>Arte y Exploración</h2>
+
+        <p>
+
+        Paralelamente,
+        Carlos Quezada Müller
+        ha desarrollado una línea artística,
+        performática
+        y pictórica propia,
+        entendiendo el arte
+        como una vía de exploración interna,
+        integración psíquica
+        y cuestionamiento consciente
+        de las estructuras establecidas.
+
+        </p>
+
+        <p>
+
+        Esta dimensión artística se manifiesta
+        en la creación del concepto
+        <strong>Impresionismo Mágico Taoísta Incoherente</strong>,
+        donde gesto,
+        símbolo,
+        emoción,
+        espontaneidad
+        y percepción
+        se transforman en herramientas expresivas
+        y pedagógicas.
+
+        </p>
 
     </div>
 
     <!-- BOTONES -->
-    <div style="
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:18px;
-    margin-bottom:70px;
-    ">
 
-        <!-- SUPERARTE -->
-        <a href="superarte.html"
-        style="
-        text-decoration:none;
-        color:#fff;
-        border:1px solid rgba(255,255,255,0.18);
-        padding:16px 24px;
-        font-size:13px;
-        letter-spacing:1px;
-        opacity:0.82;
-        transition:0.3s;
-        "
-        onmouseover="this.style.background='#fff';this.style.color='#000';"
-        onmouseout="this.style.background='transparent';this.style.color='#fff';"
-        >
-        SuperArte · Arte Incoherente
+    <div class="buttons">
+
+        <a href="superarte.html" class="btn">
+            SuperArte · Arte Incoherente
         </a>
 
-        <!-- SERVICIOS -->
-        <a href="servicios.CQM.html"
-        style="
-        text-decoration:none;
-        color:#fff;
-        border:1px solid rgba(255,255,255,0.18);
-        padding:16px 24px;
-        font-size:13px;
-        letter-spacing:1px;
-        opacity:0.82;
-        transition:0.3s;
-        "
-        onmouseover="this.style.background='#fff';this.style.color='#000';"
-        onmouseout="this.style.background='transparent';this.style.color='#fff';"
-        >
-        Servicios
+        <a href="servicios.CQM.html" class="btn">
+            Servicios
         </a>
 
     </div>
 
-    <!-- NAVEGACION -->
-    <div style="
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:18px;
-    width:100%;
-    max-width:760px;
-    ">
+    <!-- SENTIDO -->
 
-        <!-- VOLVER -->
-        <a href="index.html"
-        style="
-        text-decoration:none;
-        color:#fff;
-        border:1px solid rgba(255,255,255,0.18);
-        padding:16px 24px;
-        font-size:13px;
-        letter-spacing:1px;
-        opacity:0.82;
-        transition:0.3s;
-        "
-        onmouseover="this.style.background='#fff';this.style.color='#000';"
-        onmouseout="this.style.background='transparent';this.style.color='#fff';"
-        >
-        ← Inicio
+    <div class="section">
+
+        <h2>Sentido</h2>
+
+        <p>
+
+        Su trabajo busca preservar
+        la profundidad de las tradiciones,
+        adaptándolas de forma consciente
+        a los desafíos contemporáneos,
+        manteniendo como eje central
+        la autodisciplina,
+        la autonomía
+        y el desarrollo integral del individuo.
+
+        </p>
+
+    </div>
+
+    <!-- NAV -->
+
+    <div class="footer-nav">
+
+        <a href="index.html" class="btn">
+            ← Inicio
         </a>
 
-        <!-- DAVID -->
-        <a href="maestro.davidquezadamolina.html"
-        style="
-        text-decoration:none;
-        color:#fff;
-        border:1px solid rgba(255,255,255,0.18);
-        padding:16px 24px;
-        font-size:13px;
-        letter-spacing:1px;
-        opacity:0.82;
-        transition:0.3s;
-        "
-        onmouseover="this.style.background='#fff';this.style.color='#000';"
-        onmouseout="this.style.background='transparent';this.style.color='#fff';"
-        >
-        David Quezada Molina →
+        <a href="maestro.davidquezadamolina.html" class="btn">
+            David Quezada Molina →
         </a>
 
     </div>
@@ -403,21 +500,30 @@ box-sizing:border-box;
 </div>
 
 <!-- SWIPER -->
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 <script>
-new Swiper('.swiper', {
+
+new Swiper('.swiper',{
+
     loop:true,
+
     autoplay:{
-        delay:3500
+        delay:3500,
+        disableOnInteraction:false
     },
+
     pagination:{
         el:'.swiper-pagination',
         clickable:true
     },
+
     slidesPerView:1,
     spaceBetween:20
+
 });
+
 </script>
 
 </body>
