@@ -1,124 +1,281 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
-<title>Servicios | ASIFIM</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contactos | ASIFIM</title>
+
+<meta name="description"
+content="Contacto institucional ASIFIM. Desarrollo humano, bienestar, creatividad, actividades, asesorías y formación.">
+
 <style>
-    body {
-        margin: 0;
-        padding: 40px;
-        background: black;
-        color: white;
-        font-family: Arial, sans-serif;
-        text-align: center;
+
+body{
+    margin:0;
+    padding:50px 20px 80px 20px;
+    background:#000;
+    color:#fff;
+    font-family:Arial, Helvetica, sans-serif;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    box-sizing:border-box;
+}
+
+.logo{
+    width:140px;
+    margin-bottom:28px;
+    opacity:0.92;
+}
+
+.top-subtitle{
+    font-size:13px;
+    letter-spacing:3px;
+    opacity:0.55;
+    margin-bottom:18px;
+    text-transform:uppercase;
+}
+
+h1{
+    font-size:42px;
+    letter-spacing:4px;
+    margin:0 0 18px 0;
+}
+
+.subtitle{
+    max-width:760px;
+    font-size:16px;
+    line-height:1.9;
+    opacity:0.78;
+    margin-bottom:55px;
+}
+
+.section{
+    width:100%;
+    max-width:860px;
+    background:#0d0d0d;
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:12px;
+    padding:34px;
+    box-sizing:border-box;
+    margin-bottom:32px;
+}
+
+.section-title{
+    font-size:18px;
+    letter-spacing:2px;
+    margin-bottom:28px;
+    opacity:0.92;
+    text-transform:uppercase;
+}
+
+.contact-item{
+    margin-bottom:18px;
+    line-height:1.8;
+    opacity:0.88;
+    font-size:15px;
+}
+
+.contact-item a{
+    color:#fff;
+    text-decoration:none;
+    opacity:0.9;
+}
+
+.contact-item a:hover{
+    opacity:1;
+}
+
+.info{
+    max-width:760px;
+    margin-top:25px;
+    margin-bottom:50px;
+    font-size:15px;
+    line-height:1.9;
+    opacity:0.65;
+}
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:18px;
+    margin-top:10px;
+}
+
+.btn{
+    text-decoration:none;
+    color:#fff;
+    border:1px solid rgba(255,255,255,0.18);
+    padding:16px 24px;
+    font-size:13px;
+    letter-spacing:1px;
+    opacity:0.82;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#fff;
+    color:#000;
+}
+
+@media(max-width:768px){
+
+    body{
+        padding:40px 18px 70px 18px;
     }
-    h1, h2 {
-        letter-spacing: 4px;
+
+    h1{
+        font-size:34px;
     }
-    h2 {
-        letter-spacing: 3px;
-        margin-top: 50px;
+
+    .section{
+        padding:26px;
     }
-    p {
-        max-width: 800px;
-        margin: 20px auto;
-        line-height: 1.6;
-        opacity: 0.9;
-    }
-    p.subtitle {
-        opacity: 0.7;
-    }
-    hr {
-        margin: 50px auto;
-        width: 60%;
-        opacity: 0.3;
-    }
-    h3 {
-        margin-top: 30px;
-        letter-spacing: 2px;
-    }
-    .highlight-box {
-        max-width: 700px;
-        font-size: 16px;
-        line-height: 1.8;
-        opacity: 0.85;
-        margin: 50px auto;
-        text-align: center;
-        background: #111;
-        padding: 20px;
-        border-radius: 10px;
-    }
-    .highlight-box a {
-        color: white;
-        text-decoration: none;
-    }
-    .social-links a {
-        display: inline-block;
-        margin: 5px 0;
-        color: white;
-        text-decoration: none;
-    }
-    .nav-links {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        font-size: 14px;
-        letter-spacing: 2px;
-        opacity: 0.8;
-        text-align: center;
-        margin-bottom: 60px;
-    }
+
+}
+
 </style>
+
 </head>
 
 <body>
 
-<h1>CONTACTOS</h1>
+<!-- LOGO -->
+<img src="logoasifim.png"
+alt="ASIFIM"
+class="logo">
 
-<p>
-Contactanos directamente en:
-</p>
-
-
-
-<!-- CONTACTO -->
-<div class="highlight-box">
-    <b>Contacto institucional</b><br>
-    📧 <a href="mailto:asifimchile@gmail.com">asifimchile@gmail.com</a><br><br>
-    <b>WhatsApp</b><br>
-    📲 Carlos Quezada Müller · <a href="https://wa.me/56978105685" target="_blank">+56 9 7810 5685</a><br>
-    📲 David Quezada Molina · <a href="https://wa.me/56932491679" target="_blank">+56 9 3249 1679</a>
+<!-- SUPERIOR -->
+<div class="top-subtitle">
+Contacto · Actividades · Asesorías
 </div>
 
-<!-- REDES SOCIALES -->
-<div class="highlight-box social-links">
-    <b>Redes sociales oficiales</b><br><br>
-    <a href="https://www.tiktok.com/@arte.incoherente" target="_blank">
+<!-- TITULO -->
+<h1>CONTACTOS</h1>
+
+<!-- INTRO -->
+<div class="subtitle">
+
+ASIFIM desarrolla actividades vinculadas al bienestar,
+la autodisciplina,
+la creatividad,
+la exploración consciente
+y el desarrollo humano integral.
+
+<br><br>
+
+También realiza procesos de acompañamiento,
+asesoría,
+formación
+y actividades experienciales
+para personas,
+equipos
+y organizaciones.
+
+</div>
+
+<!-- CONTACTO -->
+<div class="section">
+
+    <div class="section-title">
+    Contacto Institucional
+    </div>
+
+    <div class="contact-item">
+        📧
+        <a href="mailto:asifimchile@gmail.com">
+        asifimchile@gmail.com
+        </a>
+    </div>
+
+</div>
+
+<!-- WHATSAPP -->
+<div class="section">
+
+    <div class="section-title">
+    WhatsApp
+    </div>
+
+    <div class="contact-item">
+        📲 Carlos Quezada Müller<br>
+        <a href="https://wa.me/56978105685" target="_blank">
+        +56 9 7810 5685
+        </a>
+    </div>
+
+    <div class="contact-item">
+        📲 David Quezada Molina<br>
+        <a href="https://wa.me/56932491679" target="_blank">
+        +56 9 3249 1679
+        </a>
+    </div>
+
+</div>
+
+<!-- REDES -->
+<div class="section">
+
+    <div class="section-title">
+    Redes Oficiales
+    </div>
+
+    <div class="contact-item">
+        <a href="https://www.tiktok.com/@arte.incoherente" target="_blank">
         TikTok · Carlos Quezada Müller
-    </a><br>
-    <a href="https://www.tiktok.com/@psi.magia" target="_blank">
+        </a>
+    </div>
+
+    <div class="contact-item">
+        <a href="https://www.tiktok.com/@psi.magia" target="_blank">
         TikTok · David Quezada Molina
-    </a><br>
+        </a>
+    </div>
 
-      <a href="https://www.instagram.com/carlosquezadamuller/" target="_blank">
+    <div class="contact-item">
+        <a href="https://www.instagram.com/carlosquezadamuller/" target="_blank">
         Instagram · Carlos Quezada Müller
-    </a><br>
-    <a href="https://www.instagram.com/mialtar.magico/" target="_blank">
-        Instagram · David Quezada Molina
+        </a>
+    </div>
+
+</div>
+
+<!-- INFO -->
+<div class="info">
+
+Las actividades y contenidos de ASIFIM
+se desarrollan desde una perspectiva
+práctica,
+experiencial
+y orientada a la autonomía personal.
+
+<br><br>
+
+Cada proceso es abordado de manera contextual,
+respetando la individualidad,
+los límites
+y las necesidades particulares
+de cada persona o grupo.
+
+</div>
+
+<!-- BOTONES -->
+<div class="buttons">
+
+    <a href="explorar.html" class="btn">
+        ← Explorar ASIFIM
     </a>
-    
-</div>  
 
-<hr>
+    <a href="index.html" class="btn">
+        Inicio
+    </a>
 
-
-<!-- NAVEGACION -->
-<div style="display:flex; gap:40px; font-size:12px; letter-spacing:2px; opacity:0.6;">
-  <a href="explorar.html" style="color:white; text-decoration:none;">← Explorar ASIFIM</a>
-  </div>
-
-
+</div>
 
 </body>
 </html>
