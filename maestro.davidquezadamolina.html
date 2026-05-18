@@ -25,7 +25,7 @@ body{
 
 .container{
     width:100%;
-    max-width:920px;
+    max-width:1280px;
     margin:auto;
     padding:50px 20px 80px 20px;
     box-sizing:border-box;
@@ -67,6 +67,9 @@ h1{
 
 .section{
     margin-top:75px;
+    max-width:980px;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .section h2{
@@ -90,7 +93,9 @@ p{
     line-height:2;
 }
 
-/* SWIPER */
+/* =========================
+   SWIPER GENERAL
+========================= */
 
 .swiper-slide{
     display:flex;
@@ -98,79 +103,113 @@ p{
     align-items:center;
 }
 
-/* CARRUSEL PRINCIPAL */
+/* =========================
+   CARRUSEL PRINCIPAL
+========================= */
 
 .swiper-main{
     width:100%;
-    height:360px;
-    margin-bottom:60px;
+    height:420px;
+    margin-bottom:70px;
 }
 
 .swiper-main img{
     width:100%;
     height:100%;
-    object-fit:contain;
-    border-radius:10px;
+    object-fit:cover;
+    border-radius:14px;
 }
 
-/* CERTIFICADOS HORIZONTALES */
+/* =========================
+   CERTIFICADOS
+========================= */
 
-.swiper-horizontal{
+.swiper-certificates{
     width:100%;
-    max-width:760px;
-    height:340px;
-    margin:60px auto;
+    max-width:1280px;
+    margin:80px auto;
+    overflow:hidden;
 }
 
-.swiper-horizontal img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    border-radius:10px;
-    background:#111;
-    padding:10px;
-    box-sizing:border-box;
-}
-
-/* CERTIFICADOS VERTICALES */
-
-.swiper-vertical{
-    width:100%;
-    max-width:760px;
-    margin:60px auto;
-}
-
-.swiper-vertical .swiper-slide{
+.swiper-certificates .swiper-slide{
     display:flex;
     justify-content:center;
     align-items:center;
-    min-height:760px;
+    padding:20px 0;
 }
 
-.swiper-vertical img{
-    width:auto;
-    max-width:100%;
-    max-height:720px;
+.certificate-frame{
+
+    width:100%;
+    height:78vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#0d0d0d;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    transition:0.35s;
+}
+
+.certificate-frame:hover{
+    border-color:rgba(255,255,255,0.18);
+    transform:scale(1.005);
+}
+
+.certificate-frame img{
+
+    width:100%;
+    height:100%;
+
     object-fit:contain;
-    border-radius:10px;
-    background:#111;
-    padding:10px;
-    box-sizing:border-box;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    transition:0.3s;
 }
 
-/* FRASE */
+.certificate-frame img:hover{
+    opacity:0.96;
+}
+
+/* PAGINACION */
+
+.swiper-pagination-bullet{
+    background:#777;
+    opacity:0.5;
+}
+
+.swiper-pagination-bullet-active{
+    background:#fff;
+    opacity:1;
+}
+
+/* =========================
+   FRASE
+========================= */
 
 .quote{
-    max-width:760px;
-    margin:80px auto;
+    max-width:860px;
+    margin:90px auto;
     text-align:center;
-    font-size:18px;
+    font-size:20px;
     line-height:2;
     opacity:0.72;
     font-style:italic;
 }
 
-/* BOTONES */
+/* =========================
+   BOTONES
+========================= */
 
 .buttons{
     display:flex;
@@ -204,7 +243,72 @@ p{
     gap:18px;
 }
 
-/* MOBILE */
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,0.95);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:999999;
+
+    padding:30px;
+
+    box-sizing:border-box;
+}
+
+.lightbox.active{
+    display:flex;
+}
+
+.lightbox img{
+
+    max-width:95vw;
+    max-height:95vh;
+
+    object-fit:contain;
+
+    border-radius:10px;
+
+    box-shadow:0 0 40px rgba(0,0,0,0.8);
+}
+
+.lightbox-close{
+
+    position:absolute;
+
+    top:18px;
+    right:25px;
+
+    color:white;
+
+    font-size:34px;
+
+    cursor:pointer;
+
+    opacity:0.75;
+
+    transition:0.3s;
+}
+
+.lightbox-close:hover{
+    opacity:1;
+    transform:scale(1.08);
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:768px){
 
@@ -216,21 +320,17 @@ p{
         height:260px;
     }
 
-    .swiper-horizontal{
-        height:240px;
-    }
-
-    .swiper-vertical .swiper-slide{
-        min-height:540px;
-    }
-
-    .swiper-vertical img{
-        max-height:500px;
+    .certificate-frame{
+        height:62vh;
     }
 
     p{
         font-size:15px;
         line-height:1.85;
+    }
+
+    .quote{
+        font-size:17px;
     }
 
 }
@@ -319,142 +419,81 @@ p{
 
         </p>
 
-        <p>
-
-        Desde temprana edad se desarrolla en disciplinas marciales
-        y prácticas internas como
-        Qigong,
-        Tai Chi Chuan,
-        Sanda,
-        Qin Na,
-        Muay Thai
-        y Kung Fu Interno,
-        integrando una comprensión práctica
-        del cuerpo,
-        la percepción,
-        la disciplina
-        y el comportamiento humano.
-
-        </p>
-
-        <p>
-
-        Paralelamente desarrolla una línea de exploración psíquica,
-        simbólica y experiencial orientada al estudio
-        de la conciencia,
-        los estados perceptivos
-        y las dinámicas profundas
-        que influyen en las decisiones,
-        relaciones
-        y procesos humanos.
-
-        </p>
-
     </div>
 
-    <!-- EXPLORACION -->
+    <!-- CERTIFICADOS -->
 
-    <div class="section">
-
-        <h2>Exploración Contemporánea</h2>
-
-        <p>
-
-        Su trabajo representa la dimensión contemporánea de ASIFIM:
-        la aplicación del método en áreas como
-        creatividad,
-        comunicación,
-        bienestar,
-        empresa,
-        cultura organizacional
-        y desarrollo humano.
-
-        </p>
-
-        <p>
-
-        Integra formación en administración de empresas,
-        programación Full Stack,
-        diseño de sistemas,
-        gamificación
-        y pensamiento estratégico,
-        junto con más de dos décadas
-        de exploración esotérica,
-        terapéutica,
-        simbólica
-        y experiencial.
-
-        </p>
-
-        <p>
-
-        A esto se suma una fuerte base autodidacta
-        en teoría de sistemas,
-        matemática,
-        creatividad aplicada,
-        PNL,
-        Design Thinking,
-        percepción humana
-        y diseño de experiencias transformativas.
-
-        </p>
-
-    </div>
-
-    <!-- CERTIFICADOS HORIZONTALES -->
-
-    <div class="swiper swiper-horizontal">
+    <div class="swiper swiper-certificates">
 
         <div class="swiper-wrapper">
 
-            <div class="swiper-slide"><img src="certificado_CDQM_01.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_02.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_03.jpg"></div>
-            
-            <div class="swiper-slide"><img src="certificado_CDQM_04.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_05.jpg"></div>
+            <div class="swiper-slide">
+                <div class="certificate-frame">
+                    <img src="certificado_CDQM_01.jpg" class="zoomable">
+                </div>
+            </div>
 
-           
-            
-            <div class="swiper-slide"><img src="certificado_CDQM_07.jpg"></div>
+            <div class="swiper-slide">
+                <div class="certificate-frame">
+                    <img src="certificado_CDQM_02.jpg" class="zoomable">
+                </div>
+            </div>
 
-            <div class="swiper-slide"><img src="certificado_CDQM_08.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_09.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_10.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_11.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_12.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_13.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_14.jpg"></div>
-            
-            <div class="swiper-slide"><img src="certificado_CDQM_15.jpg"></div>
+            <div class="swiper-slide">
+                <div class="certificate-frame">
+                    <img src="certificado_CDQM_03.jpg" class="zoomable">
+                </div>
+            </div>
 
-            <div class="swiper-slide"><img src="certificado_CDQM_16.jpg"></div>
-            
-            <div class="swiper-slide"><img src="certificado_CDQM_17.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_18.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_19.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_20.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_21.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_22.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_23.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_24.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_25.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_26.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_27.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_28.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_29.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_30.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_31.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_32.jpg"></div>
-            <div class="swiper-slide"><img src="certificado_CDQM_33.jpg"></div>
+            <div class="swiper-slide">
+                <div class="certificate-frame">
+                    <img src="certificado_CDQM_04.jpg" class="zoomable">
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="certificate-frame">
+                    <img src="certificado_CDQM_05.jpg" class="zoomable">
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="certificate-frame">
+                    <img src="certificado_CDQM_06.jpg" class="zoomable">
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="certificate-frame">
+                    <img src="certificado_CDQM_07.jpg" class="zoomable">
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="certificate-frame">
+                    <img src="certificado_CDQM_08.jpg" class="zoomable">
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="certificate-frame">
+                    <img src="certificado_CDQM_09.jpg" class="zoomable">
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="certificate-frame">
+                    <img src="certificado_CDQM_10.jpg" class="zoomable">
+                </div>
+            </div>
+
+            <!-- AGREGA LOS DEMÁS SIGUIENDO EL MISMO FORMATO -->
 
         </div>
 
         <div class="swiper-pagination"></div>
 
     </div>
-
-  
 
     <!-- ARTE -->
 
@@ -475,84 +514,6 @@ p{
         comunicación,
         provocación consciente
         y transformación humana.
-
-        </p>
-
-        <p>
-
-        Esta dimensión se vincula directamente
-        con procesos de gamificación,
-        diseño de experiencias
-        y transmisión pedagógica,
-        permitiendo traducir estructuras complejas
-        en formatos prácticos,
-        experienciales,
-        simbólicos
-        y emocionalmente significativos.
-
-        </p>
-
-    </div>
-
-    <!-- LINEAS -->
-
-    <div class="section">
-
-        <h2>Líneas de Acción</h2>
-
-        <p>
-
-        <strong>DESARROLLO HUMANO Y AUTODISCIPLINA</strong><br>
-
-        Procesos orientados a fortalecer claridad,
-        creatividad,
-        coherencia,
-        criterio,
-        dirección personal
-        y soberanía individual.
-
-        </p>
-
-        <p>
-
-        <strong>ASESORÍA ESTRATÉGICA Y CULTURA ORGANIZACIONAL</strong><br>
-
-        Procesos orientados a fortalecer identidad,
-        comunicación,
-        liderazgo,
-        creatividad
-        y coherencia interna en equipos,
-        emprendimientos
-        y organizaciones humanas.
-
-        </p>
-
-        <p>
-
-        <strong>FORMACIÓN HOLÍSTICA Y SIMBÓLICA</strong><br>
-
-        Tarot,
-        lectura áurica,
-        simbolismo,
-        Qi Gong,
-        Tai Chi,
-        meditación,
-        percepción consciente
-        y exploración psíquica aplicada al desarrollo personal.
-
-        </p>
-
-        <p>
-
-        <strong>CREATIVIDAD Y EXPERIENCIAS</strong><br>
-
-        Diseño de actividades,
-        dinámicas,
-        experiencias inmersivas
-        y herramientas orientadas
-        al aprendizaje,
-        integración
-        y transformación consciente.
 
         </p>
 
@@ -582,27 +543,6 @@ p{
 
     </div>
 
-    <!-- SENTIDO -->
-
-    <div class="section">
-
-        <h2>Sentido</h2>
-
-        <p>
-
-        Su trabajo busca integrar tradición
-        y contemporaneidad,
-        manteniendo como eje central
-        la autonomía,
-        la consciencia,
-        la creatividad
-        y el valor irreductible
-        de la individualidad humana.
-
-        </p>
-
-    </div>
-
     <!-- NAV -->
 
     <div class="footer-nav">
@@ -619,11 +559,25 @@ p{
 
 </div>
 
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+
+    <div class="lightbox-close" id="lightboxClose">
+        ✕
+    </div>
+
+    <img id="lightboxImg">
+
+</div>
+
 <!-- SWIPER -->
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 <script>
+
+/* MAIN */
 
 new Swiper('.swiper-main',{
 
@@ -641,36 +595,68 @@ new Swiper('.swiper-main',{
 
 });
 
-new Swiper('.swiper-horizontal',{
+/* CERTIFICADOS */
 
-    loop:true,
-
-    autoplay:{
-        delay:3200,
-        disableOnInteraction:false
-    },
-
-    pagination:{
-        el:'.swiper-horizontal .swiper-pagination',
-        clickable:true
-    }
-
-});
-
-new Swiper('.swiper-vertical',{
+new Swiper('.swiper-certificates',{
 
     loop:true,
 
     autoHeight:true,
 
+    centeredSlides:true,
+
     autoplay:{
-        delay:3400,
+        delay:4200,
         disableOnInteraction:false
     },
 
     pagination:{
-        el:'.swiper-vertical .swiper-pagination',
+        el:'.swiper-certificates .swiper-pagination',
         clickable:true
+    }
+
+});
+
+/* LIGHTBOX */
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const closeBtn = document.getElementById('lightboxClose');
+
+document.querySelectorAll('.zoomable').forEach(img=>{
+
+    img.addEventListener('click',()=>{
+
+        lightbox.classList.add('active');
+
+        lightboxImg.src = img.src;
+
+    });
+
+});
+
+closeBtn.addEventListener('click',()=>{
+
+    lightbox.classList.remove('active');
+
+});
+
+lightbox.addEventListener('click',(e)=>{
+
+    if(e.target === lightbox){
+
+        lightbox.classList.remove('active');
+
+    }
+
+});
+
+document.addEventListener('keydown',(e)=>{
+
+    if(e.key === 'Escape'){
+
+        lightbox.classList.remove('active');
+
     }
 
 });
