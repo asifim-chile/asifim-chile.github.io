@@ -1,37 +1,67 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Exploración Contemporánea | ASIFIM</title>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+<title>David Quezada Molina — ASIFIM</title>
+
+<meta name="description"
+content="David Quezada Molina — Dirección contemporánea de ASIFIM. Desarrollo humano, creatividad, empresa, simbolismo y exploración consciente.">
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
 
 <style>
+
 body{
     margin:0;
-    background:black;
-    color:white;
+    background:#000;
+    color:#fff;
     font-family:Arial, Helvetica, sans-serif;
 }
 
 .container{
-    max-width:900px;
+    width:100%;
+    max-width:980px;
     margin:auto;
-    padding:60px 20px;
+    padding:50px 20px 80px 20px;
+    box-sizing:border-box;
+}
+
+.logo{
+    width:150px;
+    margin:0 auto 28px auto;
+    display:block;
+    opacity:0.92;
+}
+
+.top-subtitle{
+    text-align:center;
+    font-size:13px;
+    letter-spacing:3px;
+    opacity:0.55;
+    margin-bottom:18px;
+    text-transform:uppercase;
 }
 
 h1{
-    font-size:42px;
+    font-size:48px;
     letter-spacing:3px;
-    margin-bottom:10px;
+    margin:0 0 16px 0;
+    text-align:center;
 }
 
 .subtitle{
-    font-size:16px;
+    text-align:center;
+    font-size:14px;
     letter-spacing:2px;
-    opacity:0.7;
-    margin-bottom:40px;
+    opacity:0.65;
+    margin-bottom:55px;
+    text-transform:uppercase;
+    line-height:1.7;
 }
 
 .section{
@@ -39,79 +69,133 @@ h1{
 }
 
 .section h2{
-    font-size:24px;
+    font-size:26px;
     letter-spacing:2px;
-    margin-bottom:20px;
-    border-bottom:1px solid #333;
-    padding-bottom:10px;
+    margin-bottom:25px;
+    border-bottom:1px solid rgba(255,255,255,0.15);
+    padding-bottom:12px;
 }
 
 p{
     font-size:16px;
-    line-height:1.7;
-    opacity:0.9;
-    margin-bottom:20px;
+    line-height:1.95;
+    opacity:0.86;
+    margin-bottom:26px;
 }
 
-/* 🔹 SLIDES CENTRADOS (IMPORTANTE) */
+.highlight{
+    font-size:18px;
+    opacity:0.96;
+}
+
 .swiper-slide{
     display:flex;
     justify-content:center;
     align-items:center;
 }
 
-/* 🔹 CARRUSEL PRINCIPAL */
 .swiper-main{
-    height:320px;
+    height:360px;
+    margin-bottom:60px;
 }
 
 .swiper-main img{
     width:100%;
     height:100%;
     object-fit:contain;
-    border-radius:12px;
+    border-radius:10px;
 }
 
-/* 🔹 VERTICAL (certificados largos) */
-.swiper-vertical{
-    height:500px;
-}
-
-.swiper-vertical img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-    border-radius:12px;
-}
-
-/* 🔹 HORIZONTAL (certificados anchos) */
 .swiper-horizontal{
-    height:320px;
+    height:340px;
+    margin-top:40px;
 }
 
 .swiper-horizontal img{
     width:100%;
     height:100%;
     object-fit:contain;
-    border-radius:12px;
+    border-radius:10px;
 }
 
-.block{
-    margin-bottom:30px;
+.swiper-vertical{
+    height:560px;
+    margin-top:50px;
 }
 
-.footer{
-    margin-top:90px;
+.swiper-vertical img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    border-radius:10px;
+}
+
+.quote{
+    max-width:760px;
+    margin:70px auto;
     text-align:center;
-    font-size:12px;
-    letter-spacing:2px;
-    opacity:0.6;
+    font-size:15px;
+    line-height:1.9;
+    opacity:0.62;
+    font-style:italic;
 }
 
-a{
-    color:white;
-    text-decoration:none;
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:18px;
+    margin-top:50px;
 }
+
+.btn{
+    text-decoration:none;
+    color:#fff;
+    border:1px solid rgba(255,255,255,0.18);
+    padding:16px 24px;
+    font-size:13px;
+    letter-spacing:1px;
+    opacity:0.82;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#fff;
+    color:#000;
+}
+
+.footer-nav{
+    margin-top:80px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:18px;
+}
+
+@media(max-width:768px){
+
+    h1{
+        font-size:38px;
+    }
+
+    .swiper-main{
+        height:260px;
+    }
+
+    .swiper-horizontal{
+        height:240px;
+    }
+
+    .swiper-vertical{
+        height:420px;
+    }
+
+    p{
+        font-size:15px;
+    }
+
+}
+
 </style>
 </head>
 
@@ -119,14 +203,29 @@ a{
 
 <div class="container">
 
-    <h1>David<br>Quezada Molina</h1>
+    <!-- LOGO -->
+    <img src="logoasifim.png"
+    alt="ASIFIM"
+    class="logo">
+
+    <!-- TITULO -->
+    <div class="top-subtitle">
+        Exploración Contemporánea · Dirección · ASIFIM
+    </div>
+
+    <h1>
+        David<br>Quezada Molina
+    </h1>
+
     <div class="subtitle">
-        Director · Administrador · ASIFIM
+        Desarrollo Humano · Creatividad · Empresa · Simbolismo
     </div>
 
     <!-- CARRUSEL -->
     <div class="swiper swiper-main">
+
         <div class="swiper-wrapper">
+
             <div class="swiper-slide"><img src="cd01.jpg"></div>
             <div class="swiper-slide"><img src="cd02.jpg"></div>
             <div class="swiper-slide"><img src="cd03.jpg"></div>
@@ -140,48 +239,111 @@ a{
             <div class="swiper-slide"><img src="cd11.jpg"></div>
             <div class="swiper-slide"><img src="cd12.jpg"></div>
             <div class="swiper-slide"><img src="cd13.jpg"></div>
+
         </div>
+
         <div class="swiper-pagination"></div>
+
     </div>
 
     <!-- ROL -->
     <div class="section">
-        <h2>Rol y Continuidad</h2>
 
-        <p><strong>David Quezada Molina</strong> es el actual Director, Administrador y dueño legal de ASIFIM SpA.</p>
+        <h2>Continuidad y Dirección</h2>
 
-        <p>Asumió este rol formalmente el año 2019, tras finalizar su formación en <strong>ADMINISTRACIÓN DE EMPRESAS</strong>, como continuidad orgánica del proceso fundacional iniciado en 1984.</p>
+        <p class="highlight">
 
-        <p>Su formación se inicia desde la infancia bajo la guía directa de su entorno familiar, desarrollándose en disciplinas marciales como <strong>WUSHU, KUNG FU INTERNO, QIN NA, SANDA, KICK BOXING y MUAY THAI</strong>, integrando desde temprana edad una comprensión práctica del cuerpo, la energía y la disciplina.</p>
+        David Quezada Molina es el actual Director,
+        Administrador y dueño legal de ASIFIM SpA,
+        continuando el proceso iniciado en 1984.
 
-        <p>En paralelo, profundiza en las artes internas a través de su formación como practicante y posteriormente instructor en <strong>QIGONG</strong>, así como en <strong>TAI CHI CHUAN ESTILO YANG</strong>, disciplina transmitida por su madre, la Maestra <strong>ANA MOLINA VARGAS</strong>, pionera del estilo en Chile, consolidando una base sólida en el trabajo energético, la respiración y la conciencia corporal.</p>
+        </p>
 
-        <p>A partir de los 12 años, inicia de forma espontánea y experiencial su desarrollo psíquico, comenzando con prácticas de <strong>TELEKINESIS</strong> y <strong>VISIÓN REMOTA</strong>, expandiéndose posteriormente hacia fenómenos como viajes astrales, telepatía y lectura áurica, configurando una línea de exploración directa en los estados no ordinarios de percepción.</p>
+        <p>
 
-        <p>Desde el año 2003, profundiza en el estudio y práctica de sistemas de magia esotérica, incluyendo <strong>HERMETISMO, CHAOS MAGIC, MAGICK, WICCA</strong> y otras corrientes, integrando estas disciplinas con experiencias de canalización y trabajo con entidades espirituales desde un enfoque práctico y exploratorio.</p>
+        Su formación integra disciplinas corporales,
+        desarrollo humano, exploración simbólica,
+        creatividad, emprendimiento y sistemas contemporáneos.
 
-        <p>Posteriormente, a partir de experiencias de exploración profunda de la conciencia —incluyendo una <strong>ECM (Experiencia Cercana a la Muerte)</strong> y procesos de exploración con estados ampliados mediante prácticas psicodélicas— se consolida la activación de su capacidad de <strong>MEDIUMNIDAD</strong>, la cual continúa desarrollándose de forma progresiva.</p>
+        </p>
 
-        <p>En el año 2023, profundiza y refina estas habilidades mediante trabajo sistemático en prácticas de magia aplicada junto a su entorno cercano de formación, destacando la colaboración con su mejor amiga y maestra en magia natural, proceso que impulsa significativamente el fortalecimiento de la <strong>MEDIUMNIDAD</strong> y el aumento de su capacidad de <strong>PRECOGNICIÓN</strong>.</p>
+        <p>
 
-        <p>De forma paralela, integra su exploración en el ámbito tecnológico, desarrollando una visión de <strong>MAGIA APLICADA A SISTEMAS INFORMÁTICOS</strong>, articulando pensamiento simbólico, estructural y programación, en conjunto con procesos de aprendizaje colaborativo en el área del desarrollo digital, incluyendo el trabajo conjunto con su hermano en la exploración de estos sistemas.</p>
+        Desde temprana edad se desarrolla en artes marciales
+        y disciplinas internas como
+        Qigong,
+        Tai Chi Chuan,
+        Sanda,
+        Qin Na,
+        Muay Thai
+        y Kung Fu interno,
+        integrando una comprensión práctica
+        del cuerpo,
+        la disciplina
+        y la percepción consciente.
 
-        <p>Desde entonces, su labor se ha centrado en resguardar la coherencia estructural del sistema ASIFIM, permitiendo su expansión hacia nuevas formas de exploración contemporánea sin perder su raíz disciplinaria, metodológica y tradicional.</p>
+        </p>
+
+        <p>
+
+        Paralelamente,
+        desarrolla una línea de exploración psíquica y simbólica
+        orientada al estudio de la percepción,
+        los estados ampliados de conciencia
+        y las estructuras internas del comportamiento humano.
+
+        </p>
+
     </div>
 
-    <!-- EXPLORACIÓN -->
+    <!-- EXPLORACION -->
     <div class="section">
+
         <h2>Exploración Contemporánea</h2>
 
-        <p>Su trabajo representa la dimensión contemporánea de ASIFIM: la aplicación del método en contextos actuales como el emprendimiento, la empresa, la tecnología, el desarrollo humano y la organización de sistemas complejos.</p>
+        <p>
 
-        <p>Integra una formación técnica en administración de empresas, <strong>PROGRAMACIÓN FULL STACK MEAN</strong> y desarrollo digital, junto con un camino de más de dos décadas en disciplinas esotéricas, holísticas, terapéuticas y simbólicas, operando desde una mirada integral, crítica y estructurada.</p>
+        Su trabajo representa la dimensión contemporánea de ASIFIM:
+        la aplicación del método en contextos actuales
+        relacionados con empresa,
+        creatividad,
+        tecnología,
+        comunicación,
+        bienestar
+        y desarrollo humano.
 
-        <p>A esto se suma su desarrollo autodidacta en <strong>MATEMÁTICA, TEORÍA DE SISTEMAS, GAMIFICACIÓN, PNL y DESIGN THINKING</strong>, así como su base en <strong>INGENIERÍA FÍSICA (USACH)</strong>, la cual, pese a no haber sido finalizada, marcó profundamente su forma de comprender la realidad desde modelos estructurales y sistémicos.</p>
+        </p>
+
+        <p>
+
+        Integra formación en administración de empresas,
+        programación Full Stack,
+        diseño de sistemas,
+        gamificación
+        y pensamiento estratégico,
+        junto con más de dos décadas
+        de exploración esotérica,
+        simbólica y terapéutica.
+
+        </p>
+
+        <p>
+
+        A esto se suma una fuerte base autodidacta
+        en teoría de sistemas,
+        matemática,
+        creatividad aplicada,
+        PNL,
+        Design Thinking
+        y modelos de observación estructural.
+
+        </p>
+
     </div>
 
-    <!-- CARRUSEL HORIZONTAL -->
-    <div class="swiper swiper-horizontal" style="width:100%; max-width:560px; height:320px; margin:50px auto;">
+    <!-- CERTIFICADOS HORIZONTALES -->
+    <div class="swiper swiper-horizontal">
+
         <div class="swiper-wrapper">
 
             <div class="swiper-slide"><img src="certificado_CDQM_04.jpg"></div>
@@ -207,19 +369,20 @@ a{
             <div class="swiper-slide"><img src="certificado_CDQM_33.jpg"></div>
 
         </div>
+
         <div class="swiper-pagination"></div>
+
     </div>
 
-    <br><br>
-
-    <!-- CARRUSEL VERTICAL -->
+    <!-- CERTIFICADOS VERTICALES -->
     <div class="swiper swiper-vertical">
+
         <div class="swiper-wrapper">
 
             <div class="swiper-slide"><img src="certificado_CDQM_01.jpg"></div>
-           <div class="swiper-slide"><img src="certificado_CDQM_02.jpg"></div>
+            <div class="swiper-slide"><img src="certificado_CDQM_02.jpg"></div>
             <div class="swiper-slide"><img src="certificado_CDQM_03.jpg"></div>
-           <div class="swiper-slide"><img src="certificado_CDQM_08.jpg"></div>
+            <div class="swiper-slide"><img src="certificado_CDQM_08.jpg"></div>
             <div class="swiper-slide"><img src="certificado_CDQM_09.jpg"></div>
             <div class="swiper-slide"><img src="certificado_CDQM_10.jpg"></div>
             <div class="swiper-slide"><img src="certificado_CDQM_11.jpg"></div>
@@ -229,69 +392,154 @@ a{
             <div class="swiper-slide"><img src="certificado_CDQM_16.jpg"></div>
 
         </div>
-        <div class="swiper-pagination"></div>
-    </div>
 
-    <br><br>
+        <div class="swiper-pagination"></div>
+
+    </div>
 
     <!-- ARTE -->
     <div class="section">
-        <h2>Dimensión Artística y Creativa</h2>
 
-        <p>De manera transversal, su desarrollo incluye una fuerte línea artística, comprendida no como un ámbito separado, sino como una extensión práctica de su enfoque integrador.</p>
+        <h2>Dimensión Artística</h2>
 
-        <p>Se ha desarrollado como <strong>MÚSICO</strong> (guitarrista, cantante, compositor, bajista y baterista), así como en el dibujo, la pintura, la escritura y la expresión corporal a través de la danza.</p>
+        <p>
 
-        <p>Esta dimensión creativa se articula con su trabajo en <strong>GAMIFICACIÓN</strong> y diseño de experiencias, permitiéndole traducir estructuras complejas —tanto simbólicas como estratégicas— en formatos comprensibles, aplicables y experienciales.</p>
+        Su trabajo creativo integra música,
+        escritura,
+        dibujo,
+        pintura,
+        performance
+        y expresión corporal,
+        entendiendo el arte
+        como una herramienta de exploración,
+        comunicación
+        y transformación consciente.
+
+        </p>
+
+        <p>
+
+        Esta dimensión se vincula directamente
+        con procesos de gamificación,
+        diseño de experiencias
+        y transmisión pedagógica,
+        permitiendo traducir estructuras complejas
+        en formatos prácticos,
+        comprensibles
+        y experienciales.
+
+        </p>
+
     </div>
 
     <!-- LINEAS -->
     <div class="section">
+
         <h2>Líneas de Acción</h2>
 
-        <p><strong>ASESORÍA INTEGRAL DE NEGOCIOS</strong><br>
-        Optimización de emprendimientos y organizaciones desde una lectura estratégica, humana y sistémica.</p>
+        <p>
 
-        <p><strong>DESARROLLO PERSONAL Y AUTODISCIPLINA</strong><br>
-        Procesos orientados al fortalecimiento de la soberanía individual, claridad mental y coherencia entre propósito y acción.</p>
+        <strong>DESARROLLO HUMANO Y AUTODISCIPLINA</strong><br>
+        Procesos orientados a fortalecer claridad,
+        coherencia,
+        creatividad,
+        criterio
+        y soberanía individual.
 
-        <p><strong>LECTURA SISTÉMICA DE TALENTO</strong><br>
-        Apoyo en procesos de reclutamiento y conformación de equipos mediante lectura de campo, percepción áurica y visión sistémica aplicada a entornos organizacionales.</p>
+        </p>
 
-        <p><strong>TERAPIAS HOLÍSTICAS Y FORMACIÓN INTERNA</strong><br>
-        MASOTERAPIA ORIENTAL, MEDICINA TRADICIONAL CHINA, QI GONG, TAI CHI, LECTURA DE AURAS, TAROT, I CHING, SEXUALIDAD ESOTÉRICA y desarrollo ESOTÉRICO-PSÍQUICO aplicado al equilibrio personal y funcional.</p>
+        <p>
+
+        <strong>ASESORÍA ESTRATÉGICA Y CULTURA ORGANIZACIONAL</strong><br>
+        Acompañamiento en procesos de identidad,
+        comunicación,
+        creatividad,
+        visión
+        y desarrollo humano aplicado a equipos.
+
+        </p>
+
+        <p>
+
+        <strong>FORMACIÓN HOLÍSTICA Y SIMBÓLICA</strong><br>
+        Tarot,
+        lectura áurica,
+        simbolismo,
+        Qi Gong,
+        Tai Chi,
+        meditación,
+        percepción consciente
+        y exploración psíquica.
+
+        </p>
+
+        <p>
+
+        <strong>CREATIVIDAD Y EXPERIENCIAS</strong><br>
+        Diseño de actividades,
+        dinámicas,
+        formación experiencial
+        y herramientas de integración creativa.
+
+        </p>
+
     </div>
 
-    <br><br>
+    <!-- FRASE -->
+    <div class="quote">
 
-    <a href="psi-magia.html"
-        style="text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,0.4);padding:14px;font-size:16px;letter-spacing:1px;"
-        onmouseover="this.style.backgroundColor='#fff';this.style.color='#000';"
-        onmouseout="this.style.backgroundColor='transparent';this.style.color='#fff';">
-        PSI-MAGIA
-    </a>
+        “La creatividad,
+        la consciencia
+        y la autodisciplina
+        no son mundos separados:
+        son distintas formas
+        de ordenar la experiencia humana.”
 
-    <br><br><br><br>
+    </div>
 
-    <a href="servicios.CDQM.html"
-        style="text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,0.4);padding:14px;font-size:16px;letter-spacing:1px;"
-        onmouseover="this.style.backgroundColor='#fff';this.style.color='#000';"
-        onmouseout="this.style.backgroundColor='transparent';this.style.color='#fff';">
-        Servicios
-    </a>
+    <!-- BOTONES -->
+    <div class="buttons">
+
+        <a href="psi-magia.html" class="btn">
+            PSI · MAGIA
+        </a>
+
+        <a href="servicios.CDQM.html" class="btn">
+            Servicios
+        </a>
+
+    </div>
 
     <!-- SENTIDO -->
     <div class="section">
+
         <h2>Sentido</h2>
+
         <p>
-        Su labor no busca reemplazar métodos tradicionales, sino integrarlos, expandirlos y adaptarlos a las necesidades reales del presente, manteniendo como eje la autodisciplina consciente y el valor irreductible de la individualidad.
+
+        Su trabajo busca integrar tradición
+        y contemporaneidad,
+        manteniendo como eje central
+        la autonomía,
+        la consciencia
+        y el valor irreductible
+        de la individualidad.
+
         </p>
+
     </div>
 
     <!-- NAV -->
-    <div style="display:flex; gap:40px; font-size:12px; letter-spacing:2px; opacity:0.6;">
-      <a href="explorar.html">← Explorar ASIFIM</a>
-      <a href="superarte.html">SuperArte →</a>
+    <div class="footer-nav">
+
+        <a href="index.html" class="btn">
+            ← Inicio
+        </a>
+
+        <a href="superarte.html" class="btn">
+            SuperArte →
+        </a>
+
     </div>
 
 </div>
@@ -299,23 +547,43 @@ a{
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
 <script>
+
 new Swiper('.swiper-main',{
     loop:true,
-    autoplay:{ delay:3000, disableOnInteraction:false },
-    pagination:{ el:'.swiper-main .swiper-pagination', clickable:true }
-});
-
-new Swiper('.swiper-vertical',{
-    loop:true,
-    autoplay:{ delay:3000, disableOnInteraction:false },
-    pagination:{ el:'.swiper-vertical .swiper-pagination', clickable:true }
+    autoplay:{
+        delay:3000,
+        disableOnInteraction:false
+    },
+    pagination:{
+        el:'.swiper-main .swiper-pagination',
+        clickable:true
+    }
 });
 
 new Swiper('.swiper-horizontal',{
     loop:true,
-    autoplay:{ delay:3000, disableOnInteraction:false },
-    pagination:{ el:'.swiper-horizontal .swiper-pagination', clickable:true }
+    autoplay:{
+        delay:3200,
+        disableOnInteraction:false
+    },
+    pagination:{
+        el:'.swiper-horizontal .swiper-pagination',
+        clickable:true
+    }
 });
+
+new Swiper('.swiper-vertical',{
+    loop:true,
+    autoplay:{
+        delay:3400,
+        disableOnInteraction:false
+    },
+    pagination:{
+        el:'.swiper-vertical .swiper-pagination',
+        clickable:true
+    }
+});
+
 </script>
 
 </body>
