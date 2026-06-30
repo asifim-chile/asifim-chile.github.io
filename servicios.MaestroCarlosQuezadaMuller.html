@@ -86,27 +86,22 @@ h1{
 .hero{
     width:100%;
     max-width:1020px;
-    margin:auto;
-    margin-bottom:80px;
-    position:relative;
-}
+    margin:0 auto 80px auto;
+    min-height:320px;
 
-.hero img{
-    width:100%;
-    height:720px;
-    object-fit:cover;
-    object-position:center;
+    display:flex;
+    align-items:flex-end;
+
     border-radius:16px;
-    opacity:0.94;
+
+    background:
+        linear-gradient(to top, rgba(0,0,0,0.82), rgba(0,0,0,0.15)),
+        radial-gradient(circle at center, rgba(255,255,255,0.04), transparent 70%),
+        #111;
 }
 
 .hero-overlay{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(to top, rgba(0,0,0,0.82), rgba(0,0,0,0.15));
-    border-radius:16px;
-    display:flex;
-    align-items:flex-end;
+    width:100%;
     padding:45px;
     box-sizing:border-box;
 }
@@ -231,18 +226,18 @@ p{
         font-size:40px;
     }
 
-    .hero img{
-        height:460px;
-    }
+   .hero{
+    min-height:240px;
+}
 
-    .hero-overlay{
-        padding:28px;
-    }
+.hero-overlay{
+    padding:28px;
+}
 
-    .hero-overlay div{
-        font-size:15px;
-        line-height:1.85;
-    }
+.hero-overlay div{
+    font-size:15px;
+    line-height:1.85;
+}
 
     p{
         font-size:15px;
