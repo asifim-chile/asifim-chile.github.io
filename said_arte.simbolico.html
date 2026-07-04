@@ -84,6 +84,7 @@ h1{
     width:100%;
     max-width:980px;
     margin:auto;
+     margin-top:40px; 
     margin-bottom:70px;
     position:relative;
 }
@@ -101,12 +102,14 @@ h1{
 .hero-overlay{
     position:absolute;
     inset:0;
-    background:linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.15));
+    background:linear-gradient(to top, rgba(0,0,0,0.78), rgba(0,0,0,0.2));
     border-radius:16px;
     display:flex;
     align-items:flex-end;
     padding:40px;
     box-sizing:border-box;
+
+    overflow:hidden;   /* 👈 IMPORTANTE */
 }
 
 .hero-overlay div{
@@ -114,6 +117,9 @@ h1{
     font-size:18px;
     line-height:1.9;
     opacity:0.92;
+
+    max-height:260px;   /* 👈 evita que empuje todo */
+    overflow:auto;      /* scroll interno si crece */
 }
 
 /* SECCIONES */
