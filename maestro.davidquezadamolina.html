@@ -6,829 +6,608 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>David Quezada Molina — ASIFIM</title>
+<title>David Quezada Molina | Psíquico · Artista · Asesor | ASIFIM</title>
 
-<meta name="description"
-content="David Quezada Molina — Desarrollo humano, creatividad aplicada, cultura organizacional, simbolismo y exploración consciente.">
+<meta name="description" content="David Quezada Molina. Psíquico, artista y asesor. Exploración de la conciencia, creatividad aplicada, sistemas humanos y transformación personal.">
 
-<link rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css">
 
 <style>
 
-body{
-    margin:0;
-    background:#000;
-    color:#fff;
-    font-family:Arial, Helvetica, sans-serif;
+*{
+box-sizing:border-box;
 }
+
+body{
+
+margin:0;
+background:
+radial-gradient(circle at top,rgba(255,255,255,.08),transparent 35%),
+#000;
+
+color:white;
+font-family:Inter,Arial,sans-serif;
+
+}
+
 
 .container{
-    width:100%;
-    max-width:1280px;
-    margin:auto;
-    padding:50px 20px 80px 20px;
-    box-sizing:border-box;
+
+max-width:1200px;
+margin:auto;
+padding:50px 20px 100px;
+
 }
+
 
 .logo{
-    width:150px;
-    margin:0 auto 28px auto;
-    display:block;
-    opacity:0.92;
+
+display:block;
+width:150px;
+margin:auto;
+opacity:.9;
+
 }
 
-.top-subtitle{
-    text-align:center;
-    font-size:13px;
-    letter-spacing:3px;
-    opacity:0.55;
-    margin-bottom:18px;
-    text-transform:uppercase;
+
+.top{
+
+text-align:center;
+margin-top:25px;
+
 }
+
+
+.small{
+
+letter-spacing:4px;
+font-size:12px;
+opacity:.5;
+text-transform:uppercase;
+
+}
+
 
 h1{
-    font-size:48px;
-    letter-spacing:3px;
-    margin:0 0 16px 0;
-    text-align:center;
-    line-height:1.1;
+
+font-family:Cinzel,serif;
+font-size:52px;
+line-height:1.1;
+text-align:center;
+margin:20px 0;
+
 }
+
+
+.identity{
+
+text-align:center;
+font-size:20px;
+letter-spacing:3px;
+margin-bottom:15px;
+
+}
+
 
 .subtitle{
-    text-align:center;
-    font-size:14px;
-    letter-spacing:2px;
-    opacity:0.65;
-    margin-bottom:55px;
-    text-transform:uppercase;
-    line-height:1.7;
+
+text-align:center;
+opacity:.65;
+letter-spacing:2px;
+font-size:14px;
+line-height:2;
+
 }
+
 
 .section{
-    margin-top:75px;
-    max-width:980px;
-    margin-left:auto;
-    margin-right:auto;
+
+max-width:900px;
+margin:90px auto;
+
 }
 
-.section h2{
-    font-size:26px;
-    letter-spacing:2px;
-    margin-bottom:28px;
-    border-bottom:1px solid rgba(255,255,255,0.15);
-    padding-bottom:14px;
+
+h2{
+
+font-family:Cinzel,serif;
+font-size:28px;
+border-bottom:1px solid rgba(255,255,255,.15);
+padding-bottom:15px;
+
 }
+
 
 p{
-    font-size:16px;
-    line-height:1.95;
-    opacity:0.86;
-    margin-bottom:26px;
+
+font-size:17px;
+line-height:2;
+opacity:.85;
+
 }
+
 
 .highlight{
-    font-size:18px;
-    opacity:0.96;
-    line-height:2;
+
+font-size:21px;
+opacity:1;
+
 }
 
-/* =========================
-   SWIPER GENERAL
-========================= */
+
+/* CARRUSEL */
+
+
+.swiper{
+
+width:100%;
+height:70vh;
+margin:70px auto;
+
+}
+
 
 .swiper-slide{
-    display:flex;
-    justify-content:center;
-    align-items:center;
+
+display:flex;
+justify-content:center;
+align-items:center;
+background:#050505;
+border-radius:15px;
+overflow:hidden;
+
 }
 
-/* =========================
-   PRIMER CARRUSEL
-========================= */
 
-.swiper-main{
-    width:100%;
-    max-width:1180px;
-    height:78vh;
-    min-height:420px;
-    max-height:820px;
-    margin-bottom:70px;
+.swiper-slide img{
+
+width:100%;
+height:100%;
+object-fit:contain;
+
 }
 
-.swiper-main .swiper-slide{
 
-    background:#0d0d0d;
+/* CERTIFICADOS */
 
-    border-radius:14px;
 
-    overflow:hidden;
+.certificado{
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+cursor:pointer;
+
 }
 
-.swiper-main img{
 
-    width:100%;
-    height:100%;
+/* LIGHTBOX */
 
-    object-fit:contain;
-
-    object-position:center center;
-
-    background:#000;
-
-    user-select:none;
-}
-
-/* =========================
-   CERTIFICADOS
-========================= */
-
-.swiper-certificates{
-    width:100%;
-    max-width:1280px;
-    margin:80px auto;
-    overflow:hidden;
-}
-
-.swiper-certificates .swiper-slide{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px 0;
-}
-
-.certificate-frame{
-
-    width:100%;
-    height:78vh;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    background:#0d0d0d;
-
-    border:1px solid rgba(255,255,255,0.08);
-
-    border-radius:14px;
-
-    overflow:hidden;
-
-    transition:0.35s;
-}
-
-.certificate-frame:hover{
-    border-color:rgba(255,255,255,0.18);
-    transform:scale(1.005);
-}
-
-.certificate-frame img{
-
-    width:100%;
-    height:100%;
-
-    object-fit:contain;
-
-    object-position:center;
-
-    cursor:pointer;
-
-    user-select:none;
-
-    transition:0.3s;
-
-    background:#000;
-}
-
-/* PAGINACION */
-
-.swiper-pagination-bullet{
-    background:#777;
-    opacity:0.5;
-}
-
-.swiper-pagination-bullet-active{
-    background:#fff;
-    opacity:1;
-}
-
-/* =========================
-   FRASE
-========================= */
-
-.quote{
-    max-width:860px;
-    margin:90px auto;
-    text-align:center;
-    font-size:20px;
-    line-height:2;
-    opacity:0.72;
-    font-style:italic;
-}
-
-/* =========================
-   BOTONES
-========================= */
-
-.buttons{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:18px;
-    margin-top:55px;
-}
-
-.btn{
-    text-decoration:none;
-    color:#fff;
-    border:1px solid rgba(255,255,255,0.18);
-    padding:16px 24px;
-    font-size:13px;
-    letter-spacing:1px;
-    opacity:0.82;
-    transition:0.3s;
-}
-
-.btn:hover{
-    background:#fff;
-    color:#000;
-}
-
-.footer-nav{
-    margin-top:90px;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:18px;
-}
-
-/* =========================
-   LIGHTBOX
-========================= */
 
 .lightbox{
 
-    position:fixed;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.95);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:999;
 
-    inset:0;
-
-    background:rgba(0,0,0,0.95);
-
-    display:none;
-
-    justify-content:center;
-    align-items:center;
-
-    z-index:999999;
-
-    padding:30px;
-
-    box-sizing:border-box;
 }
+
 
 .lightbox.active{
-    display:flex;
+
+display:flex;
+
 }
+
 
 .lightbox img{
 
-    max-width:95vw;
-    max-height:95vh;
-
-    object-fit:contain;
-
-    border-radius:10px;
-
-    box-shadow:0 0 40px rgba(0,0,0,0.8);
-}
-
-.lightbox-close{
-
-    position:absolute;
-
-    top:18px;
-    right:25px;
-
-    color:white;
-
-    font-size:34px;
-
-    cursor:pointer;
-
-    opacity:0.75;
-
-    transition:0.3s;
-}
-
-.lightbox-close:hover{
-    opacity:1;
-    transform:scale(1.08);
-}
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:768px){
-
-    h1{
-        font-size:38px;
-    }
-
-    .swiper-main{
-        height:52vh;
-        min-height:280px;
-    }
-
-    .certificate-frame{
-        height:62vh;
-    }
-
-    p{
-        font-size:15px;
-        line-height:1.85;
-    }
-
-    .quote{
-        font-size:17px;
-    }
+max-width:95%;
+max-height:95%;
 
 }
+
+
+.close{
+
+position:absolute;
+top:20px;
+right:30px;
+font-size:35px;
+cursor:pointer;
+
+}
+
+
+/* BOTONES */
+
+
+.buttons{
+
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+
+}
+
+
+.btn{
+
+padding:15px 25px;
+border:1px solid rgba(255,255,255,.3);
+color:white;
+text-decoration:none;
+letter-spacing:2px;
+transition:.3s;
+
+}
+
+
+.btn:hover{
+
+background:white;
+color:black;
+
+}
+
+
+.quote{
+
+text-align:center;
+max-width:800px;
+margin:100px auto;
+font-size:24px;
+font-style:italic;
+opacity:.7;
+
+}
+
+
+
+@media(max-width:700px){
+
+h1{
+font-size:38px;
+}
+
+.swiper{
+height:45vh;
+}
+
+p{
+font-size:15px;
+}
+
+}
+
 
 </style>
 
 </head>
 
+
 <body>
+
 
 <div class="container">
 
-    <!-- LOGO -->
 
-    <img src="logoasifim.png"
-    alt="ASIFIM"
-    class="logo">
+<img src="logoasifim.png" class="logo">
 
-    <!-- TITULO -->
 
-    <div class="top-subtitle">
-        Creatividad · Estrategia Humana · Exploración Consciente
-    </div>
+<div class="top">
 
-    <h1>
-        David<br>Quezada Molina
-    </h1>
+<div class="small">
+C.D.Q.M · ASIFIM
+</div>
 
-    <div class="subtitle">
-        Desarrollo Humano · Cultura Organizacional · Creatividad Aplicada · Simbolismo
-    </div>
 
-    <!-- PRIMER CARRUSEL -->
+<h1>
+David<br>
+Quezada Molina
+</h1>
 
-    <div class="swiper swiper-main">
 
-        <div class="swiper-wrapper">
+<div class="identity">
+Psíquico · Artista · Asesor
+</div>
 
-            <div class="swiper-slide"><img src="cd01.jpg"></div>
-            <div class="swiper-slide"><img src="cd02.jpg"></div>
-            <div class="swiper-slide"><img src="cd03.jpg"></div>
-            <div class="swiper-slide"><img src="cd04.jpg"></div>
-            <div class="swiper-slide"><img src="cd05.jpg"></div>
-            <div class="swiper-slide"><img src="cd06.jpg"></div>
-            <div class="swiper-slide"><img src="cd07.jpg"></div>
-            <div class="swiper-slide"><img src="cd08.jpg"></div>
-            <div class="swiper-slide"><img src="cd09.jpg"></div>
-            <div class="swiper-slide"><img src="cd10.jpg"></div>
-            <div class="swiper-slide"><img src="cd11.jpg"></div>
-            <div class="swiper-slide"><img src="cd12.jpg"></div>
-            <div class="swiper-slide"><img src="cd13.jpg"></div>
 
-        </div>
+<div class="subtitle">
+Exploración de la conciencia · Creatividad aplicada · Sistemas humanos · Transformación
+</div>
 
-        <div class="swiper-pagination"></div>
-
-    </div>
-
-    <!-- CONTENIDO -->
-
-    <div class="section">
-
-        <h2>Continuidad y Dirección</h2>
-
-        <p class="highlight">
-
-        David Quezada Molina es el actual Director,
-        Administrador y dueño legal de ASIFIM SpA,
-        continuando el proceso iniciado en 1984
-        desde una mirada contemporánea,
-        integradora
-        y profundamente humana.
-
-        </p>
-
-        <p>
-
-        Su trabajo integra desarrollo humano,
-        creatividad,
-        lectura sistémica,
-        exploración simbólica
-        y estrategias contemporáneas de comunicación,
-        con foco en procesos de transformación personal,
-        cultura organizacional
-        y construcción de identidad.
-
-        </p>
-
-        <p>
-
-        Desde temprana edad se desarrolla en disciplinas marciales
-        y prácticas internas como
-        Qigong,
-        Tai Chi Chuan,
-        Sanda,
-        Qin Na,
-        Muay Thai
-        y Kung Fu Interno,
-        integrando una comprensión práctica
-        del cuerpo,
-        la percepción,
-        la disciplina
-        y el comportamiento humano.
-
-        </p>
-
-        <p>
-
-        Paralelamente desarrolla una línea de exploración psíquica,
-        simbólica y experiencial orientada al estudio
-        de la conciencia,
-        los estados perceptivos
-        y las dinámicas profundas
-        que influyen en las decisiones,
-        relaciones
-        y procesos humanos.
-
-        </p>
-
-    </div>
-
-    <!-- EXPLORACION -->
-
-    <div class="section">
-
-        <h2>Exploración Contemporánea</h2>
-
-        <p>
-
-        Su trabajo representa la dimensión contemporánea de ASIFIM:
-        la aplicación del método en áreas como
-        creatividad,
-        comunicación,
-        bienestar,
-        empresa,
-        cultura organizacional
-        y desarrollo humano.
-
-        </p>
-
-        <p>
-
-        Integra formación en administración de empresas,
-        programación Full Stack,
-        diseño de sistemas,
-        gamificación
-        y pensamiento estratégico,
-        junto con más de dos décadas
-        de exploración esotérica,
-        terapéutica,
-        simbólica
-        y experiencial.
-
-        </p>
-
-        <p>
-
-        A esto se suma una fuerte base autodidacta
-        en teoría de sistemas,
-        matemática,
-        creatividad aplicada,
-        PNL,
-        Design Thinking,
-        percepción humana
-        y diseño de experiencias transformativas.
-
-        </p>
-
-    </div>
-
-    <!-- CERTIFICADOS -->
-
-    <div class="swiper swiper-certificates">
-
-        <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-                <div class="certificate-frame">
-                    <img src="certificado_CDQM_01.jpg" class="zoomable">
-                </div>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="certificate-frame">
-                    <img src="certificado_CDQM_02.jpg" class="zoomable">
-                </div>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="certificate-frame">
-                    <img src="certificado_CDQM_03.jpg" class="zoomable">
-                </div>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="certificate-frame">
-                    <img src="certificado_CDQM_04.jpg" class="zoomable">
-                </div>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="certificate-frame">
-                    <img src="certificado_CDQM_05.jpg" class="zoomable">
-                </div>
-            </div>
-
-
-            <div class="swiper-slide">
-                <div class="certificate-frame">
-                    <img src="certificado_CDQM_07.jpg" class="zoomable">
-                </div>
-            </div>
-
-        </div>
-
-        <div class="swiper-pagination"></div>
-
-    </div>
-
-    <!-- ARTE -->
-
-    <div class="section">
-
-        <h2>Dimensión Artística</h2>
-
-        <p>
-
-        Su trabajo creativo integra música,
-        escritura,
-        dibujo,
-        pintura,
-        performance
-        y expresión corporal,
-        entendiendo el arte
-        como una herramienta de exploración,
-        comunicación,
-        provocación consciente
-        y transformación humana.
-
-        </p>
-
-        <p>
-
-        Esta dimensión se vincula directamente
-        con procesos de gamificación,
-        diseño de experiencias
-        y transmisión pedagógica,
-        permitiendo traducir estructuras complejas
-        en formatos prácticos,
-        experienciales,
-        simbólicos
-        y emocionalmente significativos.
-
-        </p>
-
-    </div>
-
-    <!-- LINEAS -->
-
-    <div class="section">
-
-        <h2>Líneas de Acción</h2>
-
-        <p>
-
-        <strong>DESARROLLO HUMANO Y AUTODISCIPLINA</strong><br>
-
-        Procesos orientados a fortalecer claridad,
-        creatividad,
-        coherencia,
-        criterio,
-        dirección personal
-        y soberanía individual.
-
-        </p>
-
-        <p>
-
-        <strong>ASESORÍA ESTRATÉGICA Y CULTURA ORGANIZACIONAL</strong><br>
-
-        Procesos orientados a fortalecer identidad,
-        comunicación,
-        liderazgo,
-        creatividad
-        y coherencia interna en equipos,
-        emprendimientos
-        y organizaciones humanas.
-
-        </p>
-
-        <p>
-
-        <strong>FORMACIÓN HOLÍSTICA Y SIMBÓLICA</strong><br>
-
-        Tarot,
-        lectura áurica,
-        simbolismo,
-        Qi Gong,
-        Tai Chi,
-        meditación,
-        percepción consciente
-        y exploración psíquica aplicada al desarrollo personal.
-
-        </p>
-
-        <p>
-
-        <strong>CREATIVIDAD Y EXPERIENCIAS</strong><br>
-
-        Diseño de actividades,
-        dinámicas,
-        experiencias inmersivas
-        y herramientas orientadas
-        al aprendizaje,
-        integración
-        y transformación consciente.
-
-        </p>
-
-    </div>
-
-    <!-- FRASE -->
-
-    <div class="quote">
-
-        “No enseño a obedecer sistemas.
-        Enseño a desarrollar criterio
-        para construirlos.”
-
-    </div>
-
-    <!-- BOTONES -->
-
-    <div class="buttons">
-
-        <a href="said_arte.simbolico.html" class="btn">
-            Arte Simbólico
-        </a>
-
-        <a href="servicios.CDQM.html" class="btn">
-            Servicios
-        </a>
-
-    </div>
-
-    <!-- SENTIDO -->
-
-    <div class="section">
-
-        <h2>Sentido</h2>
-
-        <p>
-
-        Su trabajo busca integrar tradición
-        y contemporaneidad,
-        manteniendo como eje central
-        la autonomía,
-        la consciencia,
-        la creatividad
-        y el valor irreductible
-        de la individualidad humana.
-
-        </p>
-
-    </div>
-
-    <!-- NAV -->
-
-    <div class="footer-nav">
-
-         <a href="index.html" class="btn">
-            ← Volver
-        </a>
-    </div>
 
 </div>
 
-<!-- LIGHTBOX -->
 
-<div class="lightbox" id="lightbox">
 
-    <div class="lightbox-close" id="lightboxClose">
-        ✕
-    </div>
+<div class="swiper">
 
-    <img id="lightboxImg">
-
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<div class="swiper-wrapper">
 
 <script>
 
-new Swiper('.swiper-main',{
+for(let i=1;i<=13;i++){
 
-    loop:true,
+let n=i.toString().padStart(2,"0");
 
-    autoplay:{
-        delay:3000,
-        disableOnInteraction:false
-    },
+document.write(`
+<div class="swiper-slide">
+<img loading="lazy" src="cd${n}.jpg">
+</div>
+`);
 
-    pagination:{
-        el:'.swiper-main .swiper-pagination',
-        clickable:true
-    }
-
-});
-
-new Swiper('.swiper-certificates',{
-
-    loop:true,
-
-    autoHeight:true,
-
-    centeredSlides:true,
-
-    autoplay:{
-        delay:4200,
-        disableOnInteraction:false
-    },
-
-    pagination:{
-        el:'.swiper-certificates .swiper-pagination',
-        clickable:true
-    }
-
-});
-
-/* LIGHTBOX */
-
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightboxImg');
-const closeBtn = document.getElementById('lightboxClose');
-
-document.querySelectorAll('.zoomable').forEach(img=>{
-
-    img.addEventListener('click',()=>{
-
-        lightbox.classList.add('active');
-
-        lightboxImg.src = img.src;
-
-    });
-
-});
-
-closeBtn.addEventListener('click',()=>{
-
-    lightbox.classList.remove('active');
-
-});
-
-lightbox.addEventListener('click',(e)=>{
-
-    if(e.target === lightbox){
-
-        lightbox.classList.remove('active');
-
-    }
-
-});
-
-document.addEventListener('keydown',(e)=>{
-
-    if(e.key === 'Escape'){
-
-        lightbox.classList.remove('active');
-
-    }
-
-});
+}
 
 </script>
 
+</div>
+
+</div>
+
+
+
+<section class="section">
+
+
+<h2>Identidad</h2>
+
+
+<p class="highlight">
+
+No soy solamente un asesor,
+un artista o un investigador.
+Soy un explorador de sistemas humanos.
+
+</p>
+
+
+<p>
+
+Mi trabajo integra conciencia,
+creatividad,
+disciplina,
+simbolismo,
+estrategia
+y experiencia práctica.
+
+</p>
+
+
+</section>
+
+
+
+<section class="section">
+
+<h2>Continuidad de una Visión</h2>
+
+
+<p>
+
+ASIFIM nace como una búsqueda orientada al desarrollo humano.
+Actualmente continúa desde una mirada contemporánea,
+integrando tradición,
+pensamiento sistémico,
+creatividad
+y nuevas tecnologías.
+
+</p>
+
+
+</section>
+
+
+
+<section class="section">
+
+
+<h2>Las Tres Dimensiones</h2>
+
+
+<p>
+
+<strong>PSÍQUICO</strong><br>
+
+Exploración de la conciencia,
+percepción,
+simbolismo,
+meditación
+y desarrollo interior.
+
+</p>
+
+
+<p>
+
+<strong>ARTISTA</strong><br>
+
+Música,
+pintura,
+escritura,
+diseño,
+narrativa
+y creación simbólica.
+
+</p>
+
+
+<p>
+
+<strong>ASESOR</strong><br>
+
+Aplicación estratégica del conocimiento humano
+para personas,
+equipos
+y organizaciones.
+
+</p>
+
+
+</section>
+
+
+
+
+<div class="swiper certificados">
+
+<div class="swiper-wrapper">
+
+
+<script>
+
+for(let i=1;i<=7;i++){
+
+document.write(`
+
+<div class="swiper-slide">
+
+<img class="certificado"
+loading="lazy"
+src="certificado_CDQM_0${i}.jpg">
+
+</div>
+
+`);
+
+}
+
+</script>
+
+
+</div>
+
+</div>
+
+
+
+
+<section class="section">
+
+
+<h2>Creación de Sistemas y Experiencias</h2>
+
+
+<p>
+
+El conocimiento también puede convertirse en juegos,
+metodologías,
+mundos simbólicos,
+herramientas educativas
+y experiencias transformativas.
+
+</p>
+
+
+</section>
+
+
+
+<div class="quote">
+
+"No enseño a obedecer sistemas.
+Enseño a desarrollar criterio para construirlos."
+
+</div>
+
+
+
+
+<div class="buttons">
+
+
+<a class="btn" href="said_arte.simbolico.html">
+Arte Simbólico
+</a>
+
+
+<a class="btn" href="servicios.CDQM.html">
+Servicios
+</a>
+
+
+<a class="btn" href="index.html">
+← Volver
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<div class="lightbox" id="box">
+
+<div class="close" onclick="cerrar()">✕</div>
+
+<img id="foto">
+
+</div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+
+<script>
+
+
+new Swiper(".swiper",{
+
+loop:true,
+
+autoplay:{
+delay:3500
+}
+
+});
+
+
+new Swiper(".certificados",{
+
+loop:true,
+
+autoplay:{
+delay:4000
+}
+
+});
+
+
+
+document.querySelectorAll(".certificado").forEach(x=>{
+
+x.onclick=function(){
+
+document.getElementById("foto").src=this.src;
+
+document.getElementById("box").classList.add("active");
+
+}
+
+});
+
+
+function cerrar(){
+
+document.getElementById("box").classList.remove("active");
+
+}
+
+
+</script>
+
+
 </body>
+
 </html>
