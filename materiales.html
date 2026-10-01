@@ -1,220 +1,825 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Descargas ASIFIM</title>
-</head>
 
-<body style="
+<title>Biblioteca y Cursos | ASIFIM</title>
+
+<meta name="description"
+content="Materiales gratuitos, cursos, libros y recursos de ASIFIM y PSI-MAGIA. Explora, estudia y apoya el desarrollo de nuevos contenidos.">
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
     margin:0;
-    padding:40px 20px;
-    background-color:#000;
+    padding:0;
+    background:
+        radial-gradient(circle at top, rgba(255,255,255,0.07), transparent 32%),
+        #000;
     color:#fff;
     font-family:Arial, Helvetica, sans-serif;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+}
+
+.container{
+    width:100%;
+    max-width:1050px;
+    margin:auto;
+    padding:55px 20px 100px 20px;
+}
+
+.logo{
+    width:150px;
+    display:block;
+    margin:0 auto 30px auto;
+    opacity:0.92;
+}
+
+.top-subtitle{
     text-align:center;
-">
+    font-size:12px;
+    letter-spacing:4px;
+    opacity:0.5;
+    text-transform:uppercase;
+    margin-bottom:18px;
+}
 
-<!-- TITULO -->
-<div style="
-    font-size:40px;
-    letter-spacing:3px;
-    font-weight:bold;
-    margin-bottom:10px;
-">
-    ASIFIM
-</div>
+h1{
+    text-align:center;
+    font-size:44px;
+    letter-spacing:4px;
+    margin:0 0 15px 0;
+}
 
-<div style="
-    font-size:25px;
-    letter-spacing:3px;
-    font-weight:bold;
-    margin-bottom:10px;
-">
- 
-</div>
-    
-<div style="
+.subtitle{
+    text-align:center;
     font-size:14px;
     letter-spacing:2px;
-    opacity:0.6;
-    margin-bottom:50px;
-">
-    Documentos Gratis · Cursos de Pago · Donaciones
-</div>
+    opacity:0.62;
+    text-transform:uppercase;
+    line-height:1.8;
+    margin-bottom:60px;
+}
 
-<!-- INTRO -->
-<div style="
+.intro{
     max-width:820px;
+    margin:0 auto 90px auto;
+    text-align:center;
     font-size:17px;
-    line-height:1.7;
-    margin-bottom:50px;
-    opacity:0.9;
-">
-    Esta sección reúne materiales disponibles para libre exploración, cursos de pago y
-    apoyo consciente al proyecto ASIFIM.
-    <br><br>
-    Todo lo aquí compartido responde a una lógica de transmisión abierta,
-    responsabilidad individual y práctica autodidacta responsable.
+    line-height:1.9;
+    opacity:0.88;
+}
+
+.section{
+    max-width:950px;
+    margin:0 auto 100px auto;
+}
+
+.section-number{
+    text-align:center;
+    font-size:12px;
+    letter-spacing:4px;
+    opacity:0.38;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:28px;
+    letter-spacing:2px;
+    margin-bottom:14px;
+}
+
+.section-description{
+    max-width:760px;
+    margin:0 auto 45px auto;
+    text-align:center;
+    font-size:15px;
+    line-height:1.8;
+    opacity:0.65;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:22px;
+}
+
+.card{
+    background:#0d0d0d;
+    border:1px solid rgba(255,255,255,0.09);
+    border-radius:14px;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(255,255,255,0.25);
+}
+
+.card-label{
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    opacity:0.42;
+    margin-bottom:14px;
+}
+
+.card h3{
+    font-size:20px;
+    line-height:1.4;
+    margin:0 0 16px 0;
+}
+
+.card p{
+    font-size:14px;
+    line-height:1.8;
+    opacity:0.72;
+    margin:0 0 25px 0;
+    flex-grow:1;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 20px;
+    border:1px solid rgba(255,255,255,0.28);
+    color:#fff;
+    text-decoration:none;
+    letter-spacing:1px;
+    font-size:13px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#fff;
+    color:#000;
+}
+
+.btn-primary{
+    background:#fff;
+    color:#000;
+    opacity:0.95;
+}
+
+.btn-primary:hover{
+    background:#d8d8d8;
+}
+
+.free{
+    opacity:0.55;
+}
+
+.divider{
+    width:80px;
+    height:1px;
+    background:rgba(255,255,255,0.18);
+    margin:90px auto;
+}
+
+.donation-box{
+    max-width:800px;
+    margin:auto;
+    background:#0d0d0d;
+    border:1px solid rgba(255,255,255,0.10);
+    border-radius:14px;
+    padding:40px;
+    text-align:center;
+}
+
+.donation-box p{
+    font-size:15px;
+    line-height:1.9;
+    opacity:0.78;
+    max-width:650px;
+    margin:0 auto 30px auto;
+}
+
+.paypal-button{
+    text-align:center;
+    border:none;
+    border-radius:1.5rem;
+    min-width:11.625rem;
+    padding:0 2rem;
+    height:2.625rem;
+    font-weight:bold;
+    background-color:#FFD140;
+    color:#000;
+    font-family:Arial, sans-serif;
+    font-size:1rem;
+    cursor:pointer;
+    margin-bottom:30px;
+}
+
+.transfer{
+    margin-top:15px;
+    padding-top:30px;
+    border-top:1px solid rgba(255,255,255,0.08);
+    font-size:14px;
+    line-height:1.8;
+    opacity:0.68;
+}
+
+.quote{
+    max-width:720px;
+    margin:90px auto;
+    text-align:center;
+    font-size:17px;
+    line-height:2;
+    opacity:0.55;
+    font-style:italic;
+}
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:18px;
+    margin-top:70px;
+}
+
+.footer-note{
+    max-width:720px;
+    margin:80px auto 0 auto;
+    text-align:center;
+    font-size:13px;
+    line-height:1.9;
+    opacity:0.4;
+}
+
+@media(max-width:700px){
+
+    h1{
+        font-size:34px;
+    }
+
+    .intro{
+        font-size:16px;
+    }
+
+    .section-title{
+        font-size:24px;
+    }
+
+    .donation-box{
+        padding:28px 20px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+<!-- LOGO -->
+
+<img src="logoasifim.png" alt="ASIFIM" class="logo">
+
+
+<!-- ENCABEZADO -->
+
+<div class="top-subtitle">
+ASIFIM · C.D.Q.M.
 </div>
 
-<!-- DESCARGAS -->
+<h1>
+BIBLIOTECA
+</h1>
+
+<div class="subtitle">
+Material gratuito · Cursos · Libros · Apoyo al proyecto
+</div>
+
+
+<!-- INTRODUCCIÓN -->
+
+<div class="intro">
+
+Este espacio reúne materiales de estudio,
+manuales,
+cursos
+y publicaciones desarrolladas dentro de
+<strong>ASIFIM</strong>
+y <strong>PSI-MAGIA</strong>.
+
+<br><br>
+
+Parte de este conocimiento se encuentra disponible
+<strong>gratuitamente</strong>
+para quien desee estudiar y explorar por cuenta propia.
+
+Los cursos y publicaciones especializadas permiten
+profundizar en estos contenidos
+y contribuyen directamente a sostener
+la investigación,
+creación
+y producción de nuevos materiales.
+
+</div>
+
+
+
+<!-- ===================================================== -->
+<!-- 01 · MATERIAL GRATUITO                               -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-number">
+01 · Explorar
+</div>
+
+<div class="section-title">
+MATERIAL GRATUITO
+</div>
+
+<div class="section-description">
+
+Manuales y documentos disponibles para descarga libre.
+Puedes comenzar por cualquiera de ellos
+y estudiar a tu propio ritmo.
+
+</div>
+
+
+<div class="grid">
+
+
+<!-- MANUAL PSI-MAGIA -->
+
+<div class="card">
+
+<div class="card-label">
+PDF · Descarga gratuita
+</div>
+
+<h3>
+Manual PSI-MAGIA C.D.Q.M.
+</h3>
+
+<p>
+Introducción al sistema PSI-MAGIA
+y a sus principios fundamentales
+de exploración psíquica,
+mágica
+y de la conciencia.
+</p>
+
+<a href="Manual_PSI_MAGIA_CDQM.pdf"
+download
+class="btn">
+DESCARGAR GRATIS
+</a>
+
+</div>
+
+
+
+<!-- MANUAL AIN -->
+
+<div class="card">
+
+<div class="card-label">
+PDF · Descarga gratuita
+</div>
+
+<h3>
+Asesoría Integral de Negocios ASIFIM
+</h3>
+
+<p>
+Material introductorio al enfoque AIN
+para comprender proyectos,
+negocios
+y organizaciones desde una perspectiva integral.
+</p>
+
+<a href="Manual_AIN_ASIFIM.pdf"
+download
+class="btn">
+DESCARGAR GRATIS
+</a>
+
+</div>
+
+
+
+<!-- GRIMORIO DAVID PSIQUICO -->
+
+<div class="card">
+
+<div class="card-label">
+PDF · Descarga gratuita
+</div>
+
+<h3>
+El Grimorio de David Psíquico
+</h3>
+
+<p>
+Material de estudio y exploración
+vinculado al psiquismo,
+la experiencia personal
+y el desarrollo de prácticas esotéricas.
+</p>
+
+<a href="El Grimorio de David Psíquico.pdf"
+download
+class="btn">
+DESCARGAR GRATIS
+</a>
+
+</div>
+
+
+
+<!-- MANUAL ALQUIMIA -->
+
+<div class="card">
+
+<div class="card-label">
+PDF · Descarga gratuita
+</div>
+
+<h3>
+Manual AlquimiA C.D.Q.M.
+</h3>
+
+<p>
+Una aproximación personal y simbólica
+a la alquimia,
+sus procesos
+y sus posibilidades como herramienta
+de transformación.
+</p>
+
+<a href="Manual_AlquimiA_CDQM.pdf"
+download
+class="btn">
+DESCARGAR GRATIS
+</a>
+
+</div>
+
+
+</div>
+
+
 <div style="
-    max-width:820px;
-    margin-bottom:60px;
+text-align:center;
+font-size:13px;
+opacity:0.45;
+margin-top:30px;
 ">
-    <div style="
-        font-size:22px;
-        letter-spacing:2px;
-        margin-bottom:20px;
-    ">
-        Documentos GRATIS Disponibles
-    </div>
 
-            <a href="Manual_PSI_MAGIA_CDQM.pdf" download
-       style="
-        display:inline-block;
-        padding:14px 30px;
-        border:1px solid #fff;
-        color:#fff;
-        text-decoration:none;
-        letter-spacing:1px;
-        font-size:14px;
-        margin-bottom:10px;
-    ">
-         Descargar · Manual PSI-MAGIA CDQM
-    </a>
-    
-        <a href="Manual_AIN_ASIFIM.pdf" download
-       style="
-        display:inline-block;
-        padding:14px 30px;
-        border:1px solid #fff;
-        color:#fff;
-        text-decoration:none;
-        letter-spacing:1px;
-        font-size:14px;
-        margin-bottom:10px;
-    ">
-        Descargar · Asesoría Integral de Negocios ASIFIM
-    </a>
+Nuevos documentos y materiales serán incorporados progresivamente.
 
-    
-        <a href="El Grimorio de David Psíquico.pdf" download
-       style="
-        display:inline-block;
-        padding:14px 30px;
-        border:1px solid #fff;
-        color:#fff;
-        text-decoration:none;
-        letter-spacing:1px;
-        font-size:14px;
-        margin-bottom:10px;
-    ">
-        Descargar · El Grimorio de David Psíquico
-    </a>
-    
-    <a href="Manual_AlquimiA_CDQM.pdf" download
-       style="
-        display:inline-block;
-        padding:14px 30px;
-        border:1px solid #fff;
-        color:#fff;
-        text-decoration:none;
-        letter-spacing:1px;
-        font-size:14px;
-        margin-bottom:10px;
-    ">
-        Descargar · Manual AlquimiA CDQM
-    </a>
-
-    
-
-
-    <div style="
-        font-size:13px;
-        opacity:0.6;
-        margin-top:10px;
-    ">
-        Próximamente nuevos manuales.
-    </div>
 </div>
 
-<!-- DONACIONES -->
-<div style="
-    max-width:820px;
-    margin-bottom:60px;
-">
-    <div style="
-        font-size:22px;
-        letter-spacing:2px;
-        margin-bottom:20px;
-    ">
-        Apoyo & Donaciones
-    </div>
 
-    <div style="
-        font-size:15px;
-        line-height:1.6;
-        opacity:0.85;
-        margin-bottom:30px;
-    ">
-        ASIFIM se sostiene en gran parte gracias al apoyo consciente
-        de quienes valoran este trabajo de transmisión, investigación
-        y desarrollo humano integral.
-    </div>
+</section>
 
-    <!-- PAYPAL -->
-    <div style="margin-bottom:30px;">
-        <style>
-            .pp-L4XE2RXUW6M9S{
-                text-align:center;
-                border:none;
-                border-radius:1.5rem;
-                min-width:11.625rem;
-                padding:0 2rem;
-                height:2.625rem;
-                font-weight:bold;
-                background-color:#FFD140;
-                color:#000000;
-                font-family:Arial, sans-serif;
-                font-size:1rem;
-                cursor:pointer;
-            }
-        </style>
-        <form action="https://www.paypal.com/ncp/payment/L4XE2RXUW6M9S" method="post" target="_blank">
-            <input class="pp-L4XE2RXUW6M9S" type="submit" value="Donar vía PayPal" />
-        </form>
-    </div>
 
-    <!-- TRANSFERENCIA -->
-    <div style="
-        font-size:14px;
-        line-height:1.6;
-        opacity:0.7;
-    ">
-        <strong>Transferencia directa:</strong><br>
-        Cuenta Rut Banco Estado<br>
-        Carlos David Quezada Molina<br>
-        RUT: 16.277.075-6<br>
-        Correo: asifimchile@gmail.com
-    </div>
+
+<div class="divider"></div>
+
+
+
+<!-- ===================================================== -->
+<!-- 02 · CURSOS Y PUBLICACIONES                          -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-number">
+02 · Profundizar
 </div>
 
-    <!-- BOTONES -->
+<div class="section-title">
+CURSOS Y PUBLICACIONES
+</div>
 
-    <div class="buttons">
+<div class="section-description">
+
+Formación y material especializado
+para quienes desean profundizar
+en PSI-MAGIA,
+ocultismo
+y exploración de la conciencia.
+
+Acceso y compra mediante Hotmart.
+
+</div>
+
+
+<div class="grid">
 
 
 
-        <a href="index.html" class="btn">
-            ← Volver
-        </a>
+<!-- ===================================================== -->
+<!-- CURSO 01                                              -->
+<!-- PARA AGREGAR OTRO CURSO: COPIA ESTA TARJETA COMPLETA -->
+<!-- Y CAMBIA TITULO, DESCRIPCION Y LINK                   -->
+<!-- ===================================================== -->
 
-    </div>
+<div class="card">
+
+<div class="card-label">
+Curso · PSI-MAGIA
+</div>
+
+<h3>
+Curso Fundamental de PSI-MAGIA
+</h3>
+
+<p>
+Introducción estructurada a los fundamentos
+del Método PSI-MAGIA de C.D.Q.M.,
+su marco de trabajo
+y sus principales herramientas de exploración.
+</p>
+
+<a href="https://go.hotmart.com/I107778262O"
+target="_blank"
+rel="noopener noreferrer"
+class="btn btn-primary">
+VER CURSO EN HOTMART
+</a>
+
+</div>
+
+
+
+<!-- ===================================================== -->
+<!-- CURSO 02                                              -->
+<!-- ===================================================== -->
+
+<div class="card">
+
+<div class="card-label">
+Curso · Ocultismo · PSI-MAGIA
+</div>
+
+<h3>
+Demonios: Invocación y Exorcismo · Nivel I
+</h3>
+
+<p>
+Curso especializado del Método PSI-MAGIA
+dedicado al estudio y práctica
+de la invocación,
+el trabajo con entidades
+y el exorcismo.
+</p>
+
+<a href="https://go.hotmart.com/I107775565D"
+target="_blank"
+rel="noopener noreferrer"
+class="btn btn-primary">
+VER CURSO EN HOTMART
+</a>
+
+</div>
+
+
+
+<!-- ===================================================== -->
+<!-- PUBLICACION 01                                        -->
+<!-- ===================================================== -->
+
+<div class="card">
+
+<div class="card-label">
+Libro de estudio · PSI-MAGIA
+</div>
+
+<h3>
+Demonios: Invocación y Exorcismo
+</h3>
+
+<p>
+Libro de estudio ampliado
+del Método PSI-MAGIA,
+creado para profundizar
+y complementar el contenido especializado
+sobre demonología,
+invocación
+y exorcismo.
+</p>
+
+<a href="https://go.hotmart.com/F107777801A"
+target="_blank"
+rel="noopener noreferrer"
+class="btn btn-primary">
+VER LIBRO EN HOTMART
+</a>
+
+</div>
+
+
+
+<!-- ========================================================== -->
+<!--                                                            -->
+<!--       ★★★★★  AGREGAR NUEVOS CURSOS AQUÍ  ★★★★★             -->
+<!--                                                            -->
+<!-- INSTRUCCIONES:                                             -->
+<!-- 1. COPIA TODO EL BLOQUE DE EJEMPLO DE ABAJO                -->
+<!-- 2. PEGALO ANTES DEL CIERRE </div> DE ESTA GRID             -->
+<!-- 3. CAMBIA:                                                 -->
+<!--       - CATEGORIA                                          -->
+<!--       - TITULO                                             -->
+<!--       - DESCRIPCION                                        -->
+<!--       - LINK DE HOTMART                                    -->
+<!--                                                            -->
+<!-- ========================================================== -->
+
+
+<!--
+
+========== PLANTILLA PARA NUEVO CURSO ==========
+
+<div class="card">
+
+<div class="card-label">
+Curso · CATEGORIA
+</div>
+
+<h3>
+NOMBRE DEL NUEVO CURSO
+</h3>
+
+<p>
+DESCRIPCION DEL NUEVO CURSO.
+</p>
+
+<a href="PEGAR_AQUI_LINK_GO_HOTMART"
+target="_blank"
+rel="noopener noreferrer"
+class="btn btn-primary">
+VER CURSO EN HOTMART
+</a>
+
+</div>
+
+========== FIN PLANTILLA ==========
+
+-->
+
+
+</div>
+
+</section>
+
+
+
+<div class="divider"></div>
+
+
+
+<!-- ===================================================== -->
+<!-- 03 · DONACIONES                                      -->
+<!-- ===================================================== -->
+
+<section class="section">
+
+<div class="section-number">
+03 · Sostener
+</div>
+
+<div class="section-title">
+APOYAR ASIFIM
+</div>
+
+<div class="section-description">
+
+Una parte importante del material de ASIFIM
+continuará siendo de acceso gratuito.
+
+Si este trabajo te resulta útil
+y deseas contribuir voluntariamente
+a que podamos seguir investigando,
+creando
+y compartiendo nuevos contenidos,
+puedes apoyar directamente el proyecto.
+
+</div>
+
+
+<div class="donation-box">
+
+
+<p>
+
+Tu aporte ayuda a sostener
+la producción de manuales,
+material educativo,
+investigación,
+plataformas digitales
+y nuevos proyectos de ASIFIM.
+
+<br><br>
+
+<strong>
+No es necesario donar para acceder
+al material gratuito.
+</strong>
+
+</p>
+
+
+<!-- PAYPAL -->
+
+<form
+action="https://www.paypal.com/ncp/payment/L4XE2RXUW6M9S"
+method="post"
+target="_blank">
+
+<input
+class="paypal-button"
+type="submit"
+value="APOYAR VÍA PAYPAL">
+
+</form>
+
+
+
+<!-- TRANSFERENCIA -->
+
+<div class="transfer">
+
+<strong>Transferencia directa</strong>
+
+<br><br>
+
+Cuenta RUT BancoEstado<br>
+Carlos David Quezada Molina<br>
+RUT: 16.277.075-6<br>
+Correo: asifimchile@gmail.com
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- FRASE -->
+
+<div class="quote">
+
+“El conocimiento puede transmitirse,
+practicarse,
+transformarse
+y volver a ser compartido.”
+
+</div>
+
+
+
+<!-- BOTONES -->
+
+<div class="buttons">
+
+<a href="index.html" class="btn">
+← Volver
+</a>
+
+</div>
+
+
+
+<!-- FOOTER -->
+
+<div class="footer-note">
+
+ASIFIM · Escuela de desarrollo humano,
+exploración de la conciencia,
+creatividad
+y sistemas de conocimiento.
+
+</div>
+
+
+</div>
 
 </body>
+
 </html>
