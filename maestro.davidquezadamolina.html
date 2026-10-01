@@ -688,7 +688,12 @@ Servicios
 <script>
 
 
-new Swiper(".swiper",{
+/* PRIMER CARRUSEL
+   Se selecciona SOLO el primer .swiper.
+   Su comportamiento original NO cambia.
+*/
+
+new Swiper(document.querySelector(".swiper"),{
 
 loop:true,
 
@@ -698,6 +703,10 @@ delay:3500
 
 });
 
+
+/* SEGUNDO CARRUSEL: CERTIFICADOS
+   Se inicializa de manera independiente.
+*/
 
 new Swiper(".certificados",{
 
